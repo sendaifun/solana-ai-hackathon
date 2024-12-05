@@ -1,65 +1,67 @@
 import React from "react";
+import judgesImg from "@/assets/images/svgs/bgs/abstract8.png";
+import Image from "next/image";
 
 const judges = [
   {
     id: 1,
     name: "Tarun Chitra",
     role: "Partner @DragonFly",
-    image: "/api/placeholder/400/400",
+    image: judgesImg,
   },
   {
     id: 2,
     name: "Tarun Chitra",
     role: "Partner @DragonFly",
-    image: "/api/placeholder/400/400",
+    image: judgesImg,
   },
   {
     id: 3,
     name: "Tarun Chitra",
     role: "Partner @DragonFly",
-    image: "/api/placeholder/400/400",
+    image: judgesImg,
   },
   {
     id: 4,
     name: "Tarun Chitra",
     role: "Partner @DragonFly",
-    image: "/api/placeholder/400/400",
+    image: judgesImg,
   },
   {
     id: 5,
     name: "Tarun Chitra",
     role: "Partner @DragonFly",
-    image: "/api/placeholder/400/400",
+    image: judgesImg,
   },
   {
     id: 6,
     name: "Tarun Chitra",
     role: "Partner @DragonFly",
-    image: "/api/placeholder/400/400",
+    image: judgesImg,
   },
   {
     id: 7,
     name: "Tarun Chitra",
     role: "Partner @DragonFly",
-    image: "/api/placeholder/400/400",
+    image: judgesImg,
   },
   {
     id: 8,
     name: "Tarun Chitra",
     role: "Partner @DragonFly",
-    image: "/api/placeholder/400/400",
+    image: judgesImg,
   },
   {
     id: 9,
     name: "Tarun Chitra",
     role: "Partner @DragonFly",
-    image: "/api/placeholder/400/400",
+    image: judgesImg,
   },
   {
     id: 10,
     name: "Tarun Chitra",
     role: "Partner @DragonFly",
-    image: "/api/placeholder/400/400",
+    image: judgesImg,
   },
 ];
 
@@ -105,8 +107,8 @@ const JudgesSection = () => {
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
           {judges.map((judge) => (
             <div key={judge.id} className="relative">
-              <div className="aspect-square overflow-hidden rounded-lg border border-gray-800">
-                <img
+              <div className="aspect-square overflow-hidden rounded-lg border-2 border-[#353637]">
+                <Image
                   src={judge.image}
                   alt={judge.name}
                   className="w-full h-full object-cover grayscale brightness-90"
@@ -121,16 +123,19 @@ const JudgesSection = () => {
                 </div>
                 <div className="ml-auto">
                   <svg
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
+                    width="45"
+                    height="45"
+                    viewBox="0 0 45 45"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
-                      d="M5 5L19 19M19 5L5 19"
-                      stroke="#353637"
-                      strokeWidth="2"
+                      d="M1.44057 44.4354L0.530273 43.525L21.4415 22.6138L0.530273 1.70261L1.44057 0.792236L23.2621 22.6138L1.44057 44.4354Z"
+                      fill="#787B7E"
+                    />
+                    <path
+                      d="M22.8008 44.4354L21.9033 43.525L42.8146 22.6138L21.9033 1.70261L22.8008 0.792236L44.6223 22.6138L22.8008 44.4354Z"
+                      fill="#787B7E"
                     />
                   </svg>
                 </div>
