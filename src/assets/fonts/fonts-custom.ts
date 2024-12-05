@@ -5,3 +5,9 @@ export const relishGargler = localFont({
   variable: "--font-relishGargler",
   weight: "100 900",
 });
+
+export const PPSans = localFont({
+  src: "./PPSans/PPSupplySans-Regular.otf",
+  variable: "--font-PPSans",
+  weight: "100 900",
+});

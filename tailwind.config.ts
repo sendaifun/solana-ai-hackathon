@@ -15,6 +15,7 @@ const config: Config = {
       },
       fontFamily: {
         relishGargler: ['var(--font-relishGargler)'],
+        PPSans: ['var(--font-PPSans)'],
       },
     },
   },

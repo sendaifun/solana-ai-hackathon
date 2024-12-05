@@ -1,4 +1,4 @@
-import { relishGargler } from "@/assets/fonts/fonts-custom";
+import { PPSans, relishGargler } from "@/assets/fonts/fonts-custom";
 import type { Metadata } from "next";
 import "./globals.css";
 
@@ -14,7 +14,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${relishGargler.variable}`}>
+      <body className={`${relishGargler.variable} ${PPSans.variable}`}>
         {children}
       </body>
     </html>
