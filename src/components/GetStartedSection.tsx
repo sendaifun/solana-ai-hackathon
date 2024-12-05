@@ -143,7 +143,9 @@ const GetStartedSection = () => {
             </span>
             <span className="text-gray-400 font-PPSans"> on building</span>
           </h2>
-          <p className="text-3xl text-white font-PPSans">your Crypto x AI Project:</p>
+          <p className="text-3xl text-white font-PPSans">
+            your Crypto x AI Project:
+          </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">

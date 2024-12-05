@@ -1,6 +1,6 @@
-import { relishGargler } from "@/assets/fonts/fonts-custom";
 import GetStartedSection from "@/components/GetStartedSection";
 import HeroSection from "@/components/HeroSection";
+import JudgesSection from "@/components/JudgesSection";
 import NavbarComp from "@/components/Navbar";
 import PreviewCards from "@/components/Section2";
 import Section3 from "@/components/Section3";
@@ -17,6 +17,7 @@ export default function Home() {
         <Section3 />
         <TracksSection />
         <GetStartedSection />
+        <JudgesSection />
       </div>
     </>
   );
