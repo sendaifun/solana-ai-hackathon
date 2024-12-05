@@ -296,10 +296,10 @@ const TracksSection = () => {
       <div className="max-w-7xl mx-auto px-4">
         {/* Header */}
         <div className="flex justify-between items-start mb-12">
-          <h2 className="text-5xl font-bold text-white tracking-wider">
+          <h2 className="text-5xl font-relishGargler text-white tracking-wider">
             TRACKS
           </h2>
-          <p className="text-gray-400 text-right text-lg">
+          <p className="text-gray-400 text-right text-lg font-PPSans">
             Build the coolest AI
             <br />
             Agents across 6 Themes
@@ -318,8 +318,8 @@ const TracksSection = () => {
             <span
               className={
                 activeTab === "Agent Aggregators"
-                  ? "text-white"
-                  : "text-gray-400"
+                  ? "text-white font-PPSans"
+                  : "text-gray-400 font-PPSans"
               }
             >
               Agent Aggregators
@@ -333,7 +333,7 @@ const TracksSection = () => {
             <svg viewBox="0 0 24 24" className="w-6 h-6" fill="currentColor">
               <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"></path>
             </svg>
-            <span>Conversational Agents</span>
+            <span className="font-PPSans">Conversational Agents</span>
           </button>
 
           <button
@@ -343,7 +343,7 @@ const TracksSection = () => {
             <svg viewBox="0 0 24 24" className="w-6 h-6" fill="currentColor">
               <path d="M22 9l-10-7-10 7v11a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2z"></path>
             </svg>
-            <span>Agent Tooling</span>
+            <span className="font-PPSans">Agent Tooling</span>
           </button>
 
           <button
@@ -353,7 +353,7 @@ const TracksSection = () => {
             <svg viewBox="0 0 24 24" className="w-6 h-6" fill="currentColor">
               <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path>
             </svg>
-            <span>Agent Infra</span>
+            <span className="font-PPSans">Agent Infra</span>
           </button>
 
           <button
@@ -363,7 +363,7 @@ const TracksSection = () => {
             <svg viewBox="0 0 24 24" className="w-6 h-6" fill="currentColor">
               <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
             </svg>
-            <span>DeFi Agents</span>
+            <span className="font-PPSans">DeFi Agents</span>
           </button>
         </div>
 

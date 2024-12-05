@@ -1,3 +1,4 @@
+import Footer from "@/components/FooterSection";
 import GetStartedSection from "@/components/GetStartedSection";
 import HeroSection from "@/components/HeroSection";
 import JudgesSection from "@/components/JudgesSection";
@@ -20,6 +21,7 @@ export default function Home() {
         <GetStartedSection />
         <JudgesSection />
         <SponsorSection />
+        <Footer />
       </div>
     </>
   );

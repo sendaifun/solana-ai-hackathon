@@ -5,7 +5,9 @@ import headAbstract from "@/assets/images/svgs/abstract/SponsorsTitleHeader.svg"
 import Image from "next/image";
 import cornerAbstract from "@/assets/images/svgs/abstract/CornerRect.png";
 import sponsor1 from "@/assets/images/logos/DialectLogo.svg";
-
+import sendAILogo from "@/assets/images/logos/SendAI.svg";
+import sponsorBottomL from "@/assets/images/svgs/abstract/SponsorBottomL.svg";
+import sponsorBottomR from "@/assets/images/svgs/abstract/SponsorBottomR.svg";
 const sponsors = {
   grand: [
     {
@@ -47,10 +49,17 @@ const sponsors = {
       image: sponsor1,
     },
   ],
+  poweredby: [
+    {
+      id: "SendAI",
+      name: "Send AI",
+      image: sendAILogo,
+    },
+  ],
 };
 
 const SponsorCard = ({ image, name }: { image: string; name: string }) => (
-  <div className="relative bg-[#1E1E1E] border-2 border-[#353637] flex items-center justify-center">
+  <div className="relative bg-[#1E1E1E] bg-opacity-20 border-2 border-[#353637] flex items-center justify-center">
     {/* Corner Decorations */}
     <div className="absolute inset-0">
       {/* Top Left */}
@@ -94,53 +103,112 @@ const SponsorCard = ({ image, name }: { image: string; name: string }) => (
 
 const SponsorsSection = () => {
   return (
-    <div className="flex flex-col items-center bg-black">
-      <div className="w-full max-w-7xl px-4 flex flex-col items-center">
-        {/* Title */}
-        <div className="flex gap-4 bg-black items-center justify-center">
-          <Image src={headAbstract} alt="Sponsor" className=" mx-8" />
-          <div className="font-relishGargler text-4xl text-white text-nowrap mx-4">
-            {" "}
-            Supported By:
-          </div>
-          <Image src={headAbstract} alt="Sponsor" className=" mx-8" />
-        </div>
-
-        {/* Grand Sponsors */}
-        <div className="w-full flex flex-col items-center">
-          <h3 className="text-white text-md  tracking-wider font-PPSans my-8">
-            GRAND SPONSORS
-          </h3>
-          <div className="w-full flex flex-wrap justify-center gap-4">
-            {sponsors.grand.map((sponsor) => (
-              <div
-                key={sponsor.id}
-                className="w-full md:w-[calc(50%-8px)] lg:w-[calc(33.333%-11px)]"
-              >
-                <SponsorCard image={sponsor.image} name={sponsor.name} />
+    <>
+      <div className="bg-black">
+        <div className="flex flex-col items-center bg-black">
+          <div className="w-full max-w-7xl px-4 flex flex-col items-center">
+            {/* Title */}
+            <div className="flex gap-4 bg-black items-center justify-center">
+              <Image src={headAbstract} alt="Sponsor" className=" mx-8" />
+              <div className="font-relishGargler text-4xl text-white text-nowrap mx-4">
+                {" "}
+                Supported By:
               </div>
-            ))}
+              <Image src={headAbstract} alt="Sponsor" className=" mx-8" />
+            </div>
+
+            {/* Grand Sponsors */}
+            <div className="w-full flex flex-col items-center">
+              <h3 className="text-white text-md  tracking-wider font-PPSans my-8">
+                GRAND SPONSORS
+              </h3>
+              <div className="w-full flex flex-wrap justify-center gap-4">
+                {sponsors.grand.map((sponsor) => (
+                  <div
+                    key={sponsor.id}
+                    className="w-full md:w-[calc(50%-8px)] lg:w-[calc(33.333%-11px)]"
+                  >
+                    <SponsorCard image={sponsor.image} name={sponsor.name} />
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Track Sponsors */}
+            <div className="w-full flex flex-col items-center">
+              <h3 className="text-white text-md tracking-wider font-PPSans my-8">
+                TRACK SPONSORS
+              </h3>
+              <div className="w-full flex flex-wrap justify-center gap-4">
+                {sponsors.track.map((sponsor) => (
+                  <div
+                    key={sponsor.id}
+                    className="w-full md:w-[calc(50%-8px)] lg:w-[calc(33.333%-11px)]"
+                  >
+                    <SponsorCard image={sponsor.image} name={sponsor.name} />
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Supporting Sponsors */}
+            <div className="w-full flex flex-col items-center">
+              <h3 className="text-white text-md tracking-wider font-PPSans my-8">
+                SUPPORTING SPONSORS
+              </h3>
+              <div className="w-full flex flex-wrap justify-center gap-4">
+                {sponsors.track.map((sponsor) => (
+                  <div
+                    key={sponsor.id}
+                    className="w-full md:w-[calc(50%-8px)] lg:w-[calc(33.333%-11px)]"
+                  >
+                    <SponsorCard image={sponsor.image} name={sponsor.name} />
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Distribution Sponsors */}
+            <div className="w-full flex flex-col items-center">
+              <h3 className="text-white text-md tracking-wider font-PPSans my-8">
+                DISTRIBUTION SPONSORS
+              </h3>
+              <div className="w-full flex flex-wrap justify-center gap-4">
+                {sponsors.track.map((sponsor) => (
+                  <div
+                    key={sponsor.id}
+                    className="w-full md:w-[calc(50%-8px)] lg:w-[calc(33.333%-11px)]"
+                  >
+                    <SponsorCard image={sponsor.image} name={sponsor.name} />
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Distribution Sponsors */}
+            <div className="w-full flex flex-col items-center">
+              <h3 className="text-white text-md tracking-wider font-PPSans my-8">
+                POWERED BY
+              </h3>
+              <div className="w-full flex flex-wrap justify-center gap-4">
+                {sponsors.poweredby.map((sponsor) => (
+                  <div
+                    key={sponsor.id}
+                    className="w-full md:w-[calc(50%-8px)] lg:w-[calc(33.333%-11px)]"
+                  >
+                    <SponsorCard image={sponsor.image} name={sponsor.name} />
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
-
-        {/* Track Sponsors */}
-        <div className="w-full flex flex-col items-center">
-          <h3 className="text-white text-md tracking-wider font-PPSans my-8">
-            TRACK SPONSORS
-          </h3>
-          <div className="w-full flex flex-wrap justify-center gap-4">
-            {sponsors.track.map((sponsor) => (
-              <div
-                key={sponsor.id}
-                className="w-full md:w-[calc(50%-8px)] lg:w-[calc(33.333%-11px)]"
-              >
-                <SponsorCard image={sponsor.image} name={sponsor.name} />
-              </div>
-            ))}
-          </div>
+        <div className="flex justify-between">
+          <Image src={sponsorBottomL} alt="Sponsor" className=" mx-8" />
+          <Image src={sponsorBottomR} alt="Sponsor" className=" mx-8" />
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
