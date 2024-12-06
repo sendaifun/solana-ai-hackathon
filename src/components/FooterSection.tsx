@@ -29,7 +29,7 @@ const Footer = () => {
     <footer className="bg-[#111111] pt-20 pb-8">
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex flex-col lg:flex-row justify-between gap-12">
-          {/* Logo and Powered By Section */}
+
           <div className="flex flex-col gap-8">
             <div className="flex flex-col gap-2">
               <Image
@@ -39,7 +39,6 @@ const Footer = () => {
                 height={30}
                 className="brightness-100"
               />
-              {/* <div className="text-2xl font-bold text-white">AI HACKATHON</div> */}
             </div>
             <div className="flex items-center gap-2 text-gray-500">
               <span className="font-PPSans">//powered by</span>
@@ -53,7 +52,7 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Navigation Links */}
+
           <div className="flex flex-wrap gap-20">
             <div>
               <h3 className="text-white mb-4">Hackathon</h3>
@@ -103,10 +102,10 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Bottom Section */}
+
         <div className=" pt-8 flex flex-col lg:flex-row justify-between items-center gap-4">
           <div className="text-gray-600 font-PPSans">
-            Twenty'24 Solana AI Hackathon
+            Twenty&apos;24 Solana AI Hackathon
             <br />© All Rights Reserved
           </div>
           <div className="flex gap-2">
@@ -126,15 +125,6 @@ const Footer = () => {
             <div className="w-1 border-r border-[#787B7E] bg-[#787B7E]"></div>
           </div>
         </div>
-
-        {/* Decorative Dots Pattern
-        <div className="mt-12 flex justify-center">
-          <div className="grid grid-cols-24 gap-2">
-            {[...Array(96)].map((_, i) => (
-              <div key={i} className="w-1 h-1 rounded-full bg-gray-800" />
-            ))}
-          </div>
-        </div> */}
         <Image src={patternBottom} alt="Decorative Dots" className="mt-12" />
       </div>
     </footer>

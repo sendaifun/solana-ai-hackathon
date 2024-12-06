@@ -1,232 +1,130 @@
-"use client";
+// "use client";
 
-// import React, { useState } from "react";
-// import { Trophy, ArrowLeft, ArrowRight } from "lucide-react";
+// import React, { useState, useEffect, useCallback } from "react";
+// import { Trophy } from "lucide-react";
+// import Image from "next/image";
+// import dialectLogo from "@/assets/images/logos/DialectLogo.svg";
+// import superteamLogo from "@/assets/images/logos/SendWhiteLogo.svg";
+// import solanaFndnImg from "@/assets/images/logos/SolanaFoundationLogo.svg";
+// import squadsLogo from "@/assets/images/logos/SquadsLogo.svg";
+// import tensorLogo from "@/assets/images/logos/TensorLogo.svg";
 
 // const trackData = [
 //   {
 //     id: 1,
-//     color: "yellow",
-//     title: "Conversational Agents",
-//     sponsor: "GSISTER",
-//     description:
-//       "Build chatgpt or claude-like chat conversational agents — it can be forms like text, voice, or video and ideally either use a Solana wallet or a token on Solana.",
-//     prizes: {
-//       first: 25000,
-//       second: 15000,
-//     },
+//     title: "TRACKS",
+//     subtitle: ["Build the best overall AI", "Agents to win the Grand Prize"],
+//     amount: "$40,000",
+//     borderColor: "bg-yellow-400",
+//     prizes: { first: 25000, second: 15000 }
 //   },
 //   {
 //     id: 2,
-//     color: "cyan",
-//     title: "Agent Aggregators",
-//     sponsor: "DIALECT",
-//     description:
-//       "Build platforms that aggregate and manage multiple AI agents, enabling seamless interaction and coordination between different types of agents.",
-//     prizes: {
-//       first: 25000,
-//       second: 15000,
-//     },
-//   },
-//   // Add more tracks as needed
+//     title: "TRACKS",
+//     subtitle: ["Build the coolest AI", "Agents across 6 Themes"],
+//     amount: "$40,000",
+//     borderColor: "bg-cyan-400",
+//     prizes: { first: 25000, second: 15000 }
+//   }
 // ];
 
 // const TracksSection = () => {
 //   const [activeTrack, setActiveTrack] = useState(0);
-//   const [activeTab, setActiveTab] = useState("Agent Aggregators");
+//   const [isPaused, setIsPaused] = useState(false);
 
-//   const nextTrack = () => {
+//   const nextTrack = useCallback(() => {
 //     setActiveTrack((prev) => (prev + 1) % trackData.length);
-//   };
+//   }, []);
 
-//   const prevTrack = () => {
-//     setActiveTrack((prev) => (prev - 1 + trackData.length) % trackData.length);
-//   };
+//   useEffect(() => {
+//     if (!isPaused) {
+//       const timer = setInterval(nextTrack, 5000);
+//       return () => clearInterval(timer);
+//     }
+//   }, [nextTrack, isPaused]);
+
+//   const track = trackData[activeTrack];
 
 //   return (
 //     <div className="bg-black py-20">
 //       <div className="max-w-7xl mx-auto px-4">
 //         {/* Header */}
 //         <div className="flex justify-between items-start mb-12">
-//           <h2 className="text-5xl font-bold text-white tracking-wider">
-//             TRACKS
+//           <h2 className="text-5xl font-relishGargler text-white tracking-wider">
+//             {track.title}
 //           </h2>
-//           <p className="text-gray-400 text-right text-lg">
-//             Build the coolest AI
+//           <p className="text-gray-400 text-right text-lg font-PPSans">
+//             {track.subtitle[0]}
 //             <br />
-//             Agents across 6 Themes
+//             {track.subtitle[1]}
 //           </p>
 //         </div>
 
-//         {/* Track Navigation Tabs */}
-//         <div className="flex space-x-8 mb-12 overflow-x-auto pb-4">
-//           <button
-//             className="flex items-center space-x-2 text-white opacity-80 hover:opacity-100"
-//             onClick={() => setActiveTab("Agent Aggregators")}
-//           >
-//             <svg viewBox="0 0 24 24" className="w-6 h-6" fill="currentColor">
-//               <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
-//             </svg>
-//             <span
-//               className={
-//                 activeTab === "Agent Aggregators"
-//                   ? "text-white"
-//                   : "text-gray-400"
-//               }
-//             >
-//               Agent Aggregators
-//             </span>
-//           </button>
+//         {/* Prize Card */}
+//         <div className="relative"
+//              onMouseEnter={() => setIsPaused(true)}
+//              onMouseLeave={() => setIsPaused(false)}>
+//           {/* Colored border on the left */}
+//           <div className={`absolute left-0 top-0 bottom-0 w-1 ${track.borderColor}`}></div>
 
-//           <button
-//             className="flex items-center space-x-2 text-gray-400 hover:text-white"
-//             onClick={() => setActiveTab("Conversational Agents")}
-//           >
-//             <svg viewBox="0 0 24 24" className="w-6 h-6" fill="currentColor">
-//               <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"></path>
-//             </svg>
-//             <span>Conversational Agents</span>
-//           </button>
-
-//           <button
-//             className="flex items-center space-x-2 text-gray-400 hover:text-white"
-//             onClick={() => setActiveTab("Agent Tooling")}
-//           >
-//             <svg viewBox="0 0 24 24" className="w-6 h-6" fill="currentColor">
-//               <path d="M22 9l-10-7-10 7v11a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2z"></path>
-//             </svg>
-//             <span>Agent Tooling</span>
-//           </button>
-
-//           <button
-//             className="flex items-center space-x-2 text-gray-400 hover:text-white"
-//             onClick={() => setActiveTab("Agent Infra")}
-//           >
-//             <svg viewBox="0 0 24 24" className="w-6 h-6" fill="currentColor">
-//               <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path>
-//             </svg>
-//             <span>Agent Infra</span>
-//           </button>
-
-//           <button
-//             className="flex items-center space-x-2 text-gray-400 hover:text-white"
-//             onClick={() => setActiveTab("DeFi Agents")}
-//           >
-//             <svg viewBox="0 0 24 24" className="w-6 h-6" fill="currentColor">
-//               <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-//             </svg>
-//             <span>DeFi Agents</span>
-//           </button>
-//         </div>
-
-//         {/* Carousel Section */}
-//         <div className="relative">
-//           {/* Track Card */}
-//           <div className="relative overflow-hidden">
-//             {/* Left border accent */}
-//             <div
-//               className={`absolute left-0 top-0 bottom-0 w-1 bg-${trackData[activeTrack].color}-400`}
-//             ></div>
-
-//             <div className="bg-gray-900/70 rounded-lg p-8">
-//               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-//                 {/* Left side */}
-//                 <div>
-//                   <h3 className="text-3xl font-bold text-white mb-4">
-//                     {trackData[activeTrack].title} by
-//                     <span className="ml-2 px-3 py-1 bg-gray-800 rounded text-sm">
-//                       {trackData[activeTrack].sponsor}
-//                     </span>
-//                   </h3>
-
-//                   <p className="text-gray-400 mb-8">
-//                     {trackData[activeTrack].description}
-//                   </p>
-
-//                   <div>
-//                     <p className="text-gray-500 mb-4">Supported by</p>
-//                     <div className="grid grid-cols-2 gap-6">
-//                       <img
-//                         src="/api/placeholder/120/40"
-//                         alt="Dialect"
-//                         className="h-8 opacity-50 hover:opacity-100 transition-opacity"
-//                       />
-//                       <img
-//                         src="/api/placeholder/120/40"
-//                         alt="Squads"
-//                         className="h-8 opacity-50 hover:opacity-100 transition-opacity"
-//                       />
-//                       <img
-//                         src="/api/placeholder/120/40"
-//                         alt="Superteam"
-//                         className="h-8 opacity-50 hover:opacity-100 transition-opacity"
-//                       />
-//                       <img
-//                         src="/api/placeholder/120/40"
-//                         alt="Tensor"
-//                         className="h-8 opacity-50 hover:opacity-100 transition-opacity"
-//                       />
-//                     </div>
-//                   </div>
+//           <div className="bg-gray-900/70 rounded-lg p-8">
+//             {/* Main content grid */}
+//             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+//               {/* Left side */}
+//               <div>
+//                 <h3 className="text-6xl font-relishGargler font-bold text-white mb-6">
+//                   {track.amount}
+//                 </h3>
+//                 <div className="flex items-center gap-3 mb-12">
+//                   <span className="text-gray-300">Main Track by</span>
+//                   <Image src={solanaFndnImg} alt="Solana Foundation" className="h-6" />
 //                 </div>
 
-//                 {/* Right side */}
-//                 <div className="space-y-8">
-//                   <div className="flex items-center justify-between gap-4">
-//                     <div className="flex items-center gap-3">
-//                       <Trophy className="h-6 w-6 text-yellow-400" />
-//                       <span className="text-white text-xl">
-//                         First Grand Prize
-//                       </span>
-//                     </div>
-//                     <div className="flex items-center gap-4">
-//                       <div className="w-32 h-2 bg-gray-800 rounded-full">
-//                         <div className="w-4/5 h-full bg-gray-600 rounded-full"></div>
-//                       </div>
-//                       <span className="text-white text-xl font-mono">
-//                         ${trackData[activeTrack].prizes.first.toLocaleString()}
-//                       </span>
-//                     </div>
-//                   </div>
-
-//                   <div className="flex items-center justify-between gap-4">
-//                     <span className="text-white text-xl ml-9">
-//                       Second Prize
-//                     </span>
-//                     <div className="flex items-center gap-4">
-//                       <div className="w-32 h-2 bg-gray-800 rounded-full">
-//                         <div className="w-3/5 h-full bg-gray-600 rounded-full"></div>
-//                       </div>
-//                       <span className="text-white text-xl font-mono">
-//                         ${trackData[activeTrack].prizes.second.toLocaleString()}
-//                       </span>
-//                     </div>
+//                 {/* Supporters section */}
+//                 <div>
+//                   <p className="text-gray-500 mb-4">Supported by</p>
+//                   <div className="grid grid-cols-2 gap-6">
+//                     <Image src={dialectLogo} alt="Dialect" className="h-8 text-white" />
+//                     <Image src={squadsLogo} alt="Squads" className="h-8 text-white" />
+//                     <Image src={superteamLogo} alt="Superteam" className="h-8 text-white" />
+//                     <Image src={tensorLogo} alt="Tensor" className="h-8 text-white" />
 //                   </div>
 //                 </div>
 //               </div>
 
-//               {/* Know More Button */}
-//               <div className="mt-8 flex justify-end">
-//                 <button className="px-4 py-2 bg-gray-800 text-white rounded hover:bg-gray-700 transition-colors">
-//                   Know More
-//                 </button>
+//               {/* Right side */}
+//               <div className="space-y-8">
+//                 {/* First Prize */}
+//                 <div className="flex items-center justify-between gap-4">
+//                   <div className="flex items-center gap-3">
+//                     <Trophy className="h-6 w-6 text-white" />
+//                     <span className="text-white text-xl">First Grand Prize</span>
+//                   </div>
+//                   <div className="flex items-center gap-4">
+//                     <div className="w-32 h-2 bg-gray-800">
+//                       <div className="w-full h-full bg-gray-600"></div>
+//                     </div>
+//                     <span className="text-white text-xl font-relishGargler">
+//                       ${track.prizes.first.toLocaleString()}
+//                     </span>
+//                   </div>
+//                 </div>
+
+//                 {/* Second Prize */}
+//                 <div className="flex items-center justify-between gap-4">
+//                   <span className="text-white text-xl ml-9">Second Prize</span>
+//                   <div className="flex items-center gap-4">
+//                     <div className="w-32 h-2 bg-gray-800">
+//                       <div className="w-3/5 h-full bg-gray-600"></div>
+//                     </div>
+//                     <span className="text-white text-xl font-relishGargler">
+//                       ${track.prizes.second.toLocaleString()}
+//                     </span>
+//                   </div>
+//                 </div>
 //               </div>
 //             </div>
 //           </div>
-
-//           {/* Carousel Navigation */}
-//           <button
-//             onClick={prevTrack}
-//             className="absolute left-4 top-1/2 -translate-y-1/2 p-2 bg-gray-800 rounded-full text-white hover:bg-gray-700"
-//           >
-//             <ArrowLeft className="w-6 h-6" />
-//           </button>
-//           <button
-//             onClick={nextTrack}
-//             className="absolute right-4 top-1/2 -translate-y-1/2 p-2 bg-gray-800 rounded-full text-white hover:bg-gray-700"
-//           >
-//             <ArrowRight className="w-6 h-6" />
-//           </button>
 //         </div>
 //       </div>
 //     </div>
@@ -235,58 +133,303 @@
 
 // export default TracksSection;
 
+// "use client";
+
+// import React, { useState, useEffect, useCallback } from "react";
+// import { Trophy } from "lucide-react";
+// import Image from "next/image";
+// import dialectLogo from "@/assets/images/logos/DialectLogo.svg";
+// import superteamLogo from "@/assets/images/logos/SendWhiteLogo.svg";
+// import solanaFndnImg from "@/assets/images/logos/SolanaFoundationLogo.svg";
+// import squadsLogo from "@/assets/images/logos/SquadsLogo.svg";
+// import tensorLogo from "@/assets/images/logos/TensorLogo.svg";
+
+// const trackData = [
+//  {
+//    id: 1,
+//    title: "TRACKS",
+//    subtitle: ["Build the best overall AI", "Agents to win the Grand Prize"],
+//    amount: "$40,000",
+//    borderColor: "bg-yellow-400",
+//    prizes: { first: 25000, second: 15000 }
+//  },
+//  {
+//    id: 2,
+//    title: "TRACKS",
+//    subtitle: ["Build the coolest AI", "Agents across 6 Themes"],
+//    amount: "$40,000",
+//    borderColor: "bg-cyan-400",
+//    prizes: { first: 25000, second: 15000 }
+//  }
+// ];
+
+// const TracksSection = () => {
+//  const [activeTrack, setActiveTrack] = useState(0);
+//  const [isPaused, setIsPaused] = useState(false);
+
+//  const nextTrack = useCallback(() => {
+//    setActiveTrack((prev) => (prev + 1) % trackData.length);
+//  }, []);
+
+//  useEffect(() => {
+//    if (!isPaused) {
+//      const timer = setInterval(nextTrack, 5000);
+//      return () => clearInterval(timer);
+//    }
+//  }, [nextTrack, isPaused]);
+
+//  return (
+//    <div className="bg-black py-20 overflow-hidden">
+//      <div className="max-w-7xl mx-auto px-4">
+//        {/* Header */}
+//        <div className="flex justify-between items-start mb-12">
+//          <h2 className="text-5xl font-relishGargler text-white tracking-wider">
+//            {trackData[activeTrack].title}
+//          </h2>
+//          <p className="text-gray-400 text-right text-lg font-PPSans">
+//            {trackData[activeTrack].subtitle[0]}
+//            <br />
+//            {trackData[activeTrack].subtitle[1]}
+//          </p>
+//        </div>
+
+//        {/* Cards Container */}
+//        <div className="relative flex gap-4 -mr-32"
+//             onMouseEnter={() => setIsPaused(true)}
+//             onMouseLeave={() => setIsPaused(false)}>
+//          {/* Current Slide */}
+//          <div className="flex-shrink-0 w-full">
+//            <div className="relative">
+//              {/* Border */}
+//              <div className={`absolute left-0 top-0 bottom-0 w-1 ${trackData[activeTrack].borderColor}`}></div>
+
+//              <div className="bg-gray-900/70 rounded-lg p-8">
+//                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+//                  {/* Left side */}
+//                  <div>
+//                    <h3 className="text-6xl font-relishGargler font-bold text-white mb-6">
+//                      {trackData[activeTrack].amount}
+//                    </h3>
+//                    <div className="flex items-center gap-3 mb-12">
+//                      <span className="text-gray-300">Main Track by</span>
+//                      <Image src={solanaFndnImg} alt="Solana Foundation" className="h-6" />
+//                    </div>
+
+//                    {/* Supporters */}
+//                    <div>
+//                      <p className="text-gray-500 mb-4">Supported by</p>
+//                      <div className="grid grid-cols-2 gap-6">
+//                        <Image src={dialectLogo} alt="Dialect" className="h-8 text-white" />
+//                        <Image src={squadsLogo} alt="Squads" className="h-8 text-white" />
+//                        <Image src={superteamLogo} alt="Superteam" className="h-8 text-white" />
+//                        <Image src={tensorLogo} alt="Tensor" className="h-8 text-white" />
+//                      </div>
+//                    </div>
+//                  </div>
+
+//                  {/* Right side */}
+//                  <div className="space-y-8">
+//                    {/* First Prize */}
+//                    <div className="flex items-center justify-between gap-4">
+//                      <div className="flex items-center gap-3">
+//                        <Trophy className="h-6 w-6 text-white" />
+//                        <span className="text-white text-xl">First Grand Prize</span>
+//                      </div>
+//                      <div className="flex items-center gap-4">
+//                        <div className="w-32 h-2 bg-gray-800">
+//                          <div className="w-full h-full bg-gray-600"></div>
+//                        </div>
+//                        <span className="text-white text-xl font-relishGargler">
+//                          ${trackData[activeTrack].prizes.first.toLocaleString()}
+//                        </span>
+//                      </div>
+//                    </div>
+
+//                    {/* Second Prize */}
+//                    <div className="flex items-center justify-between gap-4">
+//                      <span className="text-white text-xl ml-9">Second Prize</span>
+//                      <div className="flex items-center gap-4">
+//                        <div className="w-32 h-2 bg-gray-800">
+//                          <div className="w-3/5 h-full bg-gray-600"></div>
+//                        </div>
+//                        <span className="text-white text-xl font-relishGargler">
+//                          ${trackData[activeTrack].prizes.second.toLocaleString()}
+//                        </span>
+//                      </div>
+//                    </div>
+//                  </div>
+//                </div>
+//              </div>
+//            </div>
+//          </div>
+
+//          {/* Teaser Slide */}
+//          <div className="flex-shrink-0 w-1/4 opacity-50">
+//            <div className="relative">
+//              <div className={`absolute left-0 top-0 bottom-0 w-1 ${
+//                trackData[(activeTrack + 1) % trackData.length].borderColor
+//              }`}></div>
+//              <div className="bg-gray-900/70 rounded-lg p-8">
+//                <h3 className="text-4xl font-relishGargler font-bold text-white mb-6">
+//                  {trackData[(activeTrack + 1) % trackData.length].amount}
+//                </h3>
+//              </div>
+//            </div>
+//          </div>
+//        </div>
+//      </div>
+//    </div>
+//  );
+// };
+
+// export default TracksSection;
+
 "use client";
 
 import React, { useState, useEffect, useCallback } from "react";
-import { Trophy, ArrowLeft, ArrowRight } from "lucide-react";
+import { Trophy } from "lucide-react";
+import Image from "next/image";
+import dialectLogo from "@/assets/images/logos/DialectLogo.svg";
+import superteamLogo from "@/assets/images/logos/SendWhiteLogo.svg";
+import solanaFndnImg from "@/assets/images/logos/SolanaFoundationLogo.svg";
+import squadsLogo from "@/assets/images/logos/SquadsLogo.svg";
+import tensorLogo from "@/assets/images/logos/TensorLogo.svg";
 
 const trackData = [
   {
     id: 1,
-    color: "yellow",
-    title: "Conversational Agents",
-    sponsor: "GSISTER",
-    description:
-      "Build chatgpt or claude-like chat conversational agents — it can be forms like text, voice, or video and ideally either use a Solana wallet or a token on Solana.",
-    prizes: {
-      first: 25000,
-      second: 15000,
-    },
+    title: "TRACKS",
+    subtitle: ["Build the best overall AI", "Agents to win the Grand Prize"],
+    amount: "$40,000",
+    borderColor: "bg-yellow-400",
+    gradient: "from-yellow-400/20 via-yellow-400/10 to-transparent",
+    prizes: { first: 25000, second: 15000 },
   },
   {
     id: 2,
-    color: "cyan",
-    title: "Agent Aggregators",
-    sponsor: "DIALECT",
-    description:
-      "Build platforms that aggregate and manage multiple AI agents, enabling seamless interaction and coordination between different types of agents.",
-    prizes: {
-      first: 25000,
-      second: 15000,
-    },
+    title: "TRACKS",
+    subtitle: ["Build the coolest AI", "Agents across 6 Themes"],
+    amount: "$40,000",
+    borderColor: "bg-cyan-400",
+    gradient: "from-cyan-400/20 via-cyan-400/10 to-transparent",
+    prizes: { first: 25000, second: 15000 },
   },
-  // Add more tracks as needed
 ];
 
-const AUTOPLAY_DELAY = 5000; // 5 seconds between slides
+const TrackCard = ({
+  data,
+  isTeaser = false,
+}: {
+  data: any;
+  isTeaser?: boolean;
+}) => (
+  <div className="relative">
+    {/* Gradient Background */}
+    <div
+      className={`absolute inset-0 bg-gradient-to-r ${data.gradient} rounded-lg`}
+    />
+
+    {/* Border */}
+    <div className={`absolute left-0 top-0 bottom-0 w-1 ${data.borderColor}`} />
+
+    <div className="bg-gray-900/70 rounded-lg p-8 relative">
+      {!isTeaser ? (
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          {/* Left side */}
+          <div>
+            <h3 className="text-6xl font-relishGargler font-bold text-white mb-6">
+              {data.amount}
+            </h3>
+            <div className="flex items-center gap-3 mb-12">
+              <span className="text-gray-300">Main Track by</span>
+              <Image
+                src={solanaFndnImg}
+                alt="Solana Foundation"
+                className="h-6"
+              />
+            </div>
+
+            <div>
+              <p className="text-gray-500 mb-4">Supported by</p>
+              <div className="grid grid-cols-2 gap-6">
+                <Image
+                  src={dialectLogo}
+                  alt="Dialect"
+                  className="h-8 text-white"
+                />
+                <Image
+                  src={squadsLogo}
+                  alt="Squads"
+                  className="h-8 text-white"
+                />
+                <Image
+                  src={superteamLogo}
+                  alt="Superteam"
+                  className="h-8 text-white"
+                />
+                <Image
+                  src={tensorLogo}
+                  alt="Tensor"
+                  className="h-8 text-white"
+                />
+              </div>
+            </div>
+          </div>
+
+          {/* Right side */}
+          <div className="space-y-8">
+            {/* First Prize */}
+            <div className="flex items-center justify-between gap-4">
+              <div className="flex items-center gap-3">
+                <Trophy className="h-6 w-6 text-white" />
+                <span className="text-white text-xl">First Grand Prize</span>
+              </div>
+              <div className="flex items-center gap-4">
+                <div className="w-32 h-2 bg-gray-800">
+                  <div className="w-full h-full bg-gray-600"></div>
+                </div>
+                <span className="text-white text-xl font-relishGargler">
+                  ${data.prizes.first.toLocaleString()}
+                </span>
+              </div>
+            </div>
+
+            {/* Second Prize */}
+            <div className="flex items-center justify-between gap-4">
+              <span className="text-white text-xl ml-9">Second Prize</span>
+              <div className="flex items-center gap-4">
+                <div className="w-32 h-2 bg-gray-800">
+                  <div className="w-3/5 h-full bg-gray-600"></div>
+                </div>
+                <span className="text-white text-xl font-relishGargler">
+                  ${data.prizes.second.toLocaleString()}
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      ) : (
+        <div>
+          <h3 className="text-4xl font-relishGargler font-bold text-white mb-6">
+            {data.amount}
+          </h3>
+        </div>
+      )}
+    </div>
+  </div>
+);
 
 const TracksSection = () => {
   const [activeTrack, setActiveTrack] = useState(0);
-  const [activeTab, setActiveTab] = useState("Agent Aggregators");
   const [isPaused, setIsPaused] = useState(false);
 
   const nextTrack = useCallback(() => {
     setActiveTrack((prev) => (prev + 1) % trackData.length);
   }, []);
 
-  const prevTrack = useCallback(() => {
-    setActiveTrack((prev) => (prev - 1 + trackData.length) % trackData.length);
-  }, []);
-
-  // Auto-rotation effect
   useEffect(() => {
     if (!isPaused) {
-      const timer = setInterval(nextTrack, AUTOPLAY_DELAY);
+      const timer = setInterval(nextTrack, 5000);
       return () => clearInterval(timer);
     }
   }, [nextTrack, isPaused]);
@@ -297,214 +440,57 @@ const TracksSection = () => {
         {/* Header */}
         <div className="flex justify-between items-start mb-12">
           <h2 className="text-5xl font-relishGargler text-white tracking-wider">
-            TRACKS
+            {trackData[activeTrack].title}
           </h2>
           <p className="text-gray-400 text-right text-lg font-PPSans">
-            Build the coolest AI
+            {trackData[activeTrack].subtitle[0]}
             <br />
-            Agents across 6 Themes
+            {trackData[activeTrack].subtitle[1]}
           </p>
         </div>
 
-        {/* Track Navigation Tabs */}
-        <div className="flex space-x-8 mb-12 overflow-x-auto pb-4">
-          <button
-            className="flex items-center space-x-2 text-white opacity-80 hover:opacity-100"
-            onClick={() => setActiveTab("Agent Aggregators")}
+        {/* Cards Container */}
+        <div className="relative">
+          <div
+            className="overflow-x-auto scrollbar-hide"
+            onMouseEnter={() => setIsPaused(true)}
+            onMouseLeave={() => setIsPaused(false)}
           >
-            <svg viewBox="0 0 24 24" className="w-6 h-6" fill="currentColor">
-              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
-            </svg>
-            <span
-              className={
-                activeTab === "Agent Aggregators"
-                  ? "text-white font-PPSans"
-                  : "text-gray-400 font-PPSans"
-              }
-            >
-              Agent Aggregators
-            </span>
-          </button>
+            <div className="flex gap-4 pb-4">
+              {/* Main Card */}
+              <div className="flex-shrink-0 w-[calc(100%-300px)]">
+                <TrackCard data={trackData[activeTrack]} />
+              </div>
 
-          <button
-            className="flex items-center space-x-2 text-gray-400 hover:text-white"
-            onClick={() => setActiveTab("Conversational Agents")}
-          >
-            <svg viewBox="0 0 24 24" className="w-6 h-6" fill="currentColor">
-              <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"></path>
-            </svg>
-            <span className="font-PPSans">Conversational Agents</span>
-          </button>
-
-          <button
-            className="flex items-center space-x-2 text-gray-400 hover:text-white"
-            onClick={() => setActiveTab("Agent Tooling")}
-          >
-            <svg viewBox="0 0 24 24" className="w-6 h-6" fill="currentColor">
-              <path d="M22 9l-10-7-10 7v11a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2z"></path>
-            </svg>
-            <span className="font-PPSans">Agent Tooling</span>
-          </button>
-
-          <button
-            className="flex items-center space-x-2 text-gray-400 hover:text-white"
-            onClick={() => setActiveTab("Agent Infra")}
-          >
-            <svg viewBox="0 0 24 24" className="w-6 h-6" fill="currentColor">
-              <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path>
-            </svg>
-            <span className="font-PPSans">Agent Infra</span>
-          </button>
-
-          <button
-            className="flex items-center space-x-2 text-gray-400 hover:text-white"
-            onClick={() => setActiveTab("DeFi Agents")}
-          >
-            <svg viewBox="0 0 24 24" className="w-6 h-6" fill="currentColor">
-              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-            </svg>
-            <span className="font-PPSans">DeFi Agents</span>
-          </button>
-        </div>
-
-        {/* Carousel Section */}
-        <div
-          className="relative"
-          onMouseEnter={() => setIsPaused(true)}
-          onMouseLeave={() => setIsPaused(false)}
-        >
-          {/* Track Cards Container with transition */}
-          <div className="relative overflow-hidden">
-            <div
-              className="transition-transform duration-500 ease-in-out flex"
-              style={{ transform: `translateX(-${activeTrack * 100}%)` }}
-            >
-              {trackData.map((track, index) => (
-                <div
-                  key={track.id}
-                  className="w-full flex-shrink-0"
-                  style={{ transform: `translateX(${index * 100}%)` }}
-                >
-                  {/* Track Card Content */}
-                  <div className="relative">
-                    {/* Left border accent */}
-                    <div
-                      className={`absolute left-0 top-0 bottom-0 w-1 bg-${track.color}-400`}
-                    ></div>
-
-                    <div className="bg-gray-900/70 rounded-lg p-8">
-                      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                        {/* Left side */}
-                        <div>
-                          <h3 className="text-3xl font-bold text-white mb-4">
-                            {track.title} by
-                            <span className="ml-2 px-3 py-1 bg-gray-800 rounded text-sm">
-                              {track.sponsor}
-                            </span>
-                          </h3>
-
-                          <p className="text-gray-400 mb-8">
-                            {track.description}
-                          </p>
-
-                          <div>
-                            <p className="text-gray-500 mb-4">Supported by</p>
-                            <div className="grid grid-cols-2 gap-6">
-                              <img
-                                src="/api/placeholder/120/40"
-                                alt="Dialect"
-                                className="h-8 opacity-50 hover:opacity-100 transition-opacity"
-                              />
-                              <img
-                                src="/api/placeholder/120/40"
-                                alt="Squads"
-                                className="h-8 opacity-50 hover:opacity-100 transition-opacity"
-                              />
-                              <img
-                                src="/api/placeholder/120/40"
-                                alt="Superteam"
-                                className="h-8 opacity-50 hover:opacity-100 transition-opacity"
-                              />
-                              <img
-                                src="/api/placeholder/120/40"
-                                alt="Tensor"
-                                className="h-8 opacity-50 hover:opacity-100 transition-opacity"
-                              />
-                            </div>
-                          </div>
-                        </div>
-
-                        {/* Right side */}
-                        <div className="space-y-8">
-                          {/* First Prize */}
-                          <div className="flex items-center justify-between gap-4">
-                            <div className="flex items-center gap-3">
-                              <Trophy className="h-6 w-6 text-yellow-400" />
-                              <span className="text-white text-xl">
-                                First Grand Prize
-                              </span>
-                            </div>
-                            <div className="flex items-center gap-4">
-                              <div className="w-32 h-2 bg-gray-800 rounded-full">
-                                <div className="w-4/5 h-full bg-gray-600 rounded-full"></div>
-                              </div>
-                              <span className="text-white text-xl font-mono">
-                                ${track.prizes.first.toLocaleString()}
-                              </span>
-                            </div>
-                          </div>
-
-                          {/* Second Prize */}
-                          <div className="flex items-center justify-between gap-4">
-                            <span className="text-white text-xl ml-9">
-                              Second Prize
-                            </span>
-                            <div className="flex items-center gap-4">
-                              <div className="w-32 h-2 bg-gray-800 rounded-full">
-                                <div className="w-3/5 h-full bg-gray-600 rounded-full"></div>
-                              </div>
-                              <span className="text-white text-xl font-mono">
-                                ${track.prizes.second.toLocaleString()}
-                              </span>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-
-                      {/* Know More Button */}
-                      <div className="mt-8 flex justify-end">
-                        <button className="px-4 py-2 bg-gray-800 text-white rounded hover:bg-gray-700 transition-colors">
-                          Know More
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              ))}
+              {/* Teaser Card */}
+              <div className="flex-shrink-0 w-[300px] opacity-50 hover:opacity-75 transition-opacity">
+                <TrackCard
+                  data={trackData[(activeTrack + 1) % trackData.length]}
+                  isTeaser={true}
+                />
+              </div>
             </div>
           </div>
 
-          {/* Carousel Navigation */}
-          <button
-            onClick={() => {
-              prevTrack();
-              setIsPaused(true);
-              setTimeout(() => setIsPaused(false), 5000);
-            }}
-            className="absolute left-4 top-1/2 -translate-y-1/2 p-2 bg-gray-800 rounded-full text-white hover:bg-gray-700 transition-opacity opacity-0 group-hover:opacity-100"
-          >
-            <ArrowLeft className="w-6 h-6" />
-          </button>
-          <button
-            onClick={() => {
-              nextTrack();
-              setIsPaused(true);
-              setTimeout(() => setIsPaused(false), 5000);
-            }}
-            className="absolute right-4 top-1/2 -translate-y-1/2 p-2 bg-gray-800 rounded-full text-white hover:bg-gray-700 transition-opacity opacity-0 group-hover:opacity-100"
-          >
-            <ArrowRight className="w-6 h-6" />
-          </button>
+          {/* Scroll Indicator */}
+          <div className="absolute -right-4 top-1/2 -translate-y-1/2 flex items-center gap-2">
+            <div className="h-px w-8 bg-gray-600"></div>
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              className="text-gray-600 animate-bounce"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M9 5l7 7-7 7"
+              />
+            </svg>
+          </div>
         </div>
       </div>
     </div>
