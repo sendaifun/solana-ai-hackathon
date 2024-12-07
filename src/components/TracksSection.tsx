@@ -89,9 +89,7 @@ const TrackCard = ({ data }: { data: (typeof trackData)[number] }) => (
             {data.amount}
           </h3>
           <div className="flex items-center gap-2">
-            <span className="text-gray-300 text-sm font-PPSans">
-              by
-            </span>
+            <span className="text-gray-300 text-sm font-PPSans">by</span>
             <div className="h-4 w-16 bg-gray-700" />
           </div>
         </div>
@@ -101,9 +99,7 @@ const TrackCard = ({ data }: { data: (typeof trackData)[number] }) => (
           <div className="flex items-center justify-between gap-2">
             <div className="flex items-center gap-2">
               <Trophy className="h-5 w-5 text-white hidden md:block" />
-              <span className="text-white text-lg font-PPSans">
-                First Grand Prize
-              </span>
+              <span className="text-white text-lg font-PPSans">1st Prize</span>
             </div>
             <div className="flex items-center gap-2">
               <div className="w-20 h-2 bg-gray-800">
@@ -117,9 +113,7 @@ const TrackCard = ({ data }: { data: (typeof trackData)[number] }) => (
 
           {/* Second Prize */}
           <div className="flex items-center justify-between gap-2">
-            <span className="text-white text-lg ml-7 font-PPSans">
-              Second Prize
-            </span>
+            <span className="text-white text-lg font-PPSans">2nd Prize</span>
             <div className="flex items-center gap-2">
               <div className="w-20 h-2 bg-gray-800">
                 <div className="w-3/5 h-full bg-gray-600" />
@@ -200,9 +194,9 @@ const TracksSection = () => {
 
   return (
     <div className="bg-black py-12 md:py-20">
-      <div className="max-w-7xl mx-auto px-4">
+      <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-4 md:gap-0 mb-8 md:mb-12">
+        <div className=" px-4 flex flex-col md:flex-row md:justify-between md:items-start gap-4 md:gap-0 mb-8 md:mb-12">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-relishGargler text-white tracking-wider">
             {trackData[activeTrack].title}
           </h2>

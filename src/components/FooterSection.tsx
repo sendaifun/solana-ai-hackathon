@@ -29,7 +29,6 @@ const Footer = () => {
     <footer className="bg-[#111111] pt-20 pb-8">
       <div className="mx-auto px-4">
         <div className="flex flex-col lg:flex-row justify-between gap-12">
-
           <div className="flex flex-col gap-8">
             <div className="flex flex-col gap-2">
               <Image
@@ -52,8 +51,7 @@ const Footer = () => {
             </div>
           </div>
 
-
-          <div className="flex flex-wrap gap-20">
+          <div className="flex justify-between items-center flex-wrap gap-20">
             <div>
               <h3 className="text-white mb-4">Hackathon</h3>
               <ul className="space-y-3">
@@ -102,8 +100,7 @@ const Footer = () => {
           </div>
         </div>
 
-
-        <div className=" pt-8 flex flex-col lg:flex-row justify-between items-center gap-4">
+        <div className=" pt-8 flex lg:flex-row justify-between items-center gap-4">
           <div className="text-gray-600 font-PPSans">
             Twenty&apos;24 Solana AI Hackathon
             <br />© All Rights Reserved
