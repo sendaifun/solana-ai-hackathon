@@ -40,7 +40,7 @@ const Footer = () => {
               />
             </div>
             <div className="flex items-center gap-2 text-gray-500">
-              <span className="font-PPSans">//powered by</span>
+              <span className="font-PPSans text-white">//powered by</span>
               <Image
                 src={sendAILogo}
                 alt="SendAI"
@@ -51,7 +51,7 @@ const Footer = () => {
             </div>
           </div>
 
-          <div className="flex justify-between items-center flex-wrap gap-20">
+          <div className="flex justify-between items-top flex-wrap gap-20">
             <div>
               <h3 className="text-white mb-4">Hackathon</h3>
               <ul className="space-y-3">
