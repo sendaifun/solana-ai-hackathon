@@ -18,7 +18,7 @@ export default function PartnershipSection() {
           <p className="text-white/90 text-lg leading-relaxed font-PPSans">
             Leading founders, developers, and investors from the Solana
             ecosystem join the Solana AI Hackathon as judges and contributors.
-            Many of Solana's top companies have sponsored past hackathons,
+            Many of Solana&apos;s top companies have sponsored past hackathons,
             ensuring builders enjoy a seamless and enriching experience.
           </p>
 
