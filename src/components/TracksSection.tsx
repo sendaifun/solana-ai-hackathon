@@ -90,7 +90,7 @@ const TrackCard = ({ data }: { data: (typeof trackData)[number] }) => (
           </h3>
           <div className="flex items-center gap-2">
             <span className="text-gray-300 text-sm font-PPSans">
-              Main Track by
+              by
             </span>
             <div className="h-4 w-16 bg-gray-700" />
           </div>
@@ -100,7 +100,7 @@ const TrackCard = ({ data }: { data: (typeof trackData)[number] }) => (
           {/* First Prize */}
           <div className="flex items-center justify-between gap-2">
             <div className="flex items-center gap-2">
-              <Trophy className="h-5 w-5 text-white" />
+              <Trophy className="h-5 w-5 text-white hidden md:block" />
               <span className="text-white text-lg font-PPSans">
                 First Grand Prize
               </span>

@@ -22,7 +22,7 @@ const Section3 = () => {
         </div>
 
         {/* Prize Card */}
-        <div className="relative max-w-[90%] md:max-w-full mx-auto">
+        <div className="relative max-w-[100%] md:max-w-full mx-auto">
           {/* Cyan border on the left */}
           <div className="absolute left-0 top-0 bottom-0 w-1 bg-cyan-400"></div>
 
@@ -35,7 +35,8 @@ const Section3 = () => {
                   $40,000
                 </h3>
                 <div className="flex items-center gap-2">
-                  <span className="text-gray-300 text-sm">Main Track by</span>
+                  <span className="text-gray-300 text-sm hidden md:block">Main Track by</span>
+                  <span className="text-gray-300 ml-4 text-sm md:hidden sm:block"> by</span>
                   <Image
                     src={solanaFndnImg}
                     alt="Solana Foundation"
@@ -49,7 +50,7 @@ const Section3 = () => {
                 {/* First Prize */}
                 <div className="flex items-center justify-between gap-2">
                   <div className="flex items-center gap-2">
-                    <Trophy className="h-5 w-5 text-white" />
+                    <Trophy className="h-5 w-5 text-white hidden" />
                     <span className="text-white text-lg">First Grand Prize</span>
                   </div>
                   <div className="flex items-center gap-2">
