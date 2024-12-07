@@ -9,8 +9,8 @@ const NavbarComp = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="bg-black text-white font-PPSans">
-      <div className="mx-auto px-4 sm:px-6 lg:px-8">
+    <nav className="bg-[#000] text-white font-PPSans w-full">
+      <div className="sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo and Brand */}
           <div className="flex items-center cursor-pointer">
@@ -29,7 +29,10 @@ const NavbarComp = () => {
           {/* Desktop Navigation */}
           <div className="hidden md:block">
             <div className="ml-10 flex items-center space-x-8">
-              <a href="#" className="text-gray-300 hover:text-white font-PPSans">
+              <a
+                href="#"
+                className="text-gray-300 hover:text-white font-PPSans"
+              >
                 Tracks
               </a>
               <a href="#" className="text-gray-300 hover:text-white">
@@ -99,7 +102,7 @@ const NavbarComp = () => {
             </a>
             <a
               href="#"
-              className="block px-3 py-2 rounded-md text-white bg-blue-500 hover:bg-blue-600"
+              className="bg-[#1E262C] text-[#1BE1FF] px-4 py-2 rounded-md hover:bg-gray-700"
             >
               Join Now
             </a>
