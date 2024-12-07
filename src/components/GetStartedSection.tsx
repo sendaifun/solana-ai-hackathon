@@ -118,7 +118,7 @@ const GetStartedSection = () => {
 
         {/* Bottom Button */}
         <div className="flex justify-center mt-16">
-          <button className="bg-white text-black px-6 py-3 rounded-md hover:bg-gray-200 transition-colors text-sm">
+          <button className="bg-white text-black px-6 py-3 rounded-md hover:bg-gray-200 transition-colors text-sm font-PPSans">
             Why Build an AI Agent x Crypto?
           </button>
         </div>

@@ -35,8 +35,8 @@ const Section3 = () => {
                   $40,000
                 </h3>
                 <div className="flex items-center gap-2">
-                  <span className="text-gray-300 text-sm hidden md:block">Main Track by</span>
-                  <span className="text-gray-300 ml-4 text-sm md:hidden sm:block"> by</span>
+                  <span className="font-PPSans text-gray-300 text-sm hidden md:block">Main Track by</span>
+                  <span className="font-PPSans text-gray-300 ml-4 text-sm md:hidden sm:block"> by</span>
                   <Image
                     src={solanaFndnImg}
                     alt="Solana Foundation"
@@ -51,7 +51,7 @@ const Section3 = () => {
                 <div className="flex items-center justify-between gap-2">
                   <div className="flex items-center gap-2">
                     <Trophy className="h-5 w-5 text-white hidden" />
-                    <span className="text-white text-lg">First Grand Prize</span>
+                    <span className="text-white text-lg font-PPSans">1st Prize</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <div className="w-20 h-2 bg-gray-800">
@@ -65,7 +65,7 @@ const Section3 = () => {
 
                 {/* Second Prize */}
                 <div className="flex items-center justify-between gap-2">
-                  <span className="text-white text-lg ml-7">Second Prize</span>
+                  <span className="text-white text-lg font-PPSans">2nd Prize</span>
                   <div className="flex items-center gap-2">
                     <div className="w-20 h-2 bg-gray-800">
                       <div className="w-3/5 h-full bg-gray-600"></div>
@@ -86,7 +86,7 @@ const Section3 = () => {
                       key={index}
                       src={logo}
                       alt={`Supporter ${index + 1}`}
-                      className="h-6 text-white"
+                      className="h-4 sm:h-6 text-white"
                     />
                   ))}
                 </div>
