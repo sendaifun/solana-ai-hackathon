@@ -30,27 +30,27 @@ const HeroSection = () => {
       <Image
         src={imgabsL1}
         alt="Left Abstract 1"
-        className="absolute top-8 left-2 max-lg:w-24 max-lg:top-4"
+        className="absolute top-8 left-2 h-16 object-contain md:h-max max-lg:w-24 max-lg:top-4"
       />
       <Image
         src={imgabsL2}
         alt="Left Abstract 2"
-        className="absolute top-48 left-16 z-20 max-lg:w-20 max-lg:top-24 max-lg:left-8"
+        className="absolute top-48 left-16 z-20 h-16 object-contain md:h-max max-lg:w-20 max-lg:top-24 max-lg:left-8"
       />
       <Image
         src={imgabsL3}
         alt="Left Abstract 3"
-        className="absolute top-80 left-2 max-lg:w-24 max-lg:top-40"
+        className="absolute top-80 left-2 h-16 object-contain md:h-max max-lg:w-24 max-lg:top-40"
       />
       <Image
         src={imgDefiAgentFrame}
         alt="Defi Agent Frame"
-        className="absolute top-16 left-2 h-48 object-contain max-lg:h-24 max-lg:top-8"
+        className="absolute top-16 left-2 h-16 object-contain md:h-max max-lg:h-24 max-lg:top-8"
       />
       <Image
         src={imgAgentToolingFrame}
         alt="Agent Tooling Frame"
-        className="absolute top-40 left-16 z-20 max-lg:w-32 max-lg:top-20 max-lg:left-8"
+        className="absolute top-40 left-16 z-20 h-16 object-contain md:h-max max-lg:w-32 max-lg:top-20 max-lg:left-8"
       />
 
       {/* Right Abstract Images */}
