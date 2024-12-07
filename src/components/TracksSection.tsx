@@ -193,7 +193,7 @@ const TracksSection = () => {
   const [activeTab, setActiveTab] = useState("aggregators");
 
   return (
-    <div className="bg-black py-12 md:py-20">
+    <div className="bg-black py-12 md:py-20" id="tracks">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className=" px-4 flex flex-col md:flex-row md:justify-between md:items-start gap-4 md:gap-0 mb-8 md:mb-12">

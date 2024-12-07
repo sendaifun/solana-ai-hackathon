@@ -4,35 +4,40 @@ import React from "react";
 import { Menu } from "lucide-react";
 import Image from "next/image";
 import aiHackathonLogo from "@/assets/images/logos/HackathonLogo.svg";
-import {
-  Sheet,
-  SheetContent,
-  SheetTrigger,
-} from "@/components/ui/sheet";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import Link from "next/link";
 
 const NavLinks = ({ mobile }: { mobile?: boolean }) => (
   <>
-    <a 
-      href="#" 
-      className={`text-gray-300 hover:text-white transition-colors ${mobile ? 'text-xl text-center py-4' : ''}`}
+    <a
+      href="/#tracks"
+      className={`text-gray-300 hover:text-white transition-colors ${
+        mobile ? "text-xl text-center py-4" : ""
+      }`}
     >
       Tracks
     </a>
-    <a 
-      href="#" 
-      className={`text-gray-300 hover:text-white transition-colors ${mobile ? 'text-xl text-center py-4' : ''}`}
+    <a
+      href="/#"
+      className={`text-gray-300 hover:text-white transition-colors ${
+        mobile ? "text-xl text-center py-4" : ""
+      }`}
     >
       Ideas
     </a>
-    <a 
-      href="#" 
-      className={`text-gray-300 hover:text-white transition-colors ${mobile ? 'text-xl text-center py-4' : ''}`}
+    <a
+      href="/#"
+      className={`text-gray-300 hover:text-white transition-colors ${
+        mobile ? "text-xl text-center py-4" : ""
+      }`}
     >
       Resources
     </a>
-    <a 
-      href="#" 
-      className={`text-gray-300 hover:text-white transition-colors ${mobile ? 'text-xl text-center py-4' : ''}`}
+    <a
+      href="/faq#faqs"
+      className={`text-gray-300 hover:text-white transition-colors ${
+        mobile ? "text-xl text-center py-4" : ""
+      }`}
     >
       FAQs
     </a>
@@ -43,7 +48,7 @@ const JoinButton = ({ mobile }: { mobile?: boolean }) => (
   <a
     href="#"
     className={`bg-[#1E252B] text-[#1BE1FF] font-medium px-4 py-3 rounded-md transition-colors text-center
-      ${mobile ? 'w-full text-lg' : ''}
+      ${mobile ? "w-full text-lg" : ""}
     `}
   >
     Join Now
@@ -57,12 +62,14 @@ const NavbarComp = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo and Brand */}
           <div className="flex items-center cursor-pointer mx-2">
-            <Image
-              src={aiHackathonLogo}
-              alt="Hackathon Logo"
-              width={160}
-              height={50}
-            />
+            <Link href="/">
+              <Image
+                src={aiHackathonLogo}
+                alt="Hackathon Logo"
+                width={160}
+                height={50}
+              />
+            </Link>
           </div>
 
           {/* Desktop Navigation */}
@@ -83,8 +90,8 @@ const NavbarComp = () => {
                   <Menu className="h-6 w-6" />
                 </button>
               </SheetTrigger>
-              <SheetContent 
-                side="top" 
+              <SheetContent
+                side="top"
                 className="w-full h-fit bg-black border-gray-800 p-0"
               >
                 <div className="flex flex-col h-fit pt-8">
@@ -94,7 +101,7 @@ const NavbarComp = () => {
                       <NavLinks mobile />
                     </div>
                   </div>
-                  
+
                   {/* Join Button */}
                   {/* <div className="p-8 border-t border-gray-800">
                     <JoinButton mobile />
