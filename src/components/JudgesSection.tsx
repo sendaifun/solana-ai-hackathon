@@ -68,7 +68,7 @@ const judges = [
 const JudgesSection = () => {
   return (
     <div className="bg-black py-20">
-      <div className="w-full mx-auto px-4">
+      <div className="max-w-7xl w-full mx-auto px-4">
         {/* Title with decorative lines */}
         <div className="flex items-center justify-center gap-4 mb-16 mx-16">
           <div className="flex-1">

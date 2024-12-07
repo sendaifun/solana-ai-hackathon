@@ -204,8 +204,8 @@ const SponsorsSection = () => {
           </div>
         </div>
         <div className="flex justify-between">
-          <Image src={sponsorBottomL} alt="Sponsor" className=" mx-8" />
-          <Image src={sponsorBottomR} alt="Sponsor" className=" mx-8" />
+          <Image src={sponsorBottomL} alt="Sponsor" className=" mx-8 w-24 md:w-auto" />
+          <Image src={sponsorBottomR} alt="Sponsor" className=" mx-8 w-24 md:w-auto" />
         </div>
       </div>
     </>
