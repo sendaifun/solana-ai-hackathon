@@ -3,80 +3,74 @@ import React from "react";
 import connectImg from "@/assets/images/svgs/bgs/abstract.png";
 import prizesImg from "@/assets/images/svgs/bgs/abstract3.png";
 import opportunitiesImg from "@/assets/images/svgs/bgs/abstract2.png";
+
 const PreviewCards = () => {
+  
+  const cards = [
+    {
+      title: "Connect",
+      color: "#1BE1FF",
+      image: connectImg,
+      description: "Expert Sessions, 1:1 Mentorship,\nand Exclusive Networking"
+    },
+    {
+      title: "Prizes",
+      color: "#FFFF00",
+      image: prizesImg,
+      description: "$100,000+ in Prize Pool\nacross 6 Themed Tracks"
+    },
+    {
+      title: "Opportunities",
+      color: "#19FFCE",
+      image: opportunitiesImg,
+      description: "Access to VC/Angel Funding for\nTop-Selected Teams"
+    }
+  ];
+
   return (
     <div className="bg-black w-full py-20">
-      <div className="mx-auto px-4 flex flex-col md:flex-row justify-around gap-8 w-full">
-        {/* Connect Card */}
-        <div className="relative group">
-          <div className="absolute -inset-0.5 bg-cyan-400 rounded-lg opacity-75"></div>
-          <div className="relative w-full md:w-[240px] lg:w-[400px] bg-black rounded-lg">
-            <div className="absolute -top-8 left-0 bg-cyan-400 px-4 py-1 rounded-t text-black font-mono">
-              Connect
-            </div>
-            <div className="relative">
-              <Image
-                src={connectImg}
-                alt="Connect"
-                className="w-full brightness-75 rounded-lg"
-              />
-              <div className="absolute bottom-0 left-0 right-0 p-6 text-white text-center">
-                <p className="text-xl font-light leading-tight">
-                  Expert Sessions, 1:1 Mentorship,
-                  <br />
-                  and Exclusive Networking
-                </p>
+      {/* Container with horizontal scroll on mobile */}
+      <div className="flex md:justify-center overflow-x-auto md:overflow-x-visible">
+        <div className="flex gap-8 mx-2 md:flex-row md:justify-around md:gap-16 pb-4 md:pb-0 snap-x snap-mandatory scrollbar-hide">
+          {cards.map((card, index) => (
+            <div 
+              key={card.title}
+              className="flex-none snap-center md:flex-1 mt-8"
+            >
+              {/* Card Container */}
+              <div className="relative group w-[280px] md:w-[240px] lg:w-[320px]">
+                {/* Glowing border using the specific hex color */}
+                <div 
+                  className="absolute -inset-0.5 rounded-lg opacity-75"
+                  style={{ backgroundColor: card.color }}
+                ></div>
+                
+                <div className="relative bg-black rounded-lg">
+                  {/* Title Tab with specific hex color */}
+                  <div 
+                    className="absolute -top-8 left-0 px-4 py-1 rounded-t text-black font-mono z-10"
+                    style={{ backgroundColor: card.color }}
+                  >
+                    {card.title}
+                  </div>
+                  
+                  {/* Image and Content */}
+                  <div className="relative">
+                    <Image
+                      src={card.image}
+                      alt={card.title}
+                      className="w-full h-[200px] md:h-[180px] lg:h-[220px] object-cover brightness-75 rounded-lg"
+                    />
+                    <div className="absolute bottom-0 left-0 right-0 p-6 text-white text-center">
+                      <p className="text-lg md:text-xl font-light leading-tight whitespace-pre-line">
+                        {card.description}
+                      </p>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
-        </div>
-
-        {/* Prizes Card */}
-        <div className="relative group">
-          <div className="absolute -inset-0.5 bg-yellow-400 rounded-lg opacity-75"></div>
-          <div className="relative w-full md:w-[240px] lg:w-[400px] bg-black rounded-lg">
-            <div className="absolute -top-8 left-0 bg-yellow-400 px-4 py-1 rounded-t text-black font-mono">
-              Prizes
-            </div>
-            <div className="relative">
-              <Image
-                src={prizesImg}
-                alt="Prizes"
-                className="w-full brightness-75 rounded-lg"
-              />
-              <div className="absolute bottom-0 left-0 right-0 p-6 text-white text-center">
-                <p className="text-xl font-light leading-tight">
-                  $100,000+ in Prize Pool
-                  <br />
-                  across 6 Themed Tracks
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Opportunities Card */}
-        <div className="relative group">
-          <div className="absolute -inset-0.5 bg-emerald-400 rounded-lg opacity-75"></div>
-          <div className="relative w-full md:w-[240px] lg:w-[400px] bg-black rounded-lg">
-            <div className="absolute -top-8 left-0 bg-emerald-400 px-4 py-1 rounded-t-md text-black font-mono">
-              Opportunities
-            </div>
-            <div className="relative">
-              <Image
-                src={opportunitiesImg}
-                alt="Opportunities"
-                className="h-full w-full object-cover brightness-75 rounded-lg"
-              />
-              <div className="absolute bottom-0 left-0 right-0 p-6 text-white text-center">
-                <p className="text-xl font-light leading-tight">
-                  Access to VC/Angel Funding for
-                  <br />
-                  Top-Selected Teams
-                </p>
-              </div>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </div>
