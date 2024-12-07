@@ -16,6 +16,7 @@ import imgabsL2 from "@/assets/images/svgs/bgs/abstract9.png";
 import imgabsR1 from "@/assets/images/svgs/bgs/ai16zdotted.svg";
 import hackLogoBig from "@/assets/images/svgs/bgs/HeroAIHackText.svg";
 import Image from "next/image";
+import bottomL from "@/assets/images/svgs/abstract/SponsorBottomL.svg";
 
 const HeroSection = () => {
   return (
@@ -23,6 +24,7 @@ const HeroSection = () => {
       <div className="absolute inset-0 top-0 left-0 z-10">
         <div className="absolute bg-no-repeat inset-0 bg-[url('../assets/images/svgs/bgs/randomLines.svg')] opacity-100" />
       </div>
+      {/* Left Abstract Images */}
       <Image
         src={imgabsL1}
         alt="Right Abstract"
@@ -48,6 +50,8 @@ const HeroSection = () => {
         alt="Right Abstract"
         className="absolute top-40 left-16 z-20"
       />
+
+      {/* Right Abstract Images */}
       <Image
         src={imgabsR1}
         alt="Right Abstract"
@@ -111,6 +115,7 @@ const HeroSection = () => {
           <Image src={sendAILogo} alt="SendAI Logo" className="h-6 -ml-8" />
         </div>
       </div>
+      <Image src={bottomL} alt="Sponsor" className=" mx-8" />
     </div>
   );
 };
