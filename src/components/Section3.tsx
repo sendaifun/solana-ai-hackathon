@@ -1,256 +1,379 @@
-"use client";
+'use client';
 
-import { motion, useInView } from "framer-motion";
-import { Trophy } from "lucide-react";
-import Image from "next/image";
-import { useRef } from "react";
-import dialectLogo from "@/assets/images/logos/DialectLogo.svg";
-import superteamLogo from "@/assets/images/logos/SendWhiteLogo.svg";
-import solanaFndnImg from "@/assets/images/logos/SolanaFoundationLogo.svg";
-import squadsLogo from "@/assets/images/logos/SquadsLogo.svg";
-import tensorLogo from "@/assets/images/logos/TensorLogo.svg";
+import { motion, useInView } from 'framer-motion';
+import {
+  Trophy,
+  ChevronLeft,
+  ChevronRight,
+  ArrowRight,
+  ArrowLeft,
+} from 'lucide-react';
+import { useRef, useState } from 'react';
+import SectionHeading from './ui/SectionHeading';
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from '@/components/ui/carousel';
+import {
+  Brain,
+  Code2,
+  Coins,
+  Gamepad2,
+  Share2,
+  TrendingUp,
+} from 'lucide-react';
+import { cn } from '@/lib/utils';
+import PrizeCard from './ui/PrizeCard';
+
+// Dummy SVG Logos
+const SolanaFoundationLogo = () => (
+  <svg width='120' height='16' viewBox='0 0 120 16' fill='none'>
+    <path d='M20 4H0V6H20V4Z' fill='currentColor' />
+    <path d='M20 7H0V9H20V7Z' fill='currentColor' />
+    <path d='M0 10H20V12H0V10Z' fill='currentColor' />
+    <path d='M40 4H25V6H40V4Z' fill='currentColor' />
+    <path d='M40 7H25V12H40V7Z' fill='currentColor' />
+  </svg>
+);
+
+const DialectLogo = () => (
+  <svg width='120' height='16' viewBox='0 0 120 16' fill='none'>
+    <path d='M15 4H0V12H15V4Z' fill='currentColor' />
+    <path d='M35 4H20V12H35V4Z' fill='currentColor' />
+  </svg>
+);
+
+const HeliusLogo = () => (
+  <svg width='120' height='16' viewBox='0 0 120 16' fill='none'>
+    <path d='M10 4H0V12H10V4Z' fill='currentColor' />
+    <path d='M25 4H15V12H25V4Z' fill='currentColor' />
+    <path d='M40 4H30V12H40V4Z' fill='currentColor' />
+  </svg>
+);
+
+const BackpackLogo = () => (
+  <svg width='120' height='16' viewBox='0 0 120 16' fill='none'>
+    <path d='M20 4H0V12H20V4Z' fill='currentColor' />
+    <circle cx='30' cy='8' r='4' fill='currentColor' />
+  </svg>
+);
+
+// Use these logos in the components
+const logos = [
+  { component: SolanaFoundationLogo },
+  { component: DialectLogo },
+  { component: HeliusLogo },
+  { component: BackpackLogo },
+];
+
+const trackTabs = [
+  {
+    title: 'Agent Aggregators',
+    icon: (
+      <svg
+        width='20'
+        height='20'
+        viewBox='0 0 24 24'
+        fill='none'
+        stroke='currentColor'
+        strokeWidth='1.5'
+      >
+        <path d='M12 4L4 8L12 12L20 8L12 4Z' />
+        <path d='M4 16L12 20L20 16' />
+        <path d='M4 12L12 16L20 12' />
+      </svg>
+    ),
+  },
+  {
+    title: 'Conversational Agents',
+    icon: (
+      <svg
+        width='20'
+        height='20'
+        viewBox='0 0 24 24'
+        fill='none'
+        stroke='currentColor'
+        strokeWidth='1.5'
+      >
+        <path d='M21 15C21 15.5304 20.7893 16.0391 20.4142 16.4142C20.0391 16.7893 19.5304 17 19 17H7L3 21V5C3 4.46957 3.21071 3.96086 3.58579 3.58579C3.96086 3.21071 4.46957 3 5 3H19C19.5304 3 20.0391 3.21071 20.4142 3.58579C20.7893 3.96086 21 4.46957 21 5V15Z' />
+      </svg>
+    ),
+  },
+  {
+    title: 'Agent Tooling',
+    icon: (
+      <svg
+        width='20'
+        height='20'
+        viewBox='0 0 24 24'
+        fill='none'
+        stroke='currentColor'
+        strokeWidth='1.5'
+      >
+        <path d='M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z' />
+      </svg>
+    ),
+  },
+  {
+    title: 'Agent Infra',
+    icon: (
+      <svg
+        width='20'
+        height='20'
+        viewBox='0 0 24 24'
+        fill='none'
+        stroke='currentColor'
+        strokeWidth='1.5'
+      >
+        <path d='M22 12H2M22 12L16 6M22 12L16 18' />
+      </svg>
+    ),
+  },
+  {
+    title: 'DeFi Agents',
+    icon: (
+      <svg
+        width='20'
+        height='20'
+        viewBox='0 0 24 24'
+        fill='none'
+        stroke='currentColor'
+        strokeWidth='1.5'
+      >
+        <path d='M23 6L13.5 15.5L8.5 10.5L1 18M23 6H17M23 6V12' />
+      </svg>
+    ),
+  },
+];
+
+const tracksPrizeData = [
+  {
+    totalPrize: '$15,000',
+    mainSponsor: {
+      title: 'Track',
+      logo: SolanaFoundationLogo,
+    },
+    prizes: [
+      {
+        title: '1st Prize',
+        amount: '$10,000',
+        progressPercentage: 100,
+        showTrophy: true,
+      },
+      {
+        title: '2nd Prize',
+        amount: '$5,000',
+        progressPercentage: 60,
+      },
+    ],
+    supporters: logos,
+    accentColor: '#1BE1FF',
+    title: 'Agent Aggregators',
+    description:
+      'Build AI agents that can aggregate and orchestrate multiple specialized agents to solve complex tasks.',
+  },
+  {
+    totalPrize: '$15,000',
+    mainSponsor: {
+      title: 'Track',
+      logo: DialectLogo,
+    },
+    prizes: [
+      {
+        title: '1st Prize',
+        amount: '$10,000',
+        progressPercentage: 100,
+        showTrophy: true,
+      },
+      {
+        title: '2nd Prize',
+        amount: '$5,000',
+        progressPercentage: 60,
+      },
+    ],
+    supporters: logos,
+    accentColor: '#FF1B1B',
+    title: 'Conversational Agents',
+    description:
+      'Create AI agents that can engage in natural language conversations and assist users effectively.',
+  },
+  {
+    totalPrize: '$15,000',
+    mainSponsor: {
+      title: 'Track',
+      logo: HeliusLogo,
+    },
+    prizes: [
+      {
+        title: '1st Prize',
+        amount: '$10,000',
+        progressPercentage: 100,
+        showTrophy: true,
+      },
+      {
+        title: '2nd Prize',
+        amount: '$5,000',
+        progressPercentage: 60,
+      },
+    ],
+    supporters: logos,
+    accentColor: '#00FF85',
+    title: 'Agent Tooling',
+    description:
+      'Develop tools and infrastructure to help build, test, and deploy AI agents on Solana.',
+  },
+  {
+    totalPrize: '$15,000',
+    mainSponsor: {
+      title: 'Track',
+      logo: BackpackLogo,
+    },
+    prizes: [
+      {
+        title: '1st Prize',
+        amount: '$10,000',
+        progressPercentage: 100,
+        showTrophy: true,
+      },
+      {
+        title: '2nd Prize',
+        amount: '$5,000',
+        progressPercentage: 60,
+      },
+    ],
+    supporters: logos,
+    accentColor: '#A855F7',
+    title: 'Agent Infra',
+    description:
+      'Build infrastructure components that enable AI agents to interact with the Solana blockchain.',
+  },
+  {
+    totalPrize: '$15,000',
+    mainSponsor: {
+      title: 'Track',
+      logo: SolanaFoundationLogo,
+    },
+    prizes: [
+      {
+        title: '1st Prize',
+        amount: '$10,000',
+        progressPercentage: 100,
+        showTrophy: true,
+      },
+      {
+        title: '2nd Prize',
+        amount: '$5,000',
+        progressPercentage: 60,
+      },
+    ],
+    supporters: logos,
+    accentColor: '#F59E0B',
+    title: 'DeFi Agents',
+    description:
+      'Create AI agents that can interact with DeFi protocols and execute complex financial strategies.',
+  },
+];
 
 const Section3 = () => {
   const sectionRef = useRef(null);
-  const isInView = useInView(sectionRef, { once: true, amount: 0.3 });
+  const isInView = useInView(sectionRef, { once: true });
+  const [activeTab, setActiveTab] = useState(0);
+
+  const grandPrizeData = {
+    totalPrize: '$40,000',
+    mainSponsor: {
+      title: 'Main Track',
+      logo: SolanaFoundationLogo,
+    },
+    prizes: [
+      {
+        title: 'First Grand Prize',
+        amount: '$25,000',
+        progressPercentage: 100,
+        showTrophy: true,
+      },
+      {
+        title: 'Second Prize',
+        amount: '$15,000',
+        progressPercentage: 60,
+      },
+    ],
+    supporters: logos,
+    accentColor: '#1BE1FF',
+  };
 
   return (
-    <div className="bg-black py-12 md:py-20" ref={sectionRef}>
-      <div className="max-w-7xl mx-auto px-4">
-        {/* Header */}
-        <motion.div 
-          className="flex flex-col md:flex-row md:justify-between md:items-start gap-4 md:gap-0 mb-8 md:mb-12"
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-          transition={{ duration: 0.6 }}
-        >
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-relishGargler text-white tracking-wider">
-            GRAND PRIZE
-          </h2>
-          <p className="text-gray-400 md:text-right text-base md:text-lg font-PPSans">
-            Build the best overall AI
-            <br />
-            Agents to win the Grand Prize
-          </p>
-        </motion.div>
-
-        {/* Prize Card */}
-        <motion.div 
-          className="relative max-w-[100%] md:max-w-full mx-auto"
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-        >
-          {/* Cyan border on the left */}
-          <motion.div 
-            className="absolute left-0 top-0 bottom-0 w-1 bg-cyan-400"
-            initial={{ scaleY: 0 }}
-            animate={isInView ? { scaleY: 1 } : { scaleY: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
+    <div className='bg-black' ref={sectionRef}>
+      <div className='max-w-6xl mx-auto px-6 flex flex-col gap-16 md:gap-24'>
+        <div className='w-full flex flex-col gap-8 md:gap-12'>
+          <SectionHeading
+            title='GRAND PRIZE'
+            subtitle={[
+              'Build the best overall AI',
+              'Agents to win the Grand Prize',
+            ]}
           />
-
-          <motion.div 
-            className="bg-gray-900/70 rounded-lg p-4 md:p-6 lg:p-8"
-            initial={{ opacity: 0 }}
-            animate={isInView ? { opacity: 1 } : { opacity: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-          >
-            {/* Mobile Layout */}
-            <div className="flex flex-col lg:hidden">
-              {/* Top Section */}
-              <motion.div 
-                className="flex justify-between items-center mb-8"
-                initial={{ opacity: 0, x: -20 }}
-                animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
-                transition={{ duration: 0.6, delay: 0.5 }}
-              >
-                <h3 className="text-4xl md:text-5xl font-relishGargler font-bold text-white">
-                  $40,000
-                </h3>
-                <div className="flex items-center gap-2">
-                  <span className="font-PPSans text-gray-300 text-sm hidden md:block">Main Track by</span>
-                  <span className="font-PPSans text-gray-300 ml-4 text-sm md:hidden sm:block"> by</span>
-                  <Image
-                    src={solanaFndnImg}
-                    alt="Solana Foundation"
-                    className="h-4"
-                  />
-                </div>
-              </motion.div>
-
-              {/* Prize Details */}
-              <motion.div 
-                className="space-y-6 mb-8"
-                initial={{ opacity: 0, y: 20 }}
-                animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-                transition={{ duration: 0.6, delay: 0.6 }}
-              >
-                {/* First Prize */}
-                <div className="flex items-center justify-between gap-2">
-                  <div className="flex items-center gap-2">
-                    <Trophy className="h-5 w-5 text-white hidden" />
-                    <span className="text-white text-lg font-PPSans">1st Prize</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <div className="w-20 h-2 bg-gray-800">
-                      <motion.div 
-                        className="h-full bg-gray-600"
-                        initial={{ width: 0 }}
-                        animate={isInView ? { width: "100%" } : { width: 0 }}
-                        transition={{ duration: 0.8, delay: 0.7 }}
-                      />
-                    </div>
-                    <span className="text-white text-lg font-relishGargler whitespace-nowrap">
-                      $25,000
-                    </span>
-                  </div>
-                </div>
-
-                {/* Second Prize */}
-                <div className="flex items-center justify-between gap-2">
-                  <span className="text-white text-lg font-PPSans">2nd Prize</span>
-                  <div className="flex items-center gap-2">
-                    <div className="w-20 h-2 bg-gray-800">
-                      <motion.div 
-                        className="h-full bg-gray-600"
-                        initial={{ width: 0 }}
-                        animate={isInView ? { width: "60%" } : { width: 0 }}
-                        transition={{ duration: 0.8, delay: 0.8 }}
-                      />
-                    </div>
-                    <span className="text-white text-lg font-relishGargler whitespace-nowrap">
-                      $15,000
-                    </span>
-                  </div>
-                </div>
-              </motion.div>
-
-              {/* Supporters section */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-                transition={{ duration: 0.6, delay: 0.9 }}
-              >
-                <p className="text-gray-500 text-sm mb-3">Supported by</p>
-                <div className="grid grid-cols-2 gap-4">
-                  {[dialectLogo, squadsLogo, superteamLogo, tensorLogo].map((logo, index) => (
-                    <motion.div
-                      key={index}
-                      initial={{ opacity: 0, y: 10 }}
-                      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
-                      transition={{ duration: 0.4, delay: 1 + (index * 0.1) }}
-                    >
-                      <Image
-                        src={logo}
-                        alt={`Supporter ${index + 1}`}
-                        className="h-4 sm:h-6 text-white"
-                      />
-                    </motion.div>
-                  ))}
-                </div>
-              </motion.div>
+          <PrizeCard {...grandPrizeData} isInView={isInView} />
+        </div>
+        <div className='w-full flex flex-col gap-8 md:gap-12'>
+          <SectionHeading
+            title='TRACKS'
+            subtitle={['Build the coolest AI', ' Agents across 6 Themes']}
+          />
+          <div className='flex flex-col gap-12'>
+            <div className='flex space-x-12'>
+              {trackTabs.map((tab, index) => (
+                <button
+                  key={index}
+                  onClick={() => setActiveTab(index)}
+                  className={cn(
+                    'group flex items-center gap-2.5 py-2 transition-colors duration-200',
+                    activeTab === index
+                      ? 'text-white'
+                      : 'text-[#878A8C] hover:text-gray-300'
+                  )}
+                >
+                  <span
+                    className={cn(
+                      'transition-colors duration-200',
+                      activeTab === index
+                        ? 'text-white'
+                        : 'text-[#878A8C] group-hover:text-gray-300'
+                    )}
+                  >
+                    {tab.icon}
+                  </span>
+                  <span className='text-sm md:text-lg font-ppsans whitespace-nowrap'>
+                    {tab.title}
+                  </span>
+                </button>
+              ))}
             </div>
-
-            {/* Desktop Layout */}
-            <div className="hidden lg:grid grid-cols-2 gap-8">
-              {/* Left side */}
-              <div>
-                <motion.h3 
-                  className="text-6xl font-relishGargler font-bold text-white mb-6"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-                  transition={{ duration: 0.6, delay: 0.5 }}
-                >
-                  $40,000
-                </motion.h3>
-                <motion.div 
-                  className="flex items-center gap-3 mb-12"
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
-                  transition={{ duration: 0.6, delay: 0.6 }}
-                >
-                  <span className="text-gray-300">Main Track by</span>
-                  <Image
-                    src={solanaFndnImg}
-                    alt="Solana Foundation"
-                    className="h-6"
-                  />
-                </motion.div>
-
+            <div className='relative min-h-[360px]'>
+              {tracksPrizeData.map((track, index) => (
                 <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-                  transition={{ duration: 0.6, delay: 0.7 }}
+                  key={index}
+                  className='absolute w-full'
+                  initial={{ opacity: 0, x: 20 }}
+                  animate={{
+                    opacity: activeTab === index ? 1 : 0,
+                    x: activeTab === index ? 0 : 20,
+                    pointerEvents: activeTab === index ? 'auto' : 'none',
+                  }}
+                  transition={{ duration: 0.3 }}
                 >
-                  <p className="text-gray-500 mb-4">Supported by</p>
-                  <div className="grid grid-cols-2 gap-6">
-                    {[dialectLogo, squadsLogo, superteamLogo, tensorLogo].map((logo, index) => (
-                      <motion.div
-                        key={index}
-                        initial={{ opacity: 0, y: 10 }}
-                        animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
-                        transition={{ duration: 0.4, delay: 0.8 + (index * 0.1) }}
-                      >
-                        <Image
-                          src={logo}
-                          alt={`Supporter ${index + 1}`}
-                          className="h-8 text-white"
-                        />
-                      </motion.div>
-                    ))}
-                  </div>
+                  <PrizeCard
+                    {...track}
+                    isInView={isInView && activeTab === index}
+                  />
                 </motion.div>
-              </div>
-
-              {/* Right side */}
-              <motion.div 
-                className="space-y-8"
-                initial={{ opacity: 0, x: 20 }}
-                animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 20 }}
-                transition={{ duration: 0.6, delay: 0.6 }}
-              >
-                {/* First Prize */}
-                <div className="flex items-center justify-between gap-4">
-                  <div className="flex items-center gap-3">
-                    <Trophy className="h-6 w-6 text-white" />
-                    <span className="text-white text-xl">First Grand Prize</span>
-                  </div>
-                  <div className="flex items-center gap-4">
-                    <div className="w-32 h-2 bg-gray-800">
-                      <motion.div 
-                        className="h-full bg-gray-600"
-                        initial={{ width: 0 }}
-                        animate={isInView ? { width: "100%" } : { width: 0 }}
-                        transition={{ duration: 0.8, delay: 0.7 }}
-                      />
-                    </div>
-                    <span className="text-white text-xl font-relishGargler">
-                      $25,000
-                    </span>
-                  </div>
-                </div>
-
-                {/* Second Prize */}
-                <div className="flex items-center justify-between gap-4">
-                  <span className="text-white text-xl ml-9">Second Prize</span>
-                  <div className="flex items-center gap-4">
-                    <div className="w-32 h-2 bg-gray-800">
-                      <motion.div 
-                        className="h-full bg-gray-600"
-                        initial={{ width: 0 }}
-                        animate={isInView ? { width: "60%" } : { width: 0 }}
-                        transition={{ duration: 0.8, delay: 0.8 }}
-                      />
-                    </div>
-                    <span className="text-white text-xl font-relishGargler">
-                      $15,000
-                    </span>
-                  </div>
-                </div>
-              </motion.div>
-            </div>
-          </motion.div>
-        </motion.div>
+              ))}
+            </div>{' '}
+          </div>
+        </div>
       </div>
     </div>
   );
