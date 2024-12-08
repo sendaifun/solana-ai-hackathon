@@ -1,6 +1,87 @@
 "use client";
 
-import React from "react";
+// import React from "react";
+
+// interface CardItem {
+//   id: string;
+//   title: string;
+//   icon: () => JSX.Element;
+// }
+
+// const GetStartedSection = () => {
+//   const getColors = (index: number): string => {
+//     switch (index % 4) {
+//       case 0:
+//         return "#1BE1FF"; // Cyan
+//       case 1:
+//         return "#FFFF00"; // Yellow
+//       case 2:
+//         return "#19FFCE"; // Mint/Green
+//       case 3:
+//         return "#FFFF00"; // Yellow
+//       default:
+//         return "#787B7E";
+//     }
+//   };
+
+//   return (
+//     <div className="bg-black py-20">
+//       <div className="max-w-7xl mx-auto px-4">
+//         {/* Title Section */}
+//         <div className="text-center mb-20">
+//           <h2 className="text-4xl font-bold text-white mb-4">
+//             <span className="font-relishGargler tracking-wider">
+//               GET STARTED
+//             </span>
+//             <span className="text-gray-400 font-PPSans"> on building</span>
+//           </h2>
+//           <p className="text-3xl text-white font-PPSans">
+//             your Crypto x AI Project:
+//           </p>
+//         </div>
+
+//         <div className="cursor-pointer flex flex-wrap justify-center gap-8 max-w-6xl mx-auto px-4">
+//           {cardItems.map((item, index) => (
+//             <div
+//               key={item.id}
+//               style={
+//                 {
+//                   aspectRatio: "1/1",
+//                   "--hover-color": getColors(index),
+//                 } as React.CSSProperties
+//               }
+//               className=" flex-none w-[calc(50%-1rem)] md:w-[calc(25%-1.5rem)]
+//                 bg-transparent border-4 border-[#353637] rounded-lg p-8
+//                 flex flex-col items-center justify-center transition-all duration-300
+//                 hover:border-[var(--hover-color)] group"
+//             >
+//               <div className="text-[#787B7E] group-hover:text-[var(--hover-color)] transition-colors duration-300">
+//                 {item.icon()}
+//               </div>
+//               <span className="text-[#787B7E] text-nowrap group-hover:text-[var(--hover-color)] text-lg font-PPSans mt-4 transition-colors duration-300">
+//                 {item.title}
+//               </span>
+//             </div>
+//           ))}
+//         </div>
+
+//         {/* Bottom Button */}
+//         <div className="flex justify-center mt-16">
+//           <button className="bg-white text-black px-6 py-3 rounded-md hover:bg-gray-200 transition-colors text-sm font-PPSans">
+//             Why Build an AI Agent x Crypto?
+//           </button>
+//         </div>
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default GetStartedSection;
+
+"use client";
+
+import React, { useRef } from "react";
+import { motion, useInView } from "framer-motion";
 
 interface CardItem {
   id: string;
@@ -9,6 +90,9 @@ interface CardItem {
 }
 
 const GetStartedSection = () => {
+  const sectionRef = useRef(null);
+  const isInView = useInView(sectionRef, { once: true, amount: 0.2 });
+
   const getColors = (index: number): string => {
     switch (index % 4) {
       case 0:
@@ -134,24 +218,48 @@ const GetStartedSection = () => {
   ];
 
   return (
-    <div className="bg-black py-20">
+    <div className="bg-black py-20" ref={sectionRef}>
       <div className="max-w-7xl mx-auto px-4">
-        {/* Title Section */}
-        <div className="text-center mb-20">
+        {/* Animated Title Section */}
+        <motion.div
+          className="text-center mb-20"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 30 }}
+          transition={{ duration: 0.6 }}
+        >
           <h2 className="text-4xl font-bold text-white mb-4">
-            <span className="font-relishGargler tracking-wider">
+            <motion.span
+              className="font-relishGargler tracking-wider inline-block"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 20 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
               GET STARTED
-            </span>
-            <span className="text-gray-400 font-PPSans"> on building</span>
+            </motion.span>
+            <motion.span
+              className="text-gray-400 font-PPSans inline-block"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: isInView ? 1 : 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+            >
+              {" "}
+              on building
+            </motion.span>
           </h2>
-          <p className="text-3xl text-white font-PPSans">
+          <motion.p
+            className="text-3xl text-white font-PPSans"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 20 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+          >
             your Crypto x AI Project:
-          </p>
-        </div>
+          </motion.p>
+        </motion.div>
 
+        {/* Animated Cards */}
         <div className="cursor-pointer flex flex-wrap justify-center gap-8 max-w-6xl mx-auto px-4">
           {cardItems.map((item, index) => (
-            <div
+            <motion.div
               key={item.id}
               style={
                 {
@@ -159,27 +267,70 @@ const GetStartedSection = () => {
                   "--hover-color": getColors(index),
                 } as React.CSSProperties
               }
-              className=" flex-none w-[calc(50%-1rem)] md:w-[calc(25%-1.5rem)] 
+              className="flex-none w-[calc(50%-1rem)] md:w-[calc(25%-1.5rem)] 
                 bg-transparent border-4 border-[#353637] rounded-lg p-8 
                 flex flex-col items-center justify-center transition-all duration-300
                 hover:border-[var(--hover-color)] group"
+              initial={{ opacity: 0, y: 50, scale: 0.9 }}
+              animate={{
+                opacity: isInView ? 1 : 0,
+                y: isInView ? 0 : 50,
+                scale: isInView ? 1 : 0.9,
+              }}
+              transition={{
+                duration: 0.5,
+                delay: 0.5 + index * 0.1,
+                ease: [0.23, 1, 0.32, 1],
+              }}
+              whileHover={{
+                scale: 1.05,
+                transition: { duration: 0.2 },
+              }}
             >
-              <div className="text-[#787B7E] group-hover:text-[var(--hover-color)] transition-colors duration-300">
+              <motion.div
+                className="text-[#787B7E] group-hover:text-[var(--hover-color)] transition-colors duration-300"
+                initial={{ scale: 0.8 }}
+                animate={{ scale: isInView ? 1 : 0.8 }}
+                transition={{
+                  duration: 0.5,
+                  delay: 0.6 + index * 0.1,
+                }}
+              >
                 {item.icon()}
-              </div>
-              <span className="text-[#787B7E] text-nowrap group-hover:text-[var(--hover-color)] text-lg font-PPSans mt-4 transition-colors duration-300">
+              </motion.div>
+              <motion.span
+                className="text-[#787B7E] text-nowrap group-hover:text-[var(--hover-color)] text-lg font-PPSans mt-4 transition-colors duration-300"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: isInView ? 1 : 0 }}
+                transition={{
+                  duration: 0.5,
+                  delay: 0.7 + index * 0.1,
+                }}
+              >
                 {item.title}
-              </span>
-            </div>
+              </motion.span>
+            </motion.div>
           ))}
         </div>
 
-        {/* Bottom Button */}
-        <div className="flex justify-center mt-16">
-          <button className="bg-white text-black px-6 py-3 rounded-md hover:bg-gray-200 transition-colors text-sm font-PPSans">
+        {/* Animated Bottom Button */}
+        <motion.div
+          className="flex justify-center mt-16"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 20 }}
+          transition={{
+            duration: 0.6,
+            delay: 0.8 + cardItems.length * 0.1,
+          }}
+        >
+          <motion.button
+            className="bg-white text-black px-6 py-3 rounded-md hover:bg-gray-200 transition-colors text-sm font-PPSans"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
             Why Build an AI Agent x Crypto?
-          </button>
-        </div>
+          </motion.button>
+        </motion.div>
       </div>
     </div>
   );

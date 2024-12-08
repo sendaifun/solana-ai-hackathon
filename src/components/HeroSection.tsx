@@ -32,7 +32,7 @@ const HeroSection = () => {
       {/* Abstract Images Container */}
       <div className="absolute inset-0 z-10">
         {/* Left Abstract Images */}
-        <motion.div
+        <motion.div 
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6 }}
