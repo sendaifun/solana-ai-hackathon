@@ -479,6 +479,19 @@ const AnimatedLogo = () => {
         />
       </motion.g>
 
+      {/* Bottom Pattern / Triangles */}
+      <motion.path
+        fillRule="evenodd"
+        clipRule="evenodd"
+        d="M405.152 0L337.979 116.329L349.494 122.977L405.152 26.5925L460.797 122.977L472.311 116.329L405.152 0ZM215.159 329.057L226.674 335.705L171.029 432.089H282.332V445.386H148L215.159 329.057ZM583.611 335.705L595.126 329.057L662.285 445.386H527.953V432.089H639.256L583.611 335.705ZM466.588 232.695V219.399H539.505L503.046 282.556L491.532 275.908L516.476 232.695H466.588ZM307.316 282.556L318.831 275.908L293.887 232.695H343.775V219.399H270.845L307.316 282.556ZM380.234 382.267L405.178 425.479L430.135 382.267L441.649 388.915L405.178 452.072L368.719 388.915L380.234 382.267Z"
+        fill="url(#paint1_radial_290_163)"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{
+          duration: 0.8,
+          delay: 1.2,
+        }}
+      />
       {/* Gradients and definitions */}
       <defs>
         <linearGradient
@@ -504,6 +517,17 @@ const AnimatedLogo = () => {
             transform="translate(205.181 139)"
           />
         </clipPath>
+        <radialGradient
+          id="paint1_radial_290_163"
+          cx="0"
+          cy="0"
+          r="1"
+          gradientUnits="userSpaceOnUse"
+          gradientTransform="translate(404.336 242.769) rotate(90.1726) scale(353.368 1153.49)"
+        >
+          <stop offset="0.385226" stopColor="#878A8C" stopOpacity="0" />
+          <stop offset="1" stopColor="#2B2D2E" />
+        </radialGradient>
       </defs>
     </motion.svg>
   );
