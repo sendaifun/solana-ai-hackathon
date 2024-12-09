@@ -8,6 +8,7 @@ interface ButtonProps {
   className?: string;
   target?: string;
   rel?: string;
+  [key: string]: any;
 }
 
 export const Button = ({

@@ -10,45 +10,50 @@ import { ScrambleText } from '@/components/ui/scramble-text';
 
 const NavLinks = ({ mobile }: { mobile?: boolean }) => (
   <>
-    <ScrambleText
-      text='Tracks'
-      href='/#tracks'
-      className={`text-gray-300 hover:text-white transition-colors ${
-        mobile ? 'text-xl text-center py-4' : ''
-      }`}
-    />
-    <ScrambleText
-      text='Ideas'
-      href='/#'
-      className={`text-gray-300 hover:text-white transition-colors ${
-        mobile ? 'text-xl text-center py-4' : ''
-      }`}
-    />
-    <ScrambleText
-      text='Resources'
-      href='/#'
-      className={`text-gray-300 hover:text-white transition-colors ${
-        mobile ? 'text-xl text-center py-4' : ''
-      }`}
-    />
-    <ScrambleText
-      text='FAQs'
-      href='/faq#faqs'
-      className={`text-gray-300 hover:text-white transition-colors ${
-        mobile ? 'text-xl text-center py-4' : ''
-      }`}
-    />
+    <Link href='/#tracks'>
+      <ScrambleText
+        text='Tracks'
+        className={`text-gray-300 hover:text-white transition-colors ${
+          mobile ? 'text-xl text-center py-4' : ''
+        }`}
+      />
+    </Link>
+    <Link href='/#'>
+      <ScrambleText
+        text='Ideas'
+        className={`text-gray-300 hover:text-white transition-colors ${
+          mobile ? 'text-xl text-center py-4' : ''
+        }`}
+      />
+    </Link>
+    <Link href='/#'>
+      <ScrambleText
+        text='Resources'
+        className={`text-gray-300 hover:text-white transition-colors ${
+          mobile ? 'text-xl text-center py-4' : ''
+        }`}
+      />
+    </Link>
+    <Link href='/faq#faqs'>
+      <ScrambleText
+        text='FAQs'
+        className={`text-gray-300 hover:text-white transition-colors ${
+          mobile ? 'text-xl text-center py-4' : ''
+        }`}
+      />
+    </Link>
   </>
 );
 
 const JoinButton = ({ mobile }: { mobile?: boolean }) => (
-  <ScrambleText
-    text='Join Now'
-    href='#'
-    className={`bg-[#1E252B] text-[#1BE1FF] font-medium px-4 py-3 rounded-md transition-colors text-center
-      ${mobile ? 'w-full text-lg' : ''}
-    `}
-  />
+  <Link href='#'>
+    <ScrambleText
+      text='Join Now'
+      className={`bg-[#1E252B] text-[#1BE1FF] font-medium px-4 py-3 rounded-md transition-colors text-center
+        ${mobile ? 'w-full text-lg' : ''}
+      `}
+    />
+  </Link>
 );
 
 const NavbarComp = () => {
