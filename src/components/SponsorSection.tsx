@@ -34,63 +34,67 @@ import stTurkeyLogo from "@/assets/images/framed-svgs/stTurkeyLogo.svg";
 import stUKLogo from "@/assets/images/framed-svgs/stUK.svg";
 import stVietnamLogo from "@/assets/images/framed-svgs/stVietnamLogo.svg";
 import switchboardLogo from "@/assets/images/framed-svgs/switchboardLogo.svg";
+import ai16zLogo from "@/assets/images/framed-svgs/ai16zLogo.svg";
+import orcaLogo from "@/assets/images/framed-svgs/orcaLogo.svg";
+import paladinLogo from "@/assets/images/framed-svgs/paladinLogo.svg";
+import emblemvaultLogo from "@/assets/images/framed-svgs/emblemvaultLogo.svg";
+import litProtocolLogo from "@/assets/images/framed-svgs/litProtocolLogo.svg";
+import dainLogo from "@/assets/images/framed-svgs/dainLogo.svg";
 
 const sponsors = {
-  grand: [
+  main: [
     {
       id: "solana1",
       name: "Solana Foundation",
-      image: sponsor1,
+      image: solanaFndnLogo,
     },
-    { id: "dialect1", name: "Dialect", image: sponsor1 },
-    { id: "bags1", name: "Bags", image: sponsor1 },
-    {
-      id: "superteam1",
-      name: "Superteam Vietnam",
-      image: sponsor1,
-    },
-    { id: "squads1", name: "Squads", image: sponsor1 },
-    {
-      id: "tensor1",
-      name: "Tensor Foundation",
-      image: sponsor1,
-    },
-    {
-      id: "hologram",
-      name: "Hologram",
-      image: hologramLogo,
-    },
-    {
-      id: "kuzco",
-      name: "Kuzco",
-      image: kuzcoLogo,
-    },
+    { id: "ai16z", name: "ai16z", image: ai16zLogo },
   ],
-  track: [
-    { id: "adrena", name: "Adrena", image: adrenaLogo },
-    { id: "arcium", name: "Arcium", image: arciumLogo },
-    { id: "assisterr", name: "Assisterr", image: assisterrLogo },
-    { id: "colosseum", name: "Colosseum", image: colosseumLogo },
-    { id: "crossmint", name: "Crossmint", image: crossmintLogo },
-    { id: "dynamic", name: "Dynamic", image: dynamicLogo },
-    { id: "helius", name: "Helius", image: heliusLogo },
-    { id: "hologram", name: "Hologram", image: hologramLogo },
-    { id: "ionet", name: "Ionet", image: ionetLogo },
-    { id: "juicebox", name: "Juicebox", image: juiceboxLogo },
+  supportedBy: [
+    // { id: "jito", name: "JITO", image: jitoLogo },
     { id: "jupiter", name: "Jupiter", image: jupiterLogo },
-    { id: "kuzco", name: "Kuzco", image: kuzcoLogo },
-    { id: "meteora", name: "Meteora", image: meteoraLogo },
-    { id: "mhventures", name: "MH Ventures", image: mhventuresLogo },
+    { id: "helius", name: "Helius", image: heliusLogo },
     { id: "multicoincap", name: "Multicoin Capital", image: multicoincapLogo },
-    { id: "solanafndn", name: "Solana Foundation", image: solanaFndnLogo },
+    { id: "assisterr", name: "Assisterr", image: assisterrLogo },
+    { id: "ionet", name: "Io.net", image: ionetLogo },
+    { id: "mhventures", name: "MH Ventures", image: mhventuresLogo },
+    { id: "dynamic", name: "Dynamic", image: dynamicLogo },
+  ],
+  autonomousChatAgents: [
+    { id: "assisterr", name: "Assisterr", image: assisterrLogo },
+  ],
+  socialAndInfluencerAgent: [
+    { id: "hologram", name: "Hologram", image: hologramLogo },
+  ],
+  agentsInfra: [{ id: "kuzco", name: "Kuzco", image: kuzcoLogo }],
+  supportedByAgentsInfra: [
+    { id: "arcium", name: "Arcium", image: arciumLogo },
+    { id: "dain", name: "Dain", image: dainLogo },
+    { id: "litProtocol", name: "Lit Protocol", image: litProtocolLogo },
+  ],
+  agentTokenTooling: [{ id: "meteora", name: "Meteora", image: meteoraLogo }],
+  tokenToolingSupportedBy: [
+    { id: "emblemvault", name: "Emblem Vault", image: emblemvaultLogo },
+  ],
+
+  defiAgents: [{ id: "adrena", name: "Adrena", image: adrenaLogo }],
+  supportedByDefiAgents: [
+    { id: "switchboard", name: "Switchboard", image: switchboardLogo },
+    { id: "orca", name: "Orca", image: orcaLogo },
+  ],
+  tradingAgents: [{ id: "paladin", name: "Paladin", image: paladinLogo }],
+  supportedByTradingAgents: [
+    { id: "crossmint", name: "Crossmint", image: crossmintLogo },
+  ],
+  communityPartners: [
     { id: "stGermany", name: "Superteam Germany", image: stGermanyLogo },
     { id: "stIndia", name: "Superteam India", image: stIndiaLogo },
     { id: "stNigeria", name: "Superteam Nigeria", image: stNigeriaLogo },
     { id: "stTurkey", name: "Superteam Turkey", image: stTurkeyLogo },
     { id: "stUK", name: "Superteam UK", image: stUKLogo },
     { id: "stVietnam", name: "Superteam Vietnam", image: stVietnamLogo },
-    { id: "switchboard", name: "Switchboard", image: switchboardLogo },
   ],
+
   poweredby: [
     {
       id: "SendAI",
@@ -159,13 +163,13 @@ const SponsorsSection = () => {
               <Image src={headAbstract} alt="Sponsor" className=" mx-8" />
             </div>
 
-            {/* Grand Sponsors */}
+            {/* main Sponsors */}
             <div className="w-full flex flex-col items-center">
               <h3 className="text-white text-md  tracking-wider font-PPSans my-8">
-                GRAND SPONSORS
+                MAIN SPONSORS
               </h3>
               <div className="w-full flex flex-wrap justify-center gap-4">
-                {sponsors.grand.map((sponsor) => (
+                {sponsors.main.map((sponsor) => (
                   <div
                     key={sponsor.id}
                     className="w-full md:w-[calc(50%-8px)] lg:w-[calc(33.333%-11px)]"
@@ -176,13 +180,13 @@ const SponsorsSection = () => {
               </div>
             </div>
 
-            {/* Track Sponsors */}
+            {/* Supported By Sponsors */}
             <div className="w-full flex flex-col items-center">
               <h3 className="text-white text-md tracking-wider font-PPSans my-8">
-                TRACK SPONSORS
+                MAIN TRACKS SUPPORTED BY
               </h3>
               <div className="w-full flex flex-wrap justify-center gap-4">
-                {sponsors.track.map((sponsor) => (
+                {sponsors.supportedBy.map((sponsor) => (
                   <div
                     key={sponsor.id}
                     className="w-full md:w-[calc(50%-8px)] lg:w-[calc(33.333%-11px)]"
@@ -193,13 +197,13 @@ const SponsorsSection = () => {
               </div>
             </div>
 
-            {/* Supporting Sponsors */}
+            {/* Autonomous Chat Agents Sponsors */}
             <div className="w-full flex flex-col items-center">
               <h3 className="text-white text-md tracking-wider font-PPSans my-8">
-                SUPPORTING SPONSORS
+                AUTONOMOUS CHAT AGENTS SPONSORS
               </h3>
               <div className="w-full flex flex-wrap justify-center gap-4">
-                {sponsors.track.map((sponsor) => (
+                {sponsors.autonomousChatAgents.map((sponsor) => (
                   <div
                     key={sponsor.id}
                     className="w-full md:w-[calc(50%-8px)] lg:w-[calc(33.333%-11px)]"
@@ -210,13 +214,114 @@ const SponsorsSection = () => {
               </div>
             </div>
 
-            {/* Distribution Sponsors */}
             <div className="w-full flex flex-col items-center">
               <h3 className="text-white text-md tracking-wider font-PPSans my-8">
-                DISTRIBUTION SPONSORS
+                SOCIAL AND INFLUENCER AGENT{" "}
               </h3>
               <div className="w-full flex flex-wrap justify-center gap-4">
-                {sponsors.track.map((sponsor) => (
+                {sponsors.socialAndInfluencerAgent.map((sponsor) => (
+                  <div
+                    key={sponsor.id}
+                    className="w-full md:w-[calc(50%-8px)] lg:w-[calc(33.333%-11px)]"
+                  >
+                    <SponsorCard image={sponsor.image} name={sponsor.name} />
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Agents Infra Support Sponsors */}
+            <div className="w-full flex flex-col items-center">
+              <h3 className="text-white text-md tracking-wider font-PPSans my-8">
+                AGENTS INFRA SUPPORTED BY
+              </h3>
+              <div className="w-full flex flex-wrap justify-center gap-4">
+                {sponsors.supportedByAgentsInfra.map((sponsor) => (
+                  <div
+                    key={sponsor.id}
+                    className="w-full md:w-[calc(50%-8px)] lg:w-[calc(33.333%-11px)]"
+                  >
+                    <SponsorCard image={sponsor.image} name={sponsor.name} />
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Agent Token Tooling Sponsors */}
+            <div className="w-full flex flex-col items-center">
+              <h3 className="text-white text-md tracking-wider font-PPSans my-8">
+                AGENT TOKEN TOOLING SPONSORS
+              </h3>
+              <div className="w-full flex flex-wrap justify-center gap-4">
+                {sponsors.agentTokenTooling.map((sponsor) => (
+                  <div
+                    key={sponsor.id}
+                    className="w-full md:w-[calc(50%-8px)] lg:w-[calc(33.333%-11px)]"
+                  >
+                    <SponsorCard image={sponsor.image} name={sponsor.name} />
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Token Tooling Supported By */}
+            <div className="w-full flex flex-col items-center">
+              <h3 className="text-white text-md tracking-wider font-PPSans my-8">
+                TOKEN TOOLING SUPPORTED BY
+              </h3>
+              <div className="w-full flex flex-wrap justify-center gap-4">
+                {sponsors.tokenToolingSupportedBy.map((sponsor) => (
+                  <div
+                    key={sponsor.id}
+                    className="w-full md:w-[calc(50%-8px)] lg:w-[calc(33.333%-11px)]"
+                  >
+                    <SponsorCard image={sponsor.image} name={sponsor.name} />
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* DeFi Agents Sponsors */}
+            <div className="w-full flex flex-col items-center">
+              <h3 className="text-white text-md tracking-wider font-PPSans my-8">
+                DEFI AGENTS SPONSORS
+              </h3>
+              <div className="w-full flex flex-wrap justify-center gap-4">
+                {sponsors.defiAgents.map((sponsor) => (
+                  <div
+                    key={sponsor.id}
+                    className="w-full md:w-[calc(50%-8px)] lg:w-[calc(33.333%-11px)]"
+                  >
+                    <SponsorCard image={sponsor.image} name={sponsor.name} />
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* DeFi Agents Supported By */}
+            <div className="w-full flex flex-col items-center">
+              <h3 className="text-white text-md tracking-wider font-PPSans my-8">
+                DEFI AGENTS SUPPORTED BY
+              </h3>
+              <div className="w-full flex flex-wrap justify-center gap-4">
+                {sponsors.supportedByDefiAgents.map((sponsor) => (
+                  <div
+                    key={sponsor.id}
+                    className="w-full md:w-[calc(50%-8px)] lg:w-[calc(33.333%-11px)]"
+                  >
+                    <SponsorCard image={sponsor.image} name={sponsor.name} />
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Community Partners */}
+            <div className="w-full flex flex-col items-center">
+              <h3 className="text-white text-md tracking-wider font-PPSans my-8">
+                COMMUNITY PARTNERS
+              </h3>
+              <div className="w-full flex flex-wrap justify-center gap-4">
+                {sponsors.communityPartners?.map((sponsor) => (
                   <div
                     key={sponsor.id}
                     className="w-full md:w-[calc(50%-8px)] lg:w-[calc(33.333%-11px)]"
