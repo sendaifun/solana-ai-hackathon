@@ -8,6 +8,33 @@ import sponsor1 from "@/assets/images/logos/DialectLogo.svg";
 import sendAILogo from "@/assets/images/logos/SendAI.svg";
 import sponsorBottomL from "@/assets/images/svgs/abstract/SponsorBottomL.svg";
 import sponsorBottomR from "@/assets/images/svgs/abstract/SponsorBottomR.svg";
+
+// Framed SVG imports :
+
+import adrenaLogo from "@/assets/images/framed-svgs/adrenaLogo.svg";
+import arciumLogo from "@/assets/images/framed-svgs/arciumLogo.svg";
+import assisterrLogo from "@/assets/images/framed-svgs/assisterrLogo.svg";
+import colosseumLogo from "@/assets/images/framed-svgs/colosseumLogo.svg";
+import crossmintLogo from "@/assets/images/framed-svgs/crossmintLogo.svg";
+import dynamicLogo from "@/assets/images/framed-svgs/dynamicLogo.svg";
+import heliusLogo from "@/assets/images/framed-svgs/heliusLogo.svg";
+import hologramLogo from "@/assets/images/framed-svgs/hologramLogo.svg";
+import ionetLogo from "@/assets/images/framed-svgs/ionetLogo.svg";
+import juiceboxLogo from "@/assets/images/framed-svgs/juiceboxLogo.svg";
+import jupiterLogo from "@/assets/images/framed-svgs/jupiterLogo.svg";
+import kuzcoLogo from "@/assets/images/framed-svgs/kuzcoLogo.svg";
+import meteoraLogo from "@/assets/images/framed-svgs/meteoraLogo.svg";
+import mhventuresLogo from "@/assets/images/framed-svgs/mhventuresLogo.svg";
+import multicoincapLogo from "@/assets/images/framed-svgs/multicoincapLogo.svg";
+import solanaFndnLogo from "@/assets/images/framed-svgs/solanaFndnLogo.svg";
+import stGermanyLogo from "@/assets/images/framed-svgs/stGermany.svg";
+import stIndiaLogo from "@/assets/images/framed-svgs/stIndiaLogo.svg";
+import stNigeriaLogo from "@/assets/images/framed-svgs/stNigeriaLogo.svg";
+import stTurkeyLogo from "@/assets/images/framed-svgs/stTurkeyLogo.svg";
+import stUKLogo from "@/assets/images/framed-svgs/stUK.svg";
+import stVietnamLogo from "@/assets/images/framed-svgs/stVietnamLogo.svg";
+import switchboardLogo from "@/assets/images/framed-svgs/switchboardLogo.svg";
+
 const sponsors = {
   grand: [
     {
@@ -28,26 +55,41 @@ const sponsors = {
       name: "Tensor Foundation",
       image: sponsor1,
     },
+    {
+      id: "hologram",
+      name: "Hologram",
+      image: hologramLogo,
+    },
+    {
+      id: "kuzco",
+      name: "Kuzco",
+      image: kuzcoLogo,
+    },
   ],
   track: [
-    {
-      id: "solana2",
-      name: "Solana Foundation",
-      image: sponsor1,
-    },
-    { id: "dialect2", name: "Dialect", image: sponsor1 },
-    { id: "bags2", name: "Bags", image: sponsor1 },
-    {
-      id: "superteam2",
-      name: "Superteam Vietnam",
-      image: sponsor1,
-    },
-    { id: "squads2", name: "Squads", image: sponsor1 },
-    {
-      id: "tensor2",
-      name: "Tensor Foundation",
-      image: sponsor1,
-    },
+    { id: "adrena", name: "Adrena", image: adrenaLogo },
+    { id: "arcium", name: "Arcium", image: arciumLogo },
+    { id: "assisterr", name: "Assisterr", image: assisterrLogo },
+    { id: "colosseum", name: "Colosseum", image: colosseumLogo },
+    { id: "crossmint", name: "Crossmint", image: crossmintLogo },
+    { id: "dynamic", name: "Dynamic", image: dynamicLogo },
+    { id: "helius", name: "Helius", image: heliusLogo },
+    { id: "hologram", name: "Hologram", image: hologramLogo },
+    { id: "ionet", name: "Ionet", image: ionetLogo },
+    { id: "juicebox", name: "Juicebox", image: juiceboxLogo },
+    { id: "jupiter", name: "Jupiter", image: jupiterLogo },
+    { id: "kuzco", name: "Kuzco", image: kuzcoLogo },
+    { id: "meteora", name: "Meteora", image: meteoraLogo },
+    { id: "mhventures", name: "MH Ventures", image: mhventuresLogo },
+    { id: "multicoincap", name: "Multicoin Capital", image: multicoincapLogo },
+    { id: "solanafndn", name: "Solana Foundation", image: solanaFndnLogo },
+    { id: "stGermany", name: "Superteam Germany", image: stGermanyLogo },
+    { id: "stIndia", name: "Superteam India", image: stIndiaLogo },
+    { id: "stNigeria", name: "Superteam Nigeria", image: stNigeriaLogo },
+    { id: "stTurkey", name: "Superteam Turkey", image: stTurkeyLogo },
+    { id: "stUK", name: "Superteam UK", image: stUKLogo },
+    { id: "stVietnam", name: "Superteam Vietnam", image: stVietnamLogo },
+    { id: "switchboard", name: "Switchboard", image: switchboardLogo },
   ],
   poweredby: [
     {
@@ -204,8 +246,16 @@ const SponsorsSection = () => {
           </div>
         </div>
         <div className="flex justify-between">
-          <Image src={sponsorBottomL} alt="Sponsor" className=" mx-8 w-24 md:w-auto" />
-          <Image src={sponsorBottomR} alt="Sponsor" className=" mx-8 w-24 md:w-auto" />
+          <Image
+            src={sponsorBottomL}
+            alt="Sponsor"
+            className=" mx-8 w-24 md:w-auto"
+          />
+          <Image
+            src={sponsorBottomR}
+            alt="Sponsor"
+            className=" mx-8 w-24 md:w-auto"
+          />
         </div>
       </div>
     </>
