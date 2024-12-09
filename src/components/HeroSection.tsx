@@ -157,7 +157,7 @@ const HeroSection = () => {
         {/* Button */}
         <div className='relative mt-6 md:mt-12'>
           <Button
-            href='https://t.me/solanaai'
+            href='https://t.me/solana_ai_hackathon'
             target='_blank'
             rel='noopener noreferrer'
           >
