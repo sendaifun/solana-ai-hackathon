@@ -34,6 +34,8 @@ import tarunImg from "@/assets/images/judges/tarun.svg";
 import tengyanImg from "@/assets/images/judges/tengYan.svg";
 import tolyImg from "@/assets/images/judges/toly.svg";
 import tongImg from "@/assets/images/judges/tong.svg";
+import kelImg from "@/assets/images/judges/kel.svg";
+import zerebroAgentImg from "@/assets/images/judges/zerebroagent.svg";
 
 const judges = [
   {
@@ -58,11 +60,11 @@ const judges = [
     image: shawImg,
   },
   {
-    id: "mert",
-    name: "Mert",
-    role: "Co-Founder, Helius",
-    twitter: "https://x.com/0xMert_",
-    image: mertImg,
+    id: "zerebro",
+    name: "Zerebro",
+    role: "AI Agent",
+    twitter: "https://x.com/0xzerebro",
+    image: zerebroAgentImg,
   },
   {
     id: "tarun",
@@ -70,6 +72,13 @@ const judges = [
     role: "Robot Ventures and Gauntlet",
     twitter: "https://x.com/tarunchitra",
     image: tarunImg,
+  },
+  {
+    id: "mert",
+    name: "Mert",
+    role: "Co-Founder, Helius",
+    twitter: "https://x.com/0xMert_",
+    image: mertImg,
   },
   {
     id: "buffalu",
@@ -197,13 +206,13 @@ const judges = [
     twitter: "https://x.com/nick_havryliak",
     image: nickImg,
   },
-  // {
-  //   id: "qw",
-  //   name: "Qiao",
-  //   role: "Co-founder, AllianceDAO",
-  //   twitter: "https://x.com/QwQiao",
-  //   image: qwImg,
-  // },
+  {
+    id: "kel",
+    name: "Kel",
+    role: "Investor",
+    twitter: "https://x.com/kelxyz_",
+    image: kelImg,
+  },
   {
     id: "orca",
     name: "Nathan Davis",
