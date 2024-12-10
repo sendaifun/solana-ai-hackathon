@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { ScrambleText } from "./scramble-text";
-import { ComponentType } from "react";
+import React, { ComponentType } from "react";
 
 interface Prize {
   title: string;
@@ -21,6 +21,10 @@ interface PrizeCardProps {
     title: string;
     logo: ComponentType;
   };
+  mainSponsor2?: {
+    title: string;
+    logo: ComponentType;
+  };
   prizes: Prize[];
   description?: string;
   supporters?: Supporter[];
@@ -32,6 +36,7 @@ interface PrizeCardProps {
 const PrizeCard = ({
   totalPrize,
   mainSponsor,
+  mainSponsor2,
   prizes,
   description,
   supporters = [],
@@ -40,6 +45,7 @@ const PrizeCard = ({
   isInView = true,
 }: PrizeCardProps) => {
   const MainSponsorLogo = mainSponsor.logo;
+  const MainSponsorLogo2 = mainSponsor2?.logo;
 
   // Function to adjust color opacity
   const adjustColorOpacity = (color: string, opacity: number) => {
@@ -113,11 +119,13 @@ const PrizeCard = ({
                 text={totalPrize}
                 className="text-3xl md:text-4xl lg:text-6xl font-relish font-bold text-white"
               />
-              <div className="flex items-center gap-2">
+              <div className="flex lg:items-center gap-2">
                 <span className="font-ppsans text-gray-400 text-xs lg:text-sm">
                   {mainSponsor.title} by
                 </span>
-                <div className="text-gray-400 hover:text-gray-300 transition-colors">
+                <div className="text-gray-400 hover:text-gray-300 transition-colors flex flex-wrap gap-6">
+                  {/* To avoid type error and optional - undefined */}
+                  {mainSponsor2?.logo && React.createElement(mainSponsor2.logo)}
                   <MainSponsorLogo />
                 </div>
               </div>
