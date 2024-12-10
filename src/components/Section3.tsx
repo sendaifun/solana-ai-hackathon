@@ -33,7 +33,7 @@ import zerebroLogo from "@/assets/images/framed-svgs/zerebroLogo.svg";
 
 const adrenaLogoComp = () => <Image src={adrenaLogo} alt="Adrena Logo" />;
 
-const ai16zLogoComp = () => <Image src={ai16zLogo} alt="AI16Z Logo" />;
+const ai16zLogoComp = () => <Image src={ai16zLogo} className="w-24 object-contain" alt="AI16Z Logo" />;
 
 const assistrLogoComp = () => <Image src={assistrrLogo} alt="Assistr Logo" />;
 
@@ -410,6 +410,10 @@ const Section3 = () => {
     mainSponsor: {
       title: "Main Track",
       logo: solanaFndnLogoComp,
+    },
+    mainSponsor2: {
+      title: "Main Track",
+      logo: ai16zLogoComp,
     },
     prizes: [
       {
