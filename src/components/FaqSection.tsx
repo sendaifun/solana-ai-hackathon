@@ -180,6 +180,6 @@ const faqData = [
   {
     question: "Is there any registration for the hackathon?",
     content:
-      "No. You can directly join the telegram and start building. You need to directly submit in the submissions form, which opens on 15th November.",
+      "No. You can directly join the telegram and start building. You need to directly submit in the submissions form, which opens on 15th December.",
   },
 ];
