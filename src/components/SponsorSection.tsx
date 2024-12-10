@@ -76,9 +76,6 @@ const latestSponsorHeirarchy3 = [
   { id: "ionet", name: "Io.net", image: ionetLogo },
   { id: "mhventures", name: "MH Ventures", image: mhventuresLogo },
   { id: "dynamic", name: "Dynamic", image: dynamicLogo },
-];
-
-const latestSponsorHeirarchy4 = [
   { id: "arcium", name: "Arcium", image: arciumLogo },
   { id: "dain", name: "Dain", image: dainLogo },
   { id: "litProtocol", name: "Lit Protocol", image: litProtocolLogo },
@@ -87,6 +84,16 @@ const latestSponsorHeirarchy4 = [
   { id: "orca", name: "Orca", image: orcaLogo },
   { id: "crossmint", name: "Crossmint", image: crossmintLogo },
 ];
+
+// const latestSponsorHeirarchy4 = [
+//   { id: "arcium", name: "Arcium", image: arciumLogo },
+//   { id: "dain", name: "Dain", image: dainLogo },
+//   { id: "litProtocol", name: "Lit Protocol", image: litProtocolLogo },
+//   { id: "emblemvault", name: "Emblem Vault", image: emblemvaultLogo },
+//   { id: "switchboard", name: "Switchboard", image: switchboardLogo },
+//   { id: "orca", name: "Orca", image: orcaLogo },
+//   { id: "crossmint", name: "Crossmint", image: crossmintLogo },
+// ];
 
 const latestSponsorHeirarchy5 = [
   { id: "stGermany", name: "Superteam Germany", image: stGermanyLogo },
@@ -147,7 +154,7 @@ const SponsorCard = ({ image, name }: { image: string; name: string }) => (
 const SponsorsSection = () => {
   return (
     <>
-      <div className="bg-black">
+      <div className="bg-black" id="sponsors">
         <div className="flex flex-col items-center bg-black">
           <div className="w-full max-w-7xl px-4 flex flex-col items-center">
             {/* Title */}
@@ -161,9 +168,9 @@ const SponsorsSection = () => {
             </div>
 
             <div className="w-full flex flex-col items-center my-4">
-              {/* <h3 className="text-white text-md  tracking-wider font-PPSans my-8">
+              <h3 className="text-white text-md  tracking-wider font-PPSans my-8">
                 MAIN SPONSORS
-              </h3> */}
+              </h3>
               <div className="w-full flex flex-wrap justify-center gap-4">
                 {latestSponsorHeirarchy1.map((sponsor) => (
                   <div
@@ -177,9 +184,9 @@ const SponsorsSection = () => {
             </div>
 
             <div className="w-full flex flex-col items-center my-4">
-              {/* <h3 className="text-white text-md tracking-wider font-PPSans my-8">
-                MAIN TRACKS SUPPORTED BY
-              </h3> */}
+              <h3 className="text-white text-md tracking-wider font-PPSans my-8">
+                TRACKS SPONSORS{" "}
+              </h3>
               <div className="w-full flex flex-wrap justify-center gap-4">
                 {latestSponsorHeirarchy2.map((sponsor) => (
                   <div
@@ -193,9 +200,9 @@ const SponsorsSection = () => {
             </div>
 
             <div className="w-full flex flex-col items-center my-4">
-              {/* <h3 className="text-white text-md tracking-wider font-PPSans my-8">
-                AUTONOMOUS CHAT AGENTS SPONSORS
-              </h3> */}
+            <h3 className="text-white text-md tracking-wider font-PPSans my-8">
+                SUPPORTING SPONSORS
+              </h3>
               <div className="w-full flex flex-wrap justify-center gap-4">
                 {latestSponsorHeirarchy3.map((sponsor) => (
                   <div
@@ -210,10 +217,10 @@ const SponsorsSection = () => {
 
             <div className="w-full flex flex-col items-center my-4">
               {/* <h3 className="text-white text-md tracking-wider font-PPSans my-8">
-                SOCIAL AND INFLUENCER AGENT{" "}
+                SUPPORTING SPONSORS
               </h3> */}
               <div className="w-full flex flex-wrap justify-center gap-4">
-                {latestSponsorHeirarchy4.map((sponsor) => (
+                {latestSponsorHeirarchy3.map((sponsor) => (
                   <div
                     key={sponsor.id}
                     className="w-full md:w-[calc(50%-8px)] lg:w-[calc(33.333%-11px)]"
@@ -225,9 +232,9 @@ const SponsorsSection = () => {
             </div>
 
             <div className="w-full flex flex-col items-center my-4">
-              {/* <h3 className="text-white text-md tracking-wider font-PPSans my-8">
-                AGENTS INFRA SUPPORTED BY
-              </h3> */}
+              <h3 className="text-white text-md tracking-wider font-PPSans my-8">
+                DISTRIBUTION PARTNERS
+              </h3>
               <div className="w-full flex flex-wrap justify-center gap-4">
                 {latestSponsorHeirarchy5.map((sponsor) => (
                   <div

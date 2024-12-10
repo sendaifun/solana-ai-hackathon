@@ -10,18 +10,30 @@ import patternBottom from "@/assets/images/svgs/bgs/pattern.svg";
 const Footer = () => {
   const navigation = {
     hackathon: [
-      { name: "Tracks", href: "#" },
-      { name: "Prizes", href: "#" },
-      { name: "FAQs", href: "#" },
+      { name: "Tracks", href: "/#tracks", openInNewTab: false },
+      // { name: "Prizes", href: "/#tracks" },
+      { name: "FAQs", href: "/faq#faqs" },
     ],
     getStarted: [
-      { name: "Ideas", href: "#" },
-      { name: "Resources", href: "#" },
-      { name: "Find a Team", href: "#" },
+      {
+        name: "Ideas",
+        href: "https://www.sendai.fun/ideas",
+        openInNewTab: true,
+      },
+      {
+        name: "Resources",
+        href: "https://docs.google.com/document/d/1anJ_YRzLbgrqm3zB7gC02AxPvOlGzC2aySZLcRkjKo8/",
+        openInNewTab: true,
+      },
+      {
+        name: "Find a Team",
+        href: "https://t.me/solana_ai_hackathon/19",
+        openInNewTab: true,
+      },
     ],
     organizers: [
-      { name: "Sponsors", href: "#" },
-      { name: "SendAI", href: "#" },
+      { name: "Sponsors", href: "/#sponsors" },
+      { name: "SendAI", href: "https://www.sendai.fun", openInNewTab: true },
     ],
   };
 
@@ -58,6 +70,8 @@ const Footer = () => {
                 {navigation.hackathon.map((item) => (
                   <li key={item.name}>
                     <a
+                      target={item?.openInNewTab ? "_blank" : "_self"}
+                      rel="noopener noreferrer"
                       href={item.href}
                       className="text-gray-500 hover:text-gray-400"
                     >
@@ -73,6 +87,8 @@ const Footer = () => {
                 {navigation.getStarted.map((item) => (
                   <li key={item.name}>
                     <a
+                      target={item?.openInNewTab ? "_blank" : "_self"}
+                      rel="noopener noreferrer"
                       href={item.href}
                       className="text-gray-500 hover:text-gray-400"
                     >
@@ -88,7 +104,7 @@ const Footer = () => {
                 {navigation.organizers.map((item) => (
                   <li key={item.name}>
                     <a
-                      target="_blank"
+                      target={item?.openInNewTab ? "_blank" : "_self"}
                       rel="noopener noreferrer"
                       href={item.href}
                       className="text-gray-500 hover:text-gray-400"
