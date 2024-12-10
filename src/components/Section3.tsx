@@ -110,7 +110,7 @@ const grandPrizeSupporters = [
   { component: zerebroLogoComp },
   { component: heliusLogoComp },
   { component: multicoincapLogoComp },
-  // { component: assistrLogoComp },
+  { component: assistrLogoComp },
   { component: ionetLogoComp },
   { component: mhventuresLogoComp },
   { component: dynamicLogoComp },
