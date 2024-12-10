@@ -44,6 +44,7 @@ import jitoLogo from "@/assets/images/framed-svgs/jitoLogo.svg";
 import delphiDigitalLogo from "@/assets/images/framed-svgs/delphicapLogo.svg";
 import superhostsLogo from "@/assets/images/framed-svgs/superhostsLogo.svg";
 import zerebroLogo from "@/assets/images/framed-svgs/zerebroLogo.svg";
+import dolosLogo from "@/assets/images/framed-svgs/dolosLogo.svg";
 
 const sponsors = {
   poweredby: [
@@ -73,6 +74,7 @@ const latestSponsorHeirarchy3 = [
   { id: "jito", name: "Jito", image: jitoLogo },
   { id: "jupiter", name: "Jupiter", image: jupiterLogo },
   { id: "Zerebro", name: "Zerebro", image: zerebroLogo },
+  { id: "dolos", name: "Dolos", image: dolosLogo },
   { id: "helius", name: "Helius", image: heliusLogo },
   { id: "multicoincap", name: "Multicoin Capital", image: multicoincapLogo },
   { id: "ionet", name: "Io.net", image: ionetLogo },

@@ -30,6 +30,7 @@ import solanaFndnLogo from "@/assets/images/framed-svgs/solanaFndnLogo.svg";
 import switchboardLogo from "@/assets/images/framed-svgs/switchboardLogo.svg";
 import assistrrLogo from "@/assets/images/framed-svgs/assisterrLogo.svg";
 import zerebroLogo from "@/assets/images/framed-svgs/zerebroLogo.svg";
+import dolosLogo from "@/assets/images/framed-svgs/dolosLogo.svg";
 
 const adrenaLogoComp = () => <Image src={adrenaLogo} alt="Adrena Logo" />;
 
@@ -96,6 +97,9 @@ const crossmintLogoComp = () => (
 const zerebroLogoComp = () => (
   <Image className="w-32 object-contain" src={zerebroLogo} alt="Zerebro Logo" />
 );
+const dolosLogoComp = () => (
+  <Image className="w-24 object-contain" src={dolosLogo} alt="Zerebro Logo" />
+);
 // // Use these logos in the components
 // const logos = [
 //   { component: SolanaFoundationLogo },
@@ -108,6 +112,7 @@ const grandPrizeSupporters = [
   { component: jitoLogoComp },
   { component: jupiterLogoComp },
   { component: zerebroLogoComp },
+  { component: dolosLogoComp },
   { component: heliusLogoComp },
   { component: multicoincapLogoComp },
   { component: assistrLogoComp },
