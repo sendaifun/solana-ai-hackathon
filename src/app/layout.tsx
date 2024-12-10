@@ -1,6 +1,7 @@
 import localFont from 'next/font/local';
 import type { Metadata } from 'next';
 import './globals.css';
+import { Analytics } from '@vercel/analytics/react';
 
 const relishGargler = localFont({
   src: '../fonts/relish-gargler-regular.otf',
@@ -51,6 +52,7 @@ export default function RootLayout({
     <html lang='en'>
       <body className={`${relishGargler.variable} ${ppSans.variable}`}>
         {children}
+        <Analytics />
       </body>
     </html>
   );
