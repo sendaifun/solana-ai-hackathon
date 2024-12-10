@@ -210,7 +210,7 @@ const BackgroundImages = () => {
           transition={{ duration: 0.6, delay: 0.3 }}
           className='absolute bottom-[50px] right-12 md:bottom-54 md:right-126 z-30 w-[90px] md:w-[180px]'
         >
-          <Frame title='9th to 23rd dec' titleColor='#FFD600'>
+          <Frame title='10th to 23rd dec' titleColor='#FFD600'>
             <div className='w-full aspect-[1/1.2]'>
               <Image
                 src={imgabsR2}

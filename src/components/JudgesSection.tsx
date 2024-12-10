@@ -27,7 +27,12 @@ import orcaImg from "@/assets/images/judges/orca.svg";
 import qwImg from "@/assets/images/judges/qw.svg";
 import samImg from "@/assets/images/judges/sam.svg";
 import zerebroImg from "@/assets/images/judges/zerebro.svg";
-
+import nickImg from "@/assets/images/judges/nick.svg";
+import shawImg from "@/assets/images/judges/shaw.svg";
+import somewhereImg from "@/assets/images/judges/somewheresy.svg";
+import tarunImg from "@/assets/images/judges/tarun.svg";
+import tengyanImg from "@/assets/images/judges/tengyan.svg";
+import tolyImg from "@/assets/images/judges/toly.svg";
 
 const judges = [
   {
@@ -38,7 +43,7 @@ const judges = [
   },
   {
     id: "ben",
-    name: "Ben", 
+    name: "Ben",
     role: "Judge",
     image: benImg,
   },
@@ -46,7 +51,7 @@ const judges = [
     id: "buffalu",
     name: "Buffalu",
     role: "Judge",
-    image: buffaluImg, 
+    image: buffaluImg,
   },
   {
     id: "cheryl",
@@ -57,7 +62,7 @@ const judges = [
   {
     id: "craig",
     name: "Craig",
-    role: "Judge", 
+    role: "Judge",
     image: craigImg,
   },
   {
@@ -149,9 +154,45 @@ const judges = [
     name: "Zerebro",
     role: "Judge",
     image: zerebroImg,
-  }
- ];
- 
+  },
+  {
+    id: "nick",
+    name: "Nick",
+    role: "Judge",
+    image: nickImg,
+  },
+  {
+    id: "shaw",
+    name: "Shaw",
+    role: "Judge",
+    image: shawImg,
+  },
+  {
+    id: "somewheresy",
+    name: "Somewhere in Syria",
+    role: "Judge",
+    image: somewhereImg,
+  },
+  {
+    id: "tarun",
+    name: "Tarun",
+    role: "Judge",
+    image: tarunImg,
+  },
+  {
+    id: "tengyan",
+    name: "Tengyan",
+    role: "Judge",
+    image: tengyanImg,
+  },
+  {
+    id: "toly",
+    name: "Toly",
+    role: "Judge",
+    image: tolyImg,
+  },
+];
+
 const JudgesSection = () => {
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { once: true, amount: 0.2 });

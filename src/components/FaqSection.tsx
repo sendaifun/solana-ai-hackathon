@@ -172,4 +172,10 @@ const faqData = [
     content:
       "In the telegram group. Further, feel free to use twitter as a cheat code –– you can directly post your questions as a tweet and just tag @sendaifun, we'll tag relevant experts.",
   },
+
+  {
+    question: "Is there any registration for the hackathon?",
+    content:
+      "No. You can directly join the telegram and start building. You need to directly submit in the submissions form, which opens on 15th November.",
+  },
 ];

@@ -5,7 +5,7 @@ import Image from "next/image";
 export default function PartnershipSection() {
   return (
     <div className="w-full bg-black py-16 px-6 md:px-12">
-      <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-8 items-center">
+      {/* <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-8 items-center">
         <div>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-relishGargler text-white leading-tight">
             LOOKING TO SPONSOR
@@ -26,7 +26,7 @@ export default function PartnershipSection() {
             Get in Touch!
           </button>
         </div>
-      </div>
+      </div> */}
       <div className="flex justify-end">
         <Image
           src={sponsorBottomR}
