@@ -197,13 +197,13 @@ const judges = [
     twitter: "https://x.com/nick_havryliak",
     image: nickImg,
   },
-  {
-    id: "qw",
-    name: "Qiao",
-    role: "Co-founder, AllianceDAO",
-    twitter: "https://x.com/QwQiao",
-    image: qwImg,
-  },
+  // {
+  //   id: "qw",
+  //   name: "Qiao",
+  //   role: "Co-founder, AllianceDAO",
+  //   twitter: "https://x.com/QwQiao",
+  //   image: qwImg,
+  // },
   {
     id: "orca",
     name: "Nathan Davis",
