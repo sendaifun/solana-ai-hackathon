@@ -10,7 +10,7 @@ import { ScrambleText } from "@/components/ui/scramble-text";
 
 const NavLinks = ({ mobile }: { mobile?: boolean }) => (
   <>
-    <Link href="#tracks">
+    <Link href="/#tracks">
       <ScrambleText
         text="Tracks"
         className={`text-gray-300 hover:text-white transition-colors z-30 ${

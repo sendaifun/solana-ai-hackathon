@@ -3,7 +3,7 @@
 import { cn } from "@/lib/utils";
 import { motion, useInView } from "framer-motion";
 import Image from "next/image";
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import PrizeCard from "./ui/PrizeCard";
 import SectionHeading from "./ui/SectionHeading";
 
@@ -415,6 +415,22 @@ const Section3 = () => {
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { once: true });
   const [activeTab, setActiveTab] = useState(0);
+  const [isAutoSwitching, setIsAutoSwitching] = useState(true);
+
+  useEffect(() => {
+    if (!isAutoSwitching) return;
+
+    const interval = setInterval(() => {
+      setActiveTab((prev) => (prev + 1) % trackTabs.length);
+    }, 2500);
+
+    return () => clearInterval(interval);
+  }, [isAutoSwitching]);
+
+  const handleTabClick = (index: number) => {
+    setActiveTab(index);
+    setIsAutoSwitching(false);
+  };
 
   const grandPrizeData = {
     totalPrize: "$60,000",
@@ -472,7 +488,7 @@ const Section3 = () => {
               {trackTabs.map((tab, index) => (
                 <button
                   key={index}
-                  onClick={() => setActiveTab(index)}
+                  onClick={() => handleTabClick(index)}
                   className={cn(
                     "group flex items-center gap-2.5 py-2 transition-colors duration-200",
                     activeTab === index

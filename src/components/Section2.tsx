@@ -47,7 +47,7 @@ const PreviewCards = () => {
       title: 'Opportunities',
       color: '#19FFCE',
       image: opportunitiesImg,
-      description: 'Access to VC/Angel Funding for\nTop-Selected Teams',
+      description: 'Access to VC/Angel Funding for\nTop-Selected Teams at Demo Day',
       gradient: 'from-[#19FFCE]/20 to-transparent',
     },
   ];

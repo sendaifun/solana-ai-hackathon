@@ -118,6 +118,10 @@ const faqData = [
       "You can submit your project in any two tracks of your choice. For example, if you've built a Telegram group chat-based trading AI agent, you can submit it to both the DeFi Agents Track and the Trading Agents Track. All projects are automatically eligible for the Main Track, which represents the best overall project.",
   },
   {
+    question: "Is there a Demo Day?",
+    content: "Yes, however, the exact date and format is not decided due to christmas/new year holidays. But stay tuned, we’ve many exciting surprises 👀"
+  },
+  {
     question: "Do we have to integrate a particular sponsor?",
     content:
       "No, you are free to build whatever you want, as long as it aligns with the theme. However, we strongly recommend integrating our sponsor SDKs/products, as this provides priority support and opens up future collaboration opportunities.",

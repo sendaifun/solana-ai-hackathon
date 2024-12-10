@@ -267,7 +267,7 @@ const JudgesSection = () => {
               animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 20 }}
               transition={{ duration: 0.6, delay: 0.4 }}
             >
-              by top Crypto x AI Leaders:
+              by top Crypto & AI Leaders:
             </motion.p>
           </div>
         </motion.div>
