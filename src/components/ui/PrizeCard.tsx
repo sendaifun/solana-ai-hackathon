@@ -143,7 +143,7 @@ const PrizeCard = ({
                 transition={{ duration: 0.6, delay: 0.7 }}
                 className="mt-auto"
               >
-                <p className="text-gray-500 text-sm mb-4">Supported by</p>
+                <p className="text-gray-500 text-sm mb-4 font-ppsans">Supported by</p>
                 <div className="grid grid-cols-2 gap-6 lg:gap-8">
                   {supporters.map((supporter, index) => {
                     const SupporterLogo = supporter.component;

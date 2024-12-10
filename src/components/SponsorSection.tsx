@@ -43,6 +43,7 @@ import dainLogo from "@/assets/images/framed-svgs/dainLogo.svg";
 import jitoLogo from "@/assets/images/framed-svgs/jitoLogo.svg";
 import delphiDigitalLogo from "@/assets/images/framed-svgs/delphicapLogo.svg";
 import superhostsLogo from "@/assets/images/framed-svgs/superhostsLogo.svg";
+import zerebroLogo from "@/assets/images/framed-svgs/zerebroLogo.svg";
 
 const sponsors = {
   poweredby: [
@@ -69,8 +70,9 @@ const latestSponsorHeirarchy2 = [
 ];
 
 const latestSponsorHeirarchy3 = [
-  { id: "jupiter", name: "Jupiter", image: jitoLogo },
+  { id: "jito", name: "Jito", image: jitoLogo },
   { id: "jupiter", name: "Jupiter", image: jupiterLogo },
+  { id: "Zerebro", name: "Zerebro", image: zerebroLogo },
   { id: "helius", name: "Helius", image: heliusLogo },
   { id: "multicoincap", name: "Multicoin Capital", image: multicoincapLogo },
   { id: "ionet", name: "Io.net", image: ionetLogo },
@@ -96,12 +98,12 @@ const latestSponsorHeirarchy3 = [
 // ];
 
 const latestSponsorHeirarchy5 = [
-  { id: "stGermany", name: "Superteam Germany", image: stGermanyLogo },
-  { id: "stIndia", name: "Superteam India", image: stIndiaLogo },
   { id: "stNigeria", name: "Superteam Nigeria", image: stNigeriaLogo },
   { id: "stTurkey", name: "Superteam Turkey", image: stTurkeyLogo },
-  { id: "stUK", name: "Superteam UK", image: stUKLogo },
   { id: "stVietnam", name: "Superteam Vietnam", image: stVietnamLogo },
+  { id: "stIndia", name: "Superteam India", image: stIndiaLogo },
+  { id: "stGermany", name: "Superteam Germany", image: stGermanyLogo },
+  { id: "stUK", name: "Superteam UK", image: stUKLogo },
   { id: "juicebox", name: "JuiceBox", image: juiceboxLogo },
   { id: "colosseum", name: "Colosseum", image: colosseumLogo },
   { id: "superhosts", name: "Superhosts", image: superhostsLogo },
@@ -200,7 +202,7 @@ const SponsorsSection = () => {
             </div>
 
             <div className="w-full flex flex-col items-center my-4">
-            <h3 className="text-white text-md tracking-wider font-PPSans my-8">
+              <h3 className="text-white text-md tracking-wider font-PPSans my-8">
                 SUPPORTING SPONSORS
               </h3>
               <div className="w-full flex flex-wrap justify-center gap-4">
@@ -214,11 +216,11 @@ const SponsorsSection = () => {
                 ))}
               </div>
             </div>
-
+{/* 
             <div className="w-full flex flex-col items-center my-4">
-              {/* <h3 className="text-white text-md tracking-wider font-PPSans my-8">
+              <h3 className="text-white text-md tracking-wider font-PPSans my-8">
                 SUPPORTING SPONSORS
-              </h3> */}
+              </h3>
               <div className="w-full flex flex-wrap justify-center gap-4">
                 {latestSponsorHeirarchy3.map((sponsor) => (
                   <div
@@ -229,7 +231,7 @@ const SponsorsSection = () => {
                   </div>
                 ))}
               </div>
-            </div>
+            </div> */}
 
             <div className="w-full flex flex-col items-center my-4">
               <h3 className="text-white text-md tracking-wider font-PPSans my-8">

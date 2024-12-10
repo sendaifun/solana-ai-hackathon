@@ -86,18 +86,18 @@ const judges = [
     image: kaitoImg,
   },
   {
-    id: "daryl",
-    name: "Daryl Lau",
-    role: "Investor, Not3lau Capital",
-    twitter: "https://x.com/Daryllautk",
-    image: darylImg,
+    id: "zerebro",
+    name: "Jeffy Yu",
+    role: "Creator of Zerebro",
+    twitter: "https://x.com/jyu_eth",
+    image: zerebroImg,
   },
   {
-    id: "edgar",
-    name: "Edgar Pavlovsky",
-    role: "Paladin and Mtndao",
-    twitter: "https://x.com/edgarpavlovsky",
-    image: edgarImg,
+    id: "karan",
+    name: "Karan",
+    role: "CoFounder, Nous",
+    twitter: "https://x.com/karan4d",
+    image: karanNousImg,
   },
   {
     id: "cheryl",
@@ -121,11 +121,11 @@ const judges = [
     image: somewhereImg,
   },
   {
-    id: "karan",
-    name: "Karan",
-    role: "CoFounder, Nous",
-    twitter: "https://x.com/karan4d",
-    image: karanNousImg,
+    id: "edgar",
+    name: "Edgar Pavlovsky",
+    role: "Paladin and mtnDAO",
+    twitter: "https://x.com/edgarpavlovsky",
+    image: edgarImg,
   },
   {
     id: "delhi",
@@ -184,11 +184,11 @@ const judges = [
     image: benImg,
   },
   {
-    id: "zerebro",
-    name: "Jeffy Yu",
-    role: "Creator of Zerebro",
-    twitter: "https://x.com/jyu_eth",
-    image: zerebroImg,
+    id: "daryl",
+    name: "Daryl Lau",
+    role: "Investor, Not3lau Capital",
+    twitter: "https://x.com/Daryllautk",
+    image: darylImg,
   },
   {
     id: "nick",
@@ -280,7 +280,12 @@ const JudgesSection = () => {
           transition={{ duration: 0.8, delay: 0.6 }}
         >
           {judges.map((judge, index) => (
-            <a key={judge.id} href={judge.twitter} target="_blank" rel="noopener noreferrer">
+            <a
+              key={judge.id}
+              href={judge.twitter}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <motion.div
                 key={judge.id}
                 className="relative group"

@@ -147,7 +147,7 @@ const TrackCard = ({ data }: { data: (typeof trackData)[number] }) => (
             <div className='h-6 w-24 bg-gray-700' />
           </div>
           <div>
-            <p className='text-gray-500 mb-4'>Supported by</p>
+            <p className='text-gray-500 mb-4 font-ppsans'>Supported by</p>
             <div className='grid grid-cols-2 gap-6'>
               {[1, 2, 3, 4].map((i) => (
                 <div key={i} className='h-8 bg-gray-700' />
