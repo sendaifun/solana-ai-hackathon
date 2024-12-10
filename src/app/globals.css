@@ -30,7 +30,7 @@ html,
 body {
   width: '100vw';
   overflow-x: hidden;
-  scroll-behavior: smooth;
+  scroll-behavior: smooth !important;
 }
 
 @layer base {
@@ -108,3 +108,4 @@ body {
  .scrollbar-hide::-webkit-scrollbar {
   display: none; /* Chrome, Safari and Opera */
  }
+ 
