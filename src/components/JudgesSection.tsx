@@ -110,7 +110,7 @@ const judges = [
     id: "eclipse",
     name: "Vijay Chetty",
     role: "CEO, Eclipse",
-    twitter: "https://x.com/0xLiquidity",
+    twitter: "https://x.com/0xLitquidity",
     image: eclipseImg,
   },
   {
@@ -159,7 +159,7 @@ const judges = [
     id: "dynamic",
     name: "Itai Turbahn",
     role: "Co-founder, Dynamic",
-    twitter: "https://x.com/dynamic_xyz",
+    twitter: "https://x.com/turbahn",
     image: dynamicImg,
   },
   {
