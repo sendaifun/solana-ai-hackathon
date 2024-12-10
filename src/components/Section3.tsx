@@ -93,7 +93,9 @@ const crossmintLogoComp = () => (
   <Image src={crossmintLogo} alt="Crossmint Logo" />
 );
 
-const zerebroLogoComp = () => <Image className="w-32 object-contain" src={zerebroLogo} alt="Zerebro Logo" />;
+const zerebroLogoComp = () => (
+  <Image className="w-32 object-contain" src={zerebroLogo} alt="Zerebro Logo" />
+);
 // // Use these logos in the components
 // const logos = [
 //   { component: SolanaFoundationLogo },
@@ -260,8 +262,13 @@ const tracksPrizeData = [
     // supporters: autonomoschatSupporters,
     accentColor: "#1BE1FF",
     title: "Agent Aggregators",
-    description:
-      "Build sophisticated chat interfaces similar to ChatGPT/Perplexity. Integrate with social platforms and apps, enable actionable interactions, and orchestrate 600+ live AI models/agents via API. Support 1:1 communication through text, audio, and video channels while maintaining seamless user experience.",
+    description: `Build chat-based agents (e.g., a ChatGPT or Perplexity-style interface):
+
+— Connect to Social/Apps
+— Make it actionable 
+— Orchestrate 600+ live models/agents via API
+
+these can be 1:1 text, audio, or video-based.`,
   },
   {
     totalPrize: "$15,000",
@@ -286,7 +293,11 @@ const tracksPrizeData = [
     accentColor: "#FF1B1B",
     title: "Conversational Agents",
     description:
-      "Build engaging public-facing agents for 1-to-many interactions. Create immersive 3D avatars & custom voices with Holoworld, generate autonomous text-to-video content, and integrate livestreaming on X. Support multi-modal interactions via text, audio and video channels while maintaining real-time engagement with audiences at scale.",
+     `Build public-facing agents (e.g., truth_terminal); these can be 1 to many text, audio, or video-based agents.
+
+- Create 3D avatars/custom voices
+- Generate autonomous text-to-video
+- Integrate Livestream on X`,
   },
   {
     totalPrize: "$27,500",
@@ -316,7 +327,7 @@ const tracksPrizeData = [
     accentColor: "#00FF85",
     title: "Agent Tooling",
     description:
-      "Build engaging public-facing agents for 1-to-many interactions. Create immersive 3D avatars & custom voices with Holoworld, generate autonomous text-to-video content, and integrate livestreaming on X. Support multi-modal interactions via text, audio and video channels while maintaining real-time engagement with audiences at scale.",
+      "Build the next-gen infra or frameworks for AI Agents on Solana (eg. Eliza) –– these can also be tools like Proof of Sentience or workflow automations.",
   },
   {
     totalPrize: "$20,000",
