@@ -71,7 +71,11 @@ const arciumLogoComp = () => <Image src={arciumLogo} alt="Arcium Logo" />;
 const dainLogoComp = () => <Image src={dainLogo} alt="Dain Logo" />;
 
 const litProtocolLogoComp = () => (
-  <Image src={litProtocolLogo} alt="Lit Protocol Logo" className="w-8 h-8 object-contain"/>
+  <Image
+    src={litProtocolLogo}
+    alt="Lit Protocol Logo"
+    className="w-8 h-8 object-contain"
+  />
 );
 
 const emblemvaultLogoComp = () => (
@@ -253,7 +257,7 @@ const tracksPrizeData = [
     accentColor: "#1BE1FF",
     title: "Agent Aggregators",
     description:
-      "Build AI agents that can aggregate and orchestrate multiple specialized agents to solve complex tasks.",
+      "Build chat-based agents (e.g., a ChatGPT or Perplexity-style interface)",
   },
   {
     totalPrize: "$15,000",
@@ -278,7 +282,7 @@ const tracksPrizeData = [
     accentColor: "#FF1B1B",
     title: "Conversational Agents",
     description:
-      "Create AI agents that can engage in natural language conversations and assist users effectively.",
+      "Build public-facing agents (e.g., Truth terminal), these can be 1 to many text, audio, or video-based agents.",
   },
   {
     totalPrize: "$27,500",
@@ -308,7 +312,7 @@ const tracksPrizeData = [
     accentColor: "#00FF85",
     title: "Agent Tooling",
     description:
-      "Develop tools and infrastructure to help build, test, and deploy AI agents on Solana.",
+      "Build the next-gen infra or frameworks for AI Agents on Solana (eg. Eliza)",
   },
   {
     totalPrize: "$20,000",
@@ -333,7 +337,7 @@ const tracksPrizeData = [
     accentColor: "#A855F7",
     title: "Agent Infra",
     description:
-      "Build infrastructure components that enable AI agents to interact with the Solana blockchain.",
+      "Build tools for AI agents to launch and manage token liquidity — covering token&apos;s lifecycle: from fair token launches to liquidity provision (and locking), and stake-to-earn mechanisms.",
   },
   {
     totalPrize: "$27,500",
@@ -363,7 +367,7 @@ const tracksPrizeData = [
     accentColor: "#F59E0B",
     title: "DeFi Agents",
     description:
-      "Create AI agents that can interact with DeFi protocols and execute complex financial strategies.",
+      "Build DeFi agents which can interact and manage positions across Solana DeFi protocols like lending/borrowing, perps trading, staking, and more.",
   },
   {
     totalPrize: "$20,000",
@@ -388,7 +392,7 @@ const tracksPrizeData = [
     accentColor: "#F59E0B",
     title: "DeFi Agents",
     description:
-      "Create AI agents that can interact with DeFi protocols and execute complex financial strategies.",
+      "Build AI Agents specifically for spot trading (for eg. agents copy trading analysing specific cluster of wallets) –– the quality of trading strategies and medium of execution matters.",
   },
 ];
 
@@ -421,6 +425,7 @@ const Section3 = () => {
         progressPercentage: 60,
       },
     ],
+    description: "Build the best overall AI Agent product",
     supporters: grandPrizeSupporters,
     accentColor: "#1BE1FF",
   };

@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import { motion } from 'framer-motion';
-import { ScrambleText } from './scramble-text';
-import { ComponentType } from 'react';
+import { motion } from "framer-motion";
+import { ScrambleText } from "./scramble-text";
+import { ComponentType } from "react";
 
 interface Prize {
   title: string;
@@ -22,6 +22,7 @@ interface PrizeCardProps {
     logo: ComponentType;
   };
   prizes: Prize[];
+  description?: string;
   supporters?: Supporter[];
   accentColor?: string;
   className?: string;
@@ -32,9 +33,10 @@ const PrizeCard = ({
   totalPrize,
   mainSponsor,
   prizes,
+  description,
   supporters = [],
-  accentColor = '#1BE1FF',
-  className = '',
+  accentColor = "#1BE1FF",
+  className = "",
   isInView = true,
 }: PrizeCardProps) => {
   const MainSponsorLogo = mainSponsor.logo;
@@ -57,7 +59,7 @@ const PrizeCard = ({
     >
       {/* Accent border on the left */}
       <motion.div
-        className='absolute left-0 top-0 bottom-0 w-1 z-10'
+        className="absolute left-0 top-0 bottom-0 w-1 z-10"
         style={{ backgroundColor: accentColor }}
         initial={{ scaleY: 0 }}
         animate={isInView ? { scaleY: 1 } : { scaleY: 0 }}
@@ -66,7 +68,7 @@ const PrizeCard = ({
 
       {/* Animated gradient background */}
       <motion.div
-        className='absolute inset-0 z-0'
+        className="absolute inset-0 z-0"
         style={{
           background: `radial-gradient(circle at 0% 50%, ${adjustColorOpacity(
             accentColor,
@@ -80,12 +82,12 @@ const PrizeCard = ({
         transition={{
           duration: 4,
           repeat: Infinity,
-          ease: 'easeInOut',
+          ease: "easeInOut",
         }}
       />
 
       <motion.div
-        className='relative rounded-lg p-8 md:p-12 cyberpunk-card'
+        className="relative rounded-lg p-8 md:p-12 cyberpunk-card"
         style={{
           background: `linear-gradient(135deg, 
             #0A0B0D 0%, 
@@ -97,28 +99,38 @@ const PrizeCard = ({
         animate={isInView ? { opacity: 1 } : { opacity: 0 }}
         transition={{ duration: 0.6, delay: 0.4 }}
       >
-        <div className='flex flex-col md:flex-row gap-12 justify-between items-top'>
+        <div className="flex flex-col md:flex-row gap-12 justify-between items-top">
           {/* Left Column */}
-          <div className='flex flex-col gap-8 md:gap-12 w-full'>
+          <div className="flex flex-col gap-8 md:gap-12 w-full">
             {/* Header Section */}
             <motion.div
-              className='flex flex-col gap-4 md:gap-6 justify-start lg:justify-start items-start'
+              className="flex flex-col gap-4 md:gap-6 justify-start lg:justify-start items-start"
               initial={{ opacity: 0, x: -20 }}
               animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
               transition={{ duration: 0.6, delay: 0.5 }}
             >
               <ScrambleText
                 text={totalPrize}
-                className='text-3xl md:text-4xl lg:text-6xl font-relish font-bold text-white'
+                className="text-3xl md:text-4xl lg:text-6xl font-relish font-bold text-white"
               />
-              <div className='flex items-center gap-2'>
-                <span className='font-ppsans text-gray-400 text-xs lg:text-sm'>
+              <div className="flex items-center gap-2">
+                <span className="font-ppsans text-gray-400 text-xs lg:text-sm">
                   {mainSponsor.title} by
                 </span>
-                <div className='text-gray-400 hover:text-gray-300 transition-colors'>
+                <div className="text-gray-400 hover:text-gray-300 transition-colors">
                   <MainSponsorLogo />
                 </div>
               </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+              transition={{ duration: 0.6, delay: 0.7 }}
+              className="mt-auto font-ppsans text-gray-400 text-xs lg:text-sm"
+            >
+              {" "}
+              {description}{" "}
             </motion.div>
 
             {/* Supporters section */}
@@ -129,10 +141,10 @@ const PrizeCard = ({
                   isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }
                 }
                 transition={{ duration: 0.6, delay: 0.7 }}
-                className='mt-auto'
+                className="mt-auto"
               >
-                <p className='text-gray-500 text-sm mb-4'>Supported by</p>
-                <div className='grid grid-cols-2 gap-6 lg:gap-8'>
+                <p className="text-gray-500 text-sm mb-4">Supported by</p>
+                <div className="grid grid-cols-2 gap-6 lg:gap-8">
                   {supporters.map((supporter, index) => {
                     const SupporterLogo = supporter.component;
                     return (
@@ -145,7 +157,7 @@ const PrizeCard = ({
                             : { opacity: 0, y: 10 }
                         }
                         transition={{ duration: 0.4, delay: 0.8 + index * 0.1 }}
-                        className='text-gray-400 hover:text-gray-300 transition-colors'
+                        className="text-gray-400 hover:text-gray-300 transition-colors"
                       >
                         <SupporterLogo />
                       </motion.div>
@@ -158,7 +170,7 @@ const PrizeCard = ({
 
           {/* Right Column - Prize Details */}
           <motion.div
-            className='flex flex-col gap-2 md:gap-4 h-full max-w-[320px] w-full'
+            className="flex flex-col gap-2 md:gap-4 h-full max-w-[320px] w-full"
             initial={{ opacity: 0, x: 20 }}
             animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 20 }}
             transition={{ duration: 0.6, delay: 0.6 }}
@@ -166,13 +178,13 @@ const PrizeCard = ({
             {prizes.map((prize, index) => (
               <div
                 key={index}
-                className='flex items-center justify-between w-full'
+                className="flex items-center justify-between w-full"
               >
-                <span className='text-white text-base lg:text-lg font-ppsans'>
+                <span className="text-white text-base lg:text-lg font-ppsans">
                   {prize.title}
                 </span>
-                <div className='flex items-center gap-4'>
-                  <span className='text-white text-base lg:text-lg font-relish'>
+                <div className="flex items-center gap-4">
+                  <span className="text-white text-base lg:text-lg font-relish">
                     {prize.amount}
                   </span>
                 </div>
@@ -214,7 +226,7 @@ const PrizeCard = ({
         }
 
         .cyberpunk-card::before {
-          content: '';
+          content: "";
           position: absolute;
           inset: 0;
           background: linear-gradient(
