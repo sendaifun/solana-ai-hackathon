@@ -88,6 +88,8 @@ const Footer = () => {
                 {navigation.organizers.map((item) => (
                   <li key={item.name}>
                     <a
+                      target="_blank"
+                      rel="noopener noreferrer"
                       href={item.href}
                       className="text-gray-500 hover:text-gray-400"
                     >
@@ -106,19 +108,21 @@ const Footer = () => {
             <br />© All Rights Reserved
           </div>
           <div className="flex gap-2">
-            <div className="flex flex-col justify-right items-center gap-2 text-gray-600 font-PPSans">
-              <span>crafted with</span>
-              <div className="flex gap-2">
-                <span>crates of</span>
-                <Image
-                  src={juiceBoxLogo}
-                  alt="Juicebox"
-                  width={80}
-                  height={20}
-                  className="opacity-50"
-                />
+            <a href="https://x.com/juicebox_it">
+              <div className="flex flex-col justify-right items-center gap-2 text-gray-600 font-PPSans">
+                <span>crafted with</span>
+                <div className="flex gap-2">
+                  <span>crates of</span>
+                  <Image
+                    src={juiceBoxLogo}
+                    alt="Juicebox"
+                    width={80}
+                    height={20}
+                    className="opacity-50"
+                  />
+                </div>
               </div>
-            </div>
+            </a>
             <div className="w-1 border-r border-[#787B7E] bg-[#787B7E]"></div>
           </div>
         </div>

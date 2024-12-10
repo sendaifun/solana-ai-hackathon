@@ -25,7 +25,7 @@ const trackData = [
   {
     id: 1,
     title: 'TRACKS',
-    subtitle: ['Build the best overall AI', 'Agents to win the Grand Prize'],
+    subtitle: ['Build the best overall AI', 'Agents to win the Main Prize'],
     amount: '$40,000',
     color: 'yellow-400',
     borderColor: 'bg-yellow-400',
@@ -160,7 +160,7 @@ const TrackCard = ({ data }: { data: (typeof trackData)[number] }) => (
           <div className='flex items-center justify-between gap-4'>
             <div className='flex items-center gap-3'>
               <Trophy className='h-6 w-6 text-white' />
-              <span className='text-white text-xl'>First Grand Prize</span>
+              <span className='text-white text-xl'>First Main Prize</span>
             </div>
             <div className='flex items-center gap-4'>
               <div className='w-32 h-2 bg-gray-800'>

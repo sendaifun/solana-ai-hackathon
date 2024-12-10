@@ -31,7 +31,7 @@ import nickImg from "@/assets/images/judges/nick.svg";
 import shawImg from "@/assets/images/judges/shaw.svg";
 import somewhereImg from "@/assets/images/judges/somewheresy.svg";
 import tarunImg from "@/assets/images/judges/tarun.svg";
-import tengyanImg from "@/assets/images/judges/tengyan.svg";
+import tengyanImg from "@/assets/images/judges/tengYan.svg";
 import tolyImg from "@/assets/images/judges/toly.svg";
 import tongImg from "@/assets/images/judges/tong.svg";
 
@@ -280,7 +280,7 @@ const JudgesSection = () => {
           transition={{ duration: 0.8, delay: 0.6 }}
         >
           {judges.map((judge, index) => (
-            <a href={judge.twitter} target="_blank" rel="noopener noreferrer">
+            <a key={judge.id} href={judge.twitter} target="_blank" rel="noopener noreferrer">
               <motion.div
                 key={judge.id}
                 className="relative group"
