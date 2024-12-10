@@ -144,7 +144,7 @@ const faqData = [
   {
     question: "Who will own the IP of the project?",
     content:
-      "It's 100% yours. Unless you raise funds or grant advisory equity during the course of the hackathon, you retain complete responsibility for your idea and project IP.",
+      "It's 100% yours. You retain complete responsibility for your idea and project IP.",
   },
   {
     question: "Where can I access all mentorship and meet other teams?",
