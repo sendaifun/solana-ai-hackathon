@@ -40,6 +40,9 @@ import paladinLogo from "@/assets/images/framed-svgs/paladinLogo.svg";
 import emblemvaultLogo from "@/assets/images/framed-svgs/emblemvaultLogo.svg";
 import litProtocolLogo from "@/assets/images/framed-svgs/litProtocolLogo.svg";
 import dainLogo from "@/assets/images/framed-svgs/dainLogo.svg";
+import jitoLogo from "@/assets/images/framed-svgs/jitoLogo.svg";
+import delphiDigitalLogo from "@/assets/images/framed-svgs/delphicapLogo.svg";
+import superhostsLogo from "@/assets/images/framed-svgs/superhostsLogo.svg";
 
 const sponsors = {
   poweredby: [
@@ -66,7 +69,7 @@ const latestSponsorHeirarchy2 = [
 ];
 
 const latestSponsorHeirarchy3 = [
-  // { id: "jupiter", name: "Jupiter", image: jitoLogo },
+  { id: "jupiter", name: "Jupiter", image: jitoLogo },
   { id: "jupiter", name: "Jupiter", image: jupiterLogo },
   { id: "helius", name: "Helius", image: heliusLogo },
   { id: "multicoincap", name: "Multicoin Capital", image: multicoincapLogo },
@@ -94,8 +97,8 @@ const latestSponsorHeirarchy5 = [
   { id: "stVietnam", name: "Superteam Vietnam", image: stVietnamLogo },
   { id: "juicebox", name: "JuiceBox", image: juiceboxLogo },
   { id: "colosseum", name: "Colosseum", image: colosseumLogo },
-  // { id: "superhosts", name: "Superhosts", image: superhostsLogo },
-  // { id: "delphiDigital", name: "Delphi Digital", image: delphiDigitalLogo },
+  { id: "superhosts", name: "Superhosts", image: superhostsLogo },
+  { id: "delphiDigital", name: "Delphi Digital", image: delphiDigitalLogo },
 ];
 
 const SponsorCard = ({ image, name }: { image: string; name: string }) => (
