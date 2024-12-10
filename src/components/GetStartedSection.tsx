@@ -151,7 +151,7 @@ const GetStartedSection = () => {
 
   return (
     <div className="bg-black" ref={sectionRef}>
-      <div className="max-w-7xl mx-auto px-4">
+      <div className="max-w-7xl mx-auto px-4 mt-32 md:mt-8 sm:mt-8">
         {/* Animated Title Section */}
         <motion.div
           className="text-center mb-10 md:mb-20"

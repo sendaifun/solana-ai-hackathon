@@ -337,7 +337,8 @@ const tracksPrizeData = [
     accentColor: "#A855F7",
     title: "Agent Infra",
     description:
-      "Build tools for AI agents to launch and manage token liquidity — covering token&apos;s lifecycle: from fair token launches to liquidity provision (and locking), and stake-to-earn mechanisms.",
+      "Build tools for AI agents to launch and manage token liquidity"
+      //  fair token launches to liquidity provision (and locking), and stake-to-earn mechanisms.",
   },
   {
     totalPrize: "$27,500",
@@ -449,7 +450,7 @@ const Section3 = () => {
             subtitle={["Build the coolest AI", " Agents across 6 Themes"]}
           />
           <div className="flex flex-col gap-12">
-            <div className="flex space-x-12 overflow-x-scroll">
+            <div className="flex space-x-12 overflow-x-scroll scrollbar-hide">
               {trackTabs.map((tab, index) => (
                 <button
                   key={index}
