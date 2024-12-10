@@ -15,6 +15,8 @@ const ppSans = localFont({
 export const metadata: Metadata = {
   title: 'Solana AI Hackathon',
   description: '10th - 23rd Dec. global hackathon. $100k+ in prizes',
+  keywords: ['solana', 'hackathon', 'ai', 'solana ai hackathon'],
+  authors: [{ name: 'SendAI', url: 'https://www.sendai.fun' }],
   openGraph: {
     title: 'Solana AI Hackathon',
     description: '10th - 23rd Dec. global hackathon. $100k+ in prizes',
@@ -22,7 +24,7 @@ export const metadata: Metadata = {
     siteName: 'Solana AI Hackathon',
     images: [
       {
-        url: '/og.jpeg',
+        url: '/og.png',
         width: 1200,
         height: 630,
         alt: 'Solana AI Hackathon',
@@ -35,8 +37,9 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Solana AI Hackathon',
     description: '10th - 23rd Dec. global hackathon. $100k+ in prizes',
-    images: ['/og.jpeg'],
+    images: ['/og.png'],
   },
+  metadataBase: new URL('https://solanaaihackathon.com'),
 };
 
 export default function RootLayout({
