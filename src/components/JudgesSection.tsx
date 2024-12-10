@@ -27,131 +27,206 @@ import orcaImg from "@/assets/images/judges/orca.svg";
 import qwImg from "@/assets/images/judges/qw.svg";
 import samImg from "@/assets/images/judges/sam.svg";
 import zerebroImg from "@/assets/images/judges/zerebro.svg";
-
+import nickImg from "@/assets/images/judges/nick.svg";
+import shawImg from "@/assets/images/judges/shaw.svg";
+import somewhereImg from "@/assets/images/judges/somewheresy.svg";
+import tarunImg from "@/assets/images/judges/tarun.svg";
+import tengyanImg from "@/assets/images/judges/tengyan.svg";
+import tolyImg from "@/assets/images/judges/toly.svg";
+import tongImg from "@/assets/images/judges/tong.svg";
 
 const judges = [
   {
-    id: "alfonso",
-    name: "Alfonso",
-    role: "Partner @DragonFly",
-    image: alfonsoImg,
-  },
-  {
-    id: "ben",
-    name: "Ben", 
-    role: "Judge",
-    image: benImg,
-  },
-  {
-    id: "buffalu",
-    name: "Buffalu",
-    role: "Judge",
-    image: buffaluImg, 
-  },
-  {
-    id: "cheryl",
-    name: "Cheryl Chan",
-    role: "Judge",
-    image: cherylImg,
-  },
-  {
-    id: "craig",
-    name: "Craig",
-    role: "Judge", 
-    image: craigImg,
-  },
-  {
-    id: "daryl",
-    name: "Daryl",
-    role: "Judge",
-    image: darylImg,
-  },
-  {
-    id: "delhi",
-    name: "Delhi",
-    role: "Judge",
-    image: delhiImg,
-  },
-  {
-    id: "dynamic",
-    name: "Dynamic",
-    role: "Judge",
-    image: dynamicImg,
-  },
-  {
-    id: "eclipse",
-    name: "Eclipse",
-    role: "Judge",
-    image: eclipseImg,
-  },
-  {
-    id: "edgar",
-    name: "Edgar",
-    role: "Judge",
-    image: edgarImg,
-  },
-  {
-    id: "kaito",
-    name: "Kaito",
-    role: "Judge",
-    image: kaitoImg,
-  },
-  {
-    id: "kamran",
-    name: "Kamran",
-    role: "Judge",
-    image: kamranImg,
-  },
-  {
-    id: "karan",
-    name: "Karan Nous",
-    role: "Judge",
-    image: karanNousImg,
+    id: "anatoly",
+    name: "Anatoly Yakovenko",
+    role: "Co-Founder, Solana",
+    twitter: "https://x.com/aeyakovenko",
+    image: tolyImg,
   },
   {
     id: "kyle",
-    name: "Kyle",
-    role: "Judge",
+    name: "Kyle Samani",
+    role: "Managing Partner, Multicoin",
+    twitter: "https://x.com/KyleSamani",
     image: kyleImg,
   },
   {
-    id: "marginif",
-    name: "Marginif",
-    role: "Judge",
-    image: marginifImg,
+    id: "shaw",
+    name: "Shaw",
+    role: "Co-Founder, ai16z and elizaOS",
+    twitter: "https://x.com/shawmakesmagic",
+    image: shawImg,
   },
   {
     id: "mert",
     name: "Mert",
-    role: "Judge",
+    role: "Co-Founder, Helius",
+    twitter: "https://x.com/0xMert_",
     image: mertImg,
   },
   {
-    id: "orca",
-    name: "Orca",
-    role: "Judge",
-    image: orcaImg,
+    id: "tarun",
+    name: "Tarun Chitra",
+    role: "Robot Ventures and Gauntlet",
+    twitter: "https://x.com/tarunchitra",
+    image: tarunImg,
   },
   {
-    id: "qw",
-    name: "QW",
-    role: "Judge",
-    image: qwImg,
+    id: "buffalu",
+    name: "Lucas Bruder",
+    role: "Co-founder, Jito",
+    twitter: "https://x.com/buffalu__",
+    image: buffaluImg,
+  },
+  {
+    id: "sandra",
+    name: "Sandra Leow",
+    role: "Research Partner, Kaito",
+    twitter: "https://x.com/sandraaleow",
+    image: kaitoImg,
+  },
+  {
+    id: "daryl",
+    name: "Daryl Lau",
+    role: "Investor, Not3lau Capital",
+    twitter: "https://x.com/Daryllautk",
+    image: darylImg,
+  },
+  {
+    id: "edgar",
+    name: "Edgar Pavlovsky",
+    role: "Paladin and Mtndao",
+    twitter: "https://x.com/edgarpavlovsky",
+    image: edgarImg,
+  },
+  {
+    id: "cheryl",
+    name: "Cheryl Chan",
+    role: "Partner, Dragonfly Capital",
+    twitter: "https://x.com/cheryldchan",
+    image: cherylImg,
+  },
+  {
+    id: "eclipse",
+    name: "Vijay Chetty",
+    role: "CEO, Eclipse",
+    twitter: "https://x.com/0xLiquidity",
+    image: eclipseImg,
+  },
+  {
+    id: "somewhere",
+    name: "Somewheresy",
+    role: "CEO, Somewhere Systems",
+    twitter: "https://x.com/somewheresystem",
+    image: somewhereImg,
+  },
+  {
+    id: "karan",
+    name: "Karan",
+    role: "CoFounder, Nous",
+    twitter: "https://x.com/karan4d",
+    image: karanNousImg,
+  },
+  {
+    id: "delhi",
+    name: "Alex Golding",
+    role: "VC, Delphi Labs",
+    twitter: "https://x.com/HelpedHope",
+    image: delhiImg,
+  },
+  {
+    id: "tengyan",
+    name: "Teng Yan",
+    role: "Founder, Chain of Thought",
+    twitter: "https://x.com/0xprismatic?s=21&t=c",
+    image: tengyanImg,
+  },
+  {
+    id: "craig",
+    name: "Craig Burel",
+    role: "General Partner, Reciprocal Ventures",
+    twitter: "https://x.com/CraigBurel",
+    image: craigImg,
   },
   {
     id: "sam",
-    name: "Sam",
-    role: "Judge",
+    name: "Sam Hogan",
+    role: "Co-founder, Kuzco",
+    twitter: "https://x.com/0xSamHogan",
     image: samImg,
   },
   {
+    id: "dynamic",
+    name: "Itai Turbahn",
+    role: "Co-founder, Dynamic",
+    twitter: "https://x.com/dynamic_xyz",
+    image: dynamicImg,
+  },
+  {
+    id: "alfonso",
+    name: "Alfonso Gomez Jordana",
+    role: "Co-founder, Crosssmint",
+    twitter: "https://x.com/alfongj",
+    image: alfonsoImg,
+  },
+  {
+    id: "kamran",
+    name: "Kamran",
+    role: "Co-Founder and GP MH Ventures",
+    twitter: "https://x.com/0xKDOT",
+    image: kamranImg,
+  },
+  {
+    id: "ben",
+    name: "Ben Chow",
+    role: "Co-founder, Meteora",
+    twitter: "https://x.com/hellochow",
+    image: benImg,
+  },
+  {
     id: "zerebro",
-    name: "Zerebro",
-    role: "Judge",
+    name: "Jeffy Yu",
+    role: "Creator of Zerebro",
+    twitter: "https://x.com/jyu_eth",
     image: zerebroImg,
-  }
- ];
- 
+  },
+  {
+    id: "nick",
+    name: "Nick Havryliak",
+    role: "Co-founder, Assisterr",
+    twitter: "https://x.com/nick_havryliak",
+    image: nickImg,
+  },
+  {
+    id: "qw",
+    name: "Qiao",
+    role: "Co-founder, AllianceDAO",
+    twitter: "https://x.com/QwQiao",
+    image: qwImg,
+  },
+  {
+    id: "orca",
+    name: "Nathan Davis",
+    role: "CEO, Orca",
+    twitter: "https://x.com/nthndvs",
+    image: orcaImg,
+  },
+  {
+    id: "marginif",
+    name: "Jakob",
+    role: "Temporal and MarginFi",
+    twitter: "https://x.com/libsvm",
+    image: marginifImg,
+  },
+  {
+    id: "tong",
+    name: "Tong",
+    role: "Founder, Hologram",
+    twitter: "https://x.com/tong0x?s=21&t=c5eqG",
+    image: tongImg,
+  },
+];
+
 const JudgesSection = () => {
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { once: true, amount: 0.2 });
@@ -205,83 +280,85 @@ const JudgesSection = () => {
           transition={{ duration: 0.8, delay: 0.6 }}
         >
           {judges.map((judge, index) => (
-            <motion.div
-              key={judge.id}
-              className="relative group"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 20 }}
-              transition={{ duration: 0.5, delay: 0.8 + index * 0.1 }}
-              style={
-                {
-                  "--hover-color": getColors(index),
-                } as React.CSSProperties
-              }
-            >
-              {/* Glowing border effect */}
-              <div className="absolute inset-0 bg-[#1E1E1E] rounded-lg transition-all duration-300 group-hover:bg-[var(--hover-color)] opacity-0 group-hover:opacity-10 blur-xl"></div>
+            <a href={judge.twitter} target="_blank" rel="noopener noreferrer">
+              <motion.div
+                key={judge.id}
+                className="relative group"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 20 }}
+                transition={{ duration: 0.5, delay: 0.8 + index * 0.1 }}
+                style={
+                  {
+                    "--hover-color": getColors(index),
+                  } as React.CSSProperties
+                }
+              >
+                {/* Glowing border effect */}
+                <div className="absolute inset-0 bg-[#1E1E1E] rounded-lg transition-all duration-300 group-hover:bg-[var(--hover-color)] opacity-0 group-hover:opacity-10 blur-xl"></div>
 
-              {/* Card Container */}
-              <div className="relative bg-[#1E1E1E] rounded-lg overflow-hidden">
-                {/* Top accent line */}
-                <div className="absolute top-0 left-0 w-full h-[2px] bg-[#353637] transition-all duration-300 group-hover:bg-[var(--hover-color)]"></div>
+                {/* Card Container */}
+                <div className="relative bg-[#1E1E1E] rounded-lg overflow-hidden">
+                  {/* Top accent line */}
+                  <div className="absolute top-0 left-0 w-full h-[2px] bg-[#353637] transition-all duration-300 group-hover:bg-[var(--hover-color)]"></div>
 
-                {/* Corner accents */}
-                <div className="absolute top-0 left-0 w-4 h-[2px] bg-[#353637] transform -rotate-45 origin-top-left transition-all duration-300 group-hover:bg-[var(--hover-color)] group-hover:w-6"></div>
-                <div className="absolute top-0 right-0 w-4 h-[2px] bg-[#353637] transform rotate-45 origin-top-right transition-all duration-300 group-hover:bg-[var(--hover-color)] group-hover:w-6"></div>
+                  {/* Corner accents */}
+                  <div className="absolute top-0 left-0 w-4 h-[2px] bg-[#353637] transform -rotate-45 origin-top-left transition-all duration-300 group-hover:bg-[var(--hover-color)] group-hover:w-6"></div>
+                  <div className="absolute top-0 right-0 w-4 h-[2px] bg-[#353637] transform rotate-45 origin-top-right transition-all duration-300 group-hover:bg-[var(--hover-color)] group-hover:w-6"></div>
 
-                {/* Image Container */}
-                <div className="aspect-square overflow-hidden border-2 border-[#353637] transition-all duration-300 group-hover:border-[var(--hover-color)]">
-                  <Image
-                    src={judge.image}
-                    alt={judge.name}
-                    className="w-full h-full object-cover grayscale brightness-90 transition-all duration-500 group-hover:grayscale-0 group-hover:brightness-110 group-hover:scale-110"
-                  />
+                  {/* Image Container */}
+                  <div className="aspect-square overflow-hidden border-2 border-[#353637] transition-all duration-300 group-hover:border-[var(--hover-color)]">
+                    <Image
+                      src={judge.image}
+                      alt={judge.name}
+                      className="w-full h-full object-cover grayscale brightness-90 transition-all duration-500 group-hover:grayscale-0 group-hover:brightness-110 group-hover:scale-110"
+                    />
 
-                  {/* Overlay gradient */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#1E1E1E] via-transparent to-transparent opacity-50 transition-opacity duration-300 group-hover:opacity-30"></div>
-                </div>
-
-                {/* Info Section */}
-                <div className="relative mt-3 p-2 flex items-center gap-2 bg-[#1E1E1E]">
-                  <div className="flex-grow">
-                    <h3 className="text-white font-mono text-sm transition-colors duration-300 group-hover:text-[var(--hover-color)]">
-                      {judge.name}
-                    </h3>
-                    <p className="text-gray-500 font-mono text-xs transition-colors duration-300 group-hover:text-[var(--hover-color)] opacity-60">
-                      {judge.role}
-                    </p>
+                    {/* Overlay gradient */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#1E1E1E] via-transparent to-transparent opacity-50 transition-opacity duration-300 group-hover:opacity-30"></div>
                   </div>
 
-                  {/* Arrow Icon */}
-                  <motion.div
-                    className="ml-auto transform transition-all duration-300 group-hover:translate-x-1"
-                    whileHover={{ scale: 1.1 }}
-                  >
-                    <svg
-                      width="32"
-                      height="32"
-                      viewBox="0 0 45 45"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="transition-colors duration-300 text-[#787B7E] group-hover:text-[var(--hover-color)]"
+                  {/* Info Section */}
+                  <div className="relative mt-3 p-2 flex items-center gap-2 bg-[#1E1E1E]">
+                    <div className="flex-grow">
+                      <h3 className="text-white font-mono text-sm transition-colors duration-300 group-hover:text-[var(--hover-color)]">
+                        {judge.name}
+                      </h3>
+                      <p className="text-gray-500 font-mono text-xs transition-colors duration-300 group-hover:text-[var(--hover-color)] opacity-60">
+                        {judge.role}
+                      </p>
+                    </div>
+
+                    {/* Arrow Icon */}
+                    <motion.div
+                      className="ml-auto transform transition-all duration-300 group-hover:translate-x-1"
+                      whileHover={{ scale: 1.1 }}
                     >
-                      <path
-                        d="M1.44057 44.4354L0.530273 43.525L21.4415 22.6138L0.530273 1.70261L1.44057 0.792236L23.2621 22.6138L1.44057 44.4354Z"
-                        fill="currentColor"
-                        fillRule="evenodd"
-                        clipRule="evenodd"
-                      />
-                      <path
-                        d="M22.8008 44.4354L21.9033 43.525L42.8146 22.6138L21.9033 1.70261L22.8008 0.792236L44.6223 22.6138L22.8008 44.4354Z"
-                        fill="currentColor"
-                        fillRule="evenodd"
-                        clipRule="evenodd"
-                      />
-                    </svg>
-                  </motion.div>
+                      <svg
+                        width="32"
+                        height="32"
+                        viewBox="0 0 45 45"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="transition-colors duration-300 text-[#787B7E] group-hover:text-[var(--hover-color)]"
+                      >
+                        <path
+                          d="M1.44057 44.4354L0.530273 43.525L21.4415 22.6138L0.530273 1.70261L1.44057 0.792236L23.2621 22.6138L1.44057 44.4354Z"
+                          fill="currentColor"
+                          fillRule="evenodd"
+                          clipRule="evenodd"
+                        />
+                        <path
+                          d="M22.8008 44.4354L21.9033 43.525L42.8146 22.6138L21.9033 1.70261L22.8008 0.792236L44.6223 22.6138L22.8008 44.4354Z"
+                          fill="currentColor"
+                          fillRule="evenodd"
+                          clipRule="evenodd"
+                        />
+                      </svg>
+                    </motion.div>
+                  </div>
                 </div>
-              </div>
-            </motion.div>
+              </motion.div>
+            </a>
           ))}
         </motion.div>
       </div>

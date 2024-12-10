@@ -40,61 +40,11 @@ import paladinLogo from "@/assets/images/framed-svgs/paladinLogo.svg";
 import emblemvaultLogo from "@/assets/images/framed-svgs/emblemvaultLogo.svg";
 import litProtocolLogo from "@/assets/images/framed-svgs/litProtocolLogo.svg";
 import dainLogo from "@/assets/images/framed-svgs/dainLogo.svg";
+import jitoLogo from "@/assets/images/framed-svgs/jitoLogo.svg";
+import delphiDigitalLogo from "@/assets/images/framed-svgs/delphicapLogo.svg";
+import superhostsLogo from "@/assets/images/framed-svgs/superhostsLogo.svg";
 
 const sponsors = {
-  main: [
-    {
-      id: "solana1",
-      name: "Solana Foundation",
-      image: solanaFndnLogo,
-    },
-    { id: "ai16z", name: "ai16z", image: ai16zLogo },
-  ],
-  supportedBy: [
-    // { id: "jito", name: "JITO", image: jitoLogo },
-    { id: "jupiter", name: "Jupiter", image: jupiterLogo },
-    { id: "helius", name: "Helius", image: heliusLogo },
-    { id: "multicoincap", name: "Multicoin Capital", image: multicoincapLogo },
-    { id: "assisterr", name: "Assisterr", image: assisterrLogo },
-    { id: "ionet", name: "Io.net", image: ionetLogo },
-    { id: "mhventures", name: "MH Ventures", image: mhventuresLogo },
-    { id: "dynamic", name: "Dynamic", image: dynamicLogo },
-  ],
-  autonomousChatAgents: [
-    { id: "assisterr", name: "Assisterr", image: assisterrLogo },
-  ],
-  socialAndInfluencerAgent: [
-    { id: "hologram", name: "Hologram", image: hologramLogo },
-  ],
-  agentsInfra: [{ id: "kuzco", name: "Kuzco", image: kuzcoLogo }],
-  supportedByAgentsInfra: [
-    { id: "arcium", name: "Arcium", image: arciumLogo },
-    { id: "dain", name: "Dain", image: dainLogo },
-    { id: "litProtocol", name: "Lit Protocol", image: litProtocolLogo },
-  ],
-  agentTokenTooling: [{ id: "meteora", name: "Meteora", image: meteoraLogo }],
-  tokenToolingSupportedBy: [
-    { id: "emblemvault", name: "Emblem Vault", image: emblemvaultLogo },
-  ],
-
-  defiAgents: [{ id: "adrena", name: "Adrena", image: adrenaLogo }],
-  supportedByDefiAgents: [
-    { id: "switchboard", name: "Switchboard", image: switchboardLogo },
-    { id: "orca", name: "Orca", image: orcaLogo },
-  ],
-  tradingAgents: [{ id: "paladin", name: "Paladin", image: paladinLogo }],
-  supportedByTradingAgents: [
-    { id: "crossmint", name: "Crossmint", image: crossmintLogo },
-  ],
-  communityPartners: [
-    { id: "stGermany", name: "Superteam Germany", image: stGermanyLogo },
-    { id: "stIndia", name: "Superteam India", image: stIndiaLogo },
-    { id: "stNigeria", name: "Superteam Nigeria", image: stNigeriaLogo },
-    { id: "stTurkey", name: "Superteam Turkey", image: stTurkeyLogo },
-    { id: "stUK", name: "Superteam UK", image: stUKLogo },
-    { id: "stVietnam", name: "Superteam Vietnam", image: stVietnamLogo },
-  ],
-
   poweredby: [
     {
       id: "SendAI",
@@ -103,6 +53,53 @@ const sponsors = {
     },
   ],
 };
+
+const latestSponsorHeirarchy1 = [
+  { id: "ai16z", name: "ai16z", image: ai16zLogo },
+  { id: "solana fndn", name: "Solana Foundation", image: solanaFndnLogo },
+];
+
+const latestSponsorHeirarchy2 = [
+  { id: "assisterr", name: "Assisterr", image: assisterrLogo },
+  { id: "hologram", name: "Hologram", image: hologramLogo },
+  { id: "kuzco", name: "Kuzco", image: kuzcoLogo },
+  { id: "meteora", name: "Meteora", image: meteoraLogo },
+  { id: "adrena", name: "Adrena", image: adrenaLogo },
+  { id: "paladin", name: "Paladin", image: paladinLogo },
+];
+
+const latestSponsorHeirarchy3 = [
+  { id: "jupiter", name: "Jupiter", image: jitoLogo },
+  { id: "jupiter", name: "Jupiter", image: jupiterLogo },
+  { id: "helius", name: "Helius", image: heliusLogo },
+  { id: "multicoincap", name: "Multicoin Capital", image: multicoincapLogo },
+  { id: "ionet", name: "Io.net", image: ionetLogo },
+  { id: "mhventures", name: "MH Ventures", image: mhventuresLogo },
+  { id: "dynamic", name: "Dynamic", image: dynamicLogo },
+];
+
+const latestSponsorHeirarchy4 = [
+  { id: "arcium", name: "Arcium", image: arciumLogo },
+  { id: "dain", name: "Dain", image: dainLogo },
+  { id: "litProtocol", name: "Lit Protocol", image: litProtocolLogo },
+  { id: "emblemvault", name: "Emblem Vault", image: emblemvaultLogo },
+  { id: "switchboard", name: "Switchboard", image: switchboardLogo },
+  { id: "orca", name: "Orca", image: orcaLogo },
+  { id: "crossmint", name: "Crossmint", image: crossmintLogo },
+];
+
+const latestSponsorHeirarchy5 = [
+  { id: "stGermany", name: "Superteam Germany", image: stGermanyLogo },
+  { id: "stIndia", name: "Superteam India", image: stIndiaLogo },
+  { id: "stNigeria", name: "Superteam Nigeria", image: stNigeriaLogo },
+  { id: "stTurkey", name: "Superteam Turkey", image: stTurkeyLogo },
+  { id: "stUK", name: "Superteam UK", image: stUKLogo },
+  { id: "stVietnam", name: "Superteam Vietnam", image: stVietnamLogo },
+  { id: "juicebox", name: "JuiceBox", image: juiceboxLogo },
+  { id: "colosseum", name: "Colosseum", image: colosseumLogo },
+  { id: "superhosts", name: "Superhosts", image: superhostsLogo },
+  { id: "delphiDigital", name: "Delphi Digital", image: delphiDigitalLogo },
+];
 
 const SponsorCard = ({ image, name }: { image: string; name: string }) => (
   <div className="relative bg-[#1E1E1E] bg-opacity-20 border-2 border-[#353637] flex items-center justify-center">
@@ -154,7 +151,7 @@ const SponsorsSection = () => {
         <div className="flex flex-col items-center bg-black">
           <div className="w-full max-w-7xl px-4 flex flex-col items-center">
             {/* Title */}
-            <div className="flex gap-4 bg-black items-center justify-center">
+            <div className="flex gap-4 bg-black items-center justify-center my-8">
               <Image src={headAbstract} alt="Sponsor" className=" mx-8" />
               <div className="font-relishGargler text-4xl text-white text-nowrap mx-4">
                 {" "}
@@ -163,13 +160,12 @@ const SponsorsSection = () => {
               <Image src={headAbstract} alt="Sponsor" className=" mx-8" />
             </div>
 
-            {/* main Sponsors */}
-            <div className="w-full flex flex-col items-center">
-              <h3 className="text-white text-md  tracking-wider font-PPSans my-8">
+            <div className="w-full flex flex-col items-center my-4">
+              {/* <h3 className="text-white text-md  tracking-wider font-PPSans my-8">
                 MAIN SPONSORS
-              </h3>
+              </h3> */}
               <div className="w-full flex flex-wrap justify-center gap-4">
-                {sponsors.main.map((sponsor) => (
+                {latestSponsorHeirarchy1.map((sponsor) => (
                   <div
                     key={sponsor.id}
                     className="w-full md:w-[calc(50%-8px)] lg:w-[calc(33.333%-11px)]"
@@ -180,13 +176,12 @@ const SponsorsSection = () => {
               </div>
             </div>
 
-            {/* Supported By Sponsors */}
-            <div className="w-full flex flex-col items-center">
-              <h3 className="text-white text-md tracking-wider font-PPSans my-8">
+            <div className="w-full flex flex-col items-center my-4">
+              {/* <h3 className="text-white text-md tracking-wider font-PPSans my-8">
                 MAIN TRACKS SUPPORTED BY
-              </h3>
+              </h3> */}
               <div className="w-full flex flex-wrap justify-center gap-4">
-                {sponsors.supportedBy.map((sponsor) => (
+                {latestSponsorHeirarchy2.map((sponsor) => (
                   <div
                     key={sponsor.id}
                     className="w-full md:w-[calc(50%-8px)] lg:w-[calc(33.333%-11px)]"
@@ -197,13 +192,12 @@ const SponsorsSection = () => {
               </div>
             </div>
 
-            {/* Autonomous Chat Agents Sponsors */}
-            <div className="w-full flex flex-col items-center">
-              <h3 className="text-white text-md tracking-wider font-PPSans my-8">
+            <div className="w-full flex flex-col items-center my-4">
+              {/* <h3 className="text-white text-md tracking-wider font-PPSans my-8">
                 AUTONOMOUS CHAT AGENTS SPONSORS
-              </h3>
+              </h3> */}
               <div className="w-full flex flex-wrap justify-center gap-4">
-                {sponsors.autonomousChatAgents.map((sponsor) => (
+                {latestSponsorHeirarchy3.map((sponsor) => (
                   <div
                     key={sponsor.id}
                     className="w-full md:w-[calc(50%-8px)] lg:w-[calc(33.333%-11px)]"
@@ -214,12 +208,12 @@ const SponsorsSection = () => {
               </div>
             </div>
 
-            <div className="w-full flex flex-col items-center">
-              <h3 className="text-white text-md tracking-wider font-PPSans my-8">
+            <div className="w-full flex flex-col items-center my-4">
+              {/* <h3 className="text-white text-md tracking-wider font-PPSans my-8">
                 SOCIAL AND INFLUENCER AGENT{" "}
-              </h3>
+              </h3> */}
               <div className="w-full flex flex-wrap justify-center gap-4">
-                {sponsors.socialAndInfluencerAgent.map((sponsor) => (
+                {latestSponsorHeirarchy4.map((sponsor) => (
                   <div
                     key={sponsor.id}
                     className="w-full md:w-[calc(50%-8px)] lg:w-[calc(33.333%-11px)]"
@@ -230,98 +224,12 @@ const SponsorsSection = () => {
               </div>
             </div>
 
-            {/* Agents Infra Support Sponsors */}
-            <div className="w-full flex flex-col items-center">
-              <h3 className="text-white text-md tracking-wider font-PPSans my-8">
+            <div className="w-full flex flex-col items-center my-4">
+              {/* <h3 className="text-white text-md tracking-wider font-PPSans my-8">
                 AGENTS INFRA SUPPORTED BY
-              </h3>
+              </h3> */}
               <div className="w-full flex flex-wrap justify-center gap-4">
-                {sponsors.supportedByAgentsInfra.map((sponsor) => (
-                  <div
-                    key={sponsor.id}
-                    className="w-full md:w-[calc(50%-8px)] lg:w-[calc(33.333%-11px)]"
-                  >
-                    <SponsorCard image={sponsor.image} name={sponsor.name} />
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Agent Token Tooling Sponsors */}
-            <div className="w-full flex flex-col items-center">
-              <h3 className="text-white text-md tracking-wider font-PPSans my-8">
-                AGENT TOKEN TOOLING SPONSORS
-              </h3>
-              <div className="w-full flex flex-wrap justify-center gap-4">
-                {sponsors.agentTokenTooling.map((sponsor) => (
-                  <div
-                    key={sponsor.id}
-                    className="w-full md:w-[calc(50%-8px)] lg:w-[calc(33.333%-11px)]"
-                  >
-                    <SponsorCard image={sponsor.image} name={sponsor.name} />
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Token Tooling Supported By */}
-            <div className="w-full flex flex-col items-center">
-              <h3 className="text-white text-md tracking-wider font-PPSans my-8">
-                TOKEN TOOLING SUPPORTED BY
-              </h3>
-              <div className="w-full flex flex-wrap justify-center gap-4">
-                {sponsors.tokenToolingSupportedBy.map((sponsor) => (
-                  <div
-                    key={sponsor.id}
-                    className="w-full md:w-[calc(50%-8px)] lg:w-[calc(33.333%-11px)]"
-                  >
-                    <SponsorCard image={sponsor.image} name={sponsor.name} />
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* DeFi Agents Sponsors */}
-            <div className="w-full flex flex-col items-center">
-              <h3 className="text-white text-md tracking-wider font-PPSans my-8">
-                DEFI AGENTS SPONSORS
-              </h3>
-              <div className="w-full flex flex-wrap justify-center gap-4">
-                {sponsors.defiAgents.map((sponsor) => (
-                  <div
-                    key={sponsor.id}
-                    className="w-full md:w-[calc(50%-8px)] lg:w-[calc(33.333%-11px)]"
-                  >
-                    <SponsorCard image={sponsor.image} name={sponsor.name} />
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* DeFi Agents Supported By */}
-            <div className="w-full flex flex-col items-center">
-              <h3 className="text-white text-md tracking-wider font-PPSans my-8">
-                DEFI AGENTS SUPPORTED BY
-              </h3>
-              <div className="w-full flex flex-wrap justify-center gap-4">
-                {sponsors.supportedByDefiAgents.map((sponsor) => (
-                  <div
-                    key={sponsor.id}
-                    className="w-full md:w-[calc(50%-8px)] lg:w-[calc(33.333%-11px)]"
-                  >
-                    <SponsorCard image={sponsor.image} name={sponsor.name} />
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Community Partners */}
-            <div className="w-full flex flex-col items-center">
-              <h3 className="text-white text-md tracking-wider font-PPSans my-8">
-                COMMUNITY PARTNERS
-              </h3>
-              <div className="w-full flex flex-wrap justify-center gap-4">
-                {sponsors.communityPartners?.map((sponsor) => (
+                {latestSponsorHeirarchy5.map((sponsor) => (
                   <div
                     key={sponsor.id}
                     className="w-full md:w-[calc(50%-8px)] lg:w-[calc(33.333%-11px)]"
@@ -333,7 +241,7 @@ const SponsorsSection = () => {
             </div>
 
             {/* Distribution Sponsors */}
-            <div className="w-full flex flex-col items-center">
+            <div className="w-full flex flex-col items-center my-4">
               <h3 className="text-white text-md tracking-wider font-PPSans my-8">
                 POWERED BY
               </h3>
