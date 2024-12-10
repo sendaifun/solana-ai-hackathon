@@ -447,7 +447,7 @@ const Section3 = () => {
           />
           <PrizeCard {...grandPrizeData} isInView={isInView} />
         </div>
-        <div className="w-full flex flex-col gap-8 md:gap-12">
+        <div className="w-full flex flex-col gap-8 md:gap-12" id="tracks">
           <SectionHeading
             title="TRACKS"
             subtitle={["Build the coolest AI", " Agents across 6 Themes"]}
