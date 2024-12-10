@@ -93,7 +93,7 @@ const crossmintLogoComp = () => (
   <Image src={crossmintLogo} alt="Crossmint Logo" />
 );
 
-const zerebroLogoComp = () => <Image src={zerebroLogo} alt="Zerebro Logo" />;
+const zerebroLogoComp = () => <Image className="w-32 object-contain" src={zerebroLogo} alt="Zerebro Logo" />;
 // // Use these logos in the components
 // const logos = [
 //   { component: SolanaFoundationLogo },
