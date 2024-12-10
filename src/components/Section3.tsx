@@ -29,6 +29,7 @@ import paladinLogo from "@/assets/images/framed-svgs/paladinLogo.svg";
 import solanaFndnLogo from "@/assets/images/framed-svgs/solanaFndnLogo.svg";
 import switchboardLogo from "@/assets/images/framed-svgs/switchboardLogo.svg";
 import assistrrLogo from "@/assets/images/framed-svgs/assisterrLogo.svg";
+import zerebroLogo from "@/assets/images/framed-svgs/zerebroLogo.svg";
 
 const adrenaLogoComp = () => <Image src={adrenaLogo} alt="Adrena Logo" />;
 
@@ -91,6 +92,8 @@ const orcaLogoComp = () => <Image src={orcaLogo} alt="Orca Logo" />;
 const crossmintLogoComp = () => (
   <Image src={crossmintLogo} alt="Crossmint Logo" />
 );
+
+const zerebroLogoComp = () => <Image src={zerebroLogo} alt="Zerebro Logo" />;
 // // Use these logos in the components
 // const logos = [
 //   { component: SolanaFoundationLogo },
@@ -102,9 +105,10 @@ const crossmintLogoComp = () => (
 const grandPrizeSupporters = [
   { component: jitoLogoComp },
   { component: jupiterLogoComp },
+  { component: zerebroLogoComp },
   { component: heliusLogoComp },
   { component: multicoincapLogoComp },
-  { component: assistrLogoComp },
+  // { component: assistrLogoComp },
   { component: ionetLogoComp },
   { component: mhventuresLogoComp },
   { component: dynamicLogoComp },
@@ -257,7 +261,7 @@ const tracksPrizeData = [
     accentColor: "#1BE1FF",
     title: "Agent Aggregators",
     description:
-      "Build chat-based agents (e.g., a ChatGPT or Perplexity-style interface)",
+      "Build sophisticated chat interfaces similar to ChatGPT/Perplexity. Integrate with social platforms and apps, enable actionable interactions, and orchestrate 600+ live AI models/agents via API. Support 1:1 communication through text, audio, and video channels while maintaining seamless user experience.",
   },
   {
     totalPrize: "$15,000",
@@ -282,7 +286,7 @@ const tracksPrizeData = [
     accentColor: "#FF1B1B",
     title: "Conversational Agents",
     description:
-      "Build public-facing agents (e.g., Truth terminal), these can be 1 to many text, audio, or video-based agents.",
+      "Build engaging public-facing agents for 1-to-many interactions. Create immersive 3D avatars & custom voices with Holoworld, generate autonomous text-to-video content, and integrate livestreaming on X. Support multi-modal interactions via text, audio and video channels while maintaining real-time engagement with audiences at scale.",
   },
   {
     totalPrize: "$27,500",
@@ -312,7 +316,7 @@ const tracksPrizeData = [
     accentColor: "#00FF85",
     title: "Agent Tooling",
     description:
-      "Build the next-gen infra or frameworks for AI Agents on Solana (eg. Eliza)",
+      "Build engaging public-facing agents for 1-to-many interactions. Create immersive 3D avatars & custom voices with Holoworld, generate autonomous text-to-video content, and integrate livestreaming on X. Support multi-modal interactions via text, audio and video channels while maintaining real-time engagement with audiences at scale.",
   },
   {
     totalPrize: "$20,000",
@@ -337,8 +341,7 @@ const tracksPrizeData = [
     accentColor: "#A855F7",
     title: "Agent Infra",
     description:
-      "Build tools for AI agents to launch and manage token liquidity"
-      //  fair token launches to liquidity provision (and locking), and stake-to-earn mechanisms.",
+      "Build tools for AI agents to launch and manage token liquidity — covering token&apos;s lifecycle: from fair token launches to liquidity provision (and locking), and stake-to-earn mechanisms.",
   },
   {
     totalPrize: "$27,500",
