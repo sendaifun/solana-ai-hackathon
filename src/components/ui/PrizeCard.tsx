@@ -21,6 +21,10 @@ interface PrizeCardProps {
     title: string;
     logo: ComponentType;
   };
+  mainSponsor2?: {
+    title: string;
+    logo: ComponentType;
+  };
   prizes: Prize[];
   description?: string;
   supporters?: Supporter[];
@@ -40,6 +44,7 @@ const PrizeCard = ({
   isInView = true,
 }: PrizeCardProps) => {
   const MainSponsorLogo = mainSponsor.logo;
+  const MainSponsorLogo2 = mainSponsor.logo;
 
   // Function to adjust color opacity
   const adjustColorOpacity = (color: string, opacity: number) => {
@@ -119,6 +124,7 @@ const PrizeCard = ({
                 </span>
                 <div className="text-gray-400 hover:text-gray-300 transition-colors">
                   <MainSponsorLogo />
+                  <MainSponsorLogo2 />
                 </div>
               </div>
             </motion.div>

@@ -411,6 +411,10 @@ const Section3 = () => {
       title: "Main Track",
       logo: solanaFndnLogoComp,
     },
+    mainSponsor2: {
+      title: "Main Track",
+      logo: ai16zLogoComp,
+    },
     prizes: [
       {
         title: "First Main Prize",
