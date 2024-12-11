@@ -37,6 +37,8 @@ import tolyImg from "@/assets/images/judges/toly.svg";
 import tongImg from "@/assets/images/judges/tong.svg";
 import kelImg from "@/assets/images/judges/kel.svg";
 import zerebroAgentImg from "@/assets/images/judges/zerebroagent.svg";
+import jadenImg from "@/assets/images/judges/jaden.svg";
+import markImg from "@/assets/images/judges/mark.svg";
 
 const judges = [
   {
@@ -241,6 +243,20 @@ const judges = [
     role: "Founder, Hologram",
     twitter: "https://x.com/tong0x?s=21&t=c5eqG",
     image: tongImg,
+  },
+  {
+    id: "jaden",
+    name: "Jaden",
+    role: "Chief Architect, Aethir, Intern, hAIyez",
+    twitter: "https://x.com/jadenonclouds",
+    image: jadenImg,
+  },
+  {
+    id: "mark",
+    name: "Mark Rydon",
+    role: "Co-founder, Aethir",
+    twitter: "https://x.com/MRRydon",
+    image: markImg,
   },
 ];
 

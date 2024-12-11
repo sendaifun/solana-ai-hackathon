@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { Trophy } from 'lucide-react';
+import { Smile, Trophy } from 'lucide-react';
 import {
   Carousel,
   CarouselContent,
@@ -68,6 +68,11 @@ const agentTabs = [
     value: 'defi',
     label: 'DeFi Agents',
     icon: TrendingUp,
+  },
+  {
+    value: 'meme',
+    label: 'Meme Agents',
+    icon: Smile,
   },
 ];
 

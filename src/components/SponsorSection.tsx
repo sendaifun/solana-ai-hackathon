@@ -45,6 +45,8 @@ import delphiDigitalLogo from "@/assets/images/framed-svgs/delphicapLogo.svg";
 import superhostsLogo from "@/assets/images/framed-svgs/superhostsLogo.svg";
 import zerebroLogo from "@/assets/images/framed-svgs/zerebroLogo.svg";
 import dolosLogo from "@/assets/images/framed-svgs/dolosLogo.svg";
+import aethirLogo from "@/assets/images/framed-svgs/aethirLogo.svg";
+import haiyezLogo from "@/assets/images/framed-svgs/haiyezLogo.svg";
 
 const sponsors = {
   poweredby: [
@@ -68,6 +70,8 @@ const latestSponsorHeirarchy2 = [
   { id: "meteora", name: "Meteora", image: meteoraLogo },
   { id: "adrena", name: "Adrena", image: adrenaLogo },
   { id: "paladin", name: "Paladin", image: paladinLogo },
+  { id: "paladin", name: "Paladin", image: aethirLogo },
+  { id: "paladin", name: "Paladin", image: haiyezLogo },
 ];
 
 const latestSponsorHeirarchy3 = [
