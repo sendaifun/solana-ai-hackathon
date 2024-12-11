@@ -25,6 +25,7 @@ import marginifImg from "@/assets/images/judges/marginif.svg";
 import mertImg from "@/assets/images/judges/mert.svg";
 import orcaImg from "@/assets/images/judges/orca.svg";
 import qwImg from "@/assets/images/judges/qw.svg";
+import shlokImg from "@/assets/images/judges/shlok.svg";
 import samImg from "@/assets/images/judges/sam.svg";
 import zerebroImg from "@/assets/images/judges/zerebro.svg";
 import nickImg from "@/assets/images/judges/nick.svg";
@@ -142,6 +143,13 @@ const judges = [
     role: "VC, Delphi Labs",
     twitter: "https://x.com/HelpedHope",
     image: delhiImg,
+  },
+  {
+    id: "shlok",
+    name: "Shlok Khemani",
+    role: "Researcher @Decentralised.co",
+    twitter: "https://x.com/shloked_",
+    image: shlokImg,
   },
   {
     id: "tengyan",
