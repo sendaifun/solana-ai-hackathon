@@ -31,6 +31,10 @@ import switchboardLogo from "@/assets/images/framed-svgs/switchboardLogo.svg";
 import assistrrLogo from "@/assets/images/framed-svgs/assisterrLogo.svg";
 import zerebroLogo from "@/assets/images/framed-svgs/zerebroLogo.svg";
 import dolosLogo from "@/assets/images/framed-svgs/dolosLogo.svg";
+import hAIyezLogo from "@/assets/images/framed-svgs/haiyezLogo.svg";
+import aethirLogo from "@/assets/images/framed-svgs/aethirLogo.svg";
+
+
 
 const adrenaLogoComp = () => <Image src={adrenaLogo} alt="Adrena Logo" />;
 
@@ -100,13 +104,13 @@ const zerebroLogoComp = () => (
 const dolosLogoComp = () => (
   <Image className="w-24 object-contain" src={dolosLogo} alt="Zerebro Logo" />
 );
-// // Use these logos in the components
-// const logos = [
-//   { component: SolanaFoundationLogo },
-//   { component: DialectLogo },
-//   { component: HeliusLogo },
-//   { component: BackpackLogo },
-// ];
+const AethirLogoComp = () => (
+  <Image className="w-12 object-contain" src={aethirLogo} alt="Zerebro Logo" />
+);
+const hAIyezLogoComp = () => (
+  <Image className="w-24 object-contain" src={hAIyezLogo} alt="Zerebro Logo" />
+);
+
 
 const grandPrizeSupporters = [
   { component: jitoLogoComp },
@@ -135,23 +139,6 @@ const defiAgentsSupporters = [
 const tradingAgentsSupporters = [{ component: crossmintLogoComp }];
 
 const trackTabs = [
-  // {
-  //   title: "Autonomous Chat Agents",
-  //   icon: (
-  //     <svg
-  //       width="20"
-  //       height="20"
-  //       viewBox="0 0 24 24"
-  //       fill="none"
-  //       stroke="currentColor"
-  //       strokeWidth="1.5"
-  //     >
-  //       <path d="M12 4L4 8L12 12L20 8L12 4Z" />
-  //       <path d="M4 16L12 20L20 16" />
-  //       <path d="M4 12L12 16L20 12" />
-  //     </svg>
-  //   ),
-  // },
   {
     title: "Autonomous Chat Agents",
     icon: (
@@ -229,6 +216,21 @@ const trackTabs = [
   },
   {
     title: "Trading Agents",
+    icon: (
+      <svg
+        width="20"
+        height="20"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.5"
+      >
+        <path d="M23 6L13.5 15.5L8.5 10.5L1 18M23 6H17M23 6V12" />
+      </svg>
+    ),
+  },
+  {
+    title: "Meme Agents",
     icon: (
       <svg
         width="20"
@@ -413,6 +415,35 @@ these can be 1:1 text, audio, or video-based.`,
     title: "DeFi Agents",
     description:
       "Build AI Agents specifically for spot trading (for eg. agents copy trading analysing specific cluster of wallets) –– the quality of trading strategies and medium of execution matters.",
+  },
+  {
+    totalPrize: "$15,000",
+    mainSponsor: {
+      title: "Track",
+      logo: hAIyezLogoComp ,
+    },
+    mainSponsor2: {
+      title: "Track",
+      logo: AethirLogoComp,
+    },
+    prizes: [
+      {
+        title: "1st Prize",
+        amount: "$10,000",
+        progressPercentage: 100,
+        showTrophy: true,
+      },
+      {
+        title: "2nd Prize",
+        amount: "$5,000",
+        progressPercentage: 60,
+      },
+    ],
+    // supporters: ,
+    accentColor: "#A855F7",
+    title: "Meme Agents",
+    description:
+      "Make the most fun and unhinged AI agent ever. Whoever makes the judges laugh the hardest, wins.",
   },
 ];
 
