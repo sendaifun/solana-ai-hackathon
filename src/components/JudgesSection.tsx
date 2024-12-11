@@ -147,7 +147,7 @@ const judges = [
   {
     id: "shlok",
     name: "Shlok Khemani",
-    role: "Researcher @Decentralised.co",
+    role: "Researcher, Decentralised.co",
     twitter: "https://x.com/shloked_",
     image: shlokImg,
   },
