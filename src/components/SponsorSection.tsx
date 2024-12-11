@@ -47,7 +47,7 @@ import zerebroLogo from "@/assets/images/framed-svgs/zerebroLogo.svg";
 import dolosLogo from "@/assets/images/framed-svgs/dolosLogo.svg";
 import aethirLogo from "@/assets/images/framed-svgs/aethirLogo.svg";
 import haiyezLogo from "@/assets/images/framed-svgs/haiyezLogo.svg";
-
+import cookieLogo from "@/assets/images/framed-svgs/cookieLogo.svg";
 const sponsors = {
   poweredby: [
     {
@@ -114,6 +114,7 @@ const latestSponsorHeirarchy5 = [
   { id: "colosseum", name: "Colosseum", image: colosseumLogo },
   { id: "superhosts", name: "Superhosts", image: superhostsLogo },
   { id: "delphiDigital", name: "Delphi Digital", image: delphiDigitalLogo },
+  { id: "cookie", name: "Cookie DAO", image: cookieLogo },
 ];
 
 const SponsorCard = ({ image, name }: { image: string; name: string }) => (

@@ -40,6 +40,7 @@ import zerebroAgentImg from "@/assets/images/judges/zerebroagent.svg";
 import jadenImg from "@/assets/images/judges/jaden.svg";
 import markImg from "@/assets/images/judges/mark.svg";
 import yoheiImg from "@/assets/images/judges/yohei.svg";
+import yannikImg from "@/assets/images/judges/yrschrade.svg";
 
 const judges = [
   {
@@ -265,6 +266,13 @@ const judges = [
     role: "Untapped Capital, BabyAGI, Pippin",
     twitter: "https://x.com/yoheinakajima",
     image: yoheiImg,
+  },
+  {
+    id: "yannik",
+    name: "Yannik Schrade",
+    role: "Co-Founder & CEO, Arcium",
+    twitter: "https://x.com/yrschrade",
+    image: yannikImg,
   },
 ];
 
