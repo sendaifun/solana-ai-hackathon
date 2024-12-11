@@ -165,7 +165,7 @@ const HeroSection = () => {
               Join
             </span>
             <span className='md:block hidden text-black/90 group-hover:text-black font-mono font-bold text-sm md:text-md tracking-wide transition-colors'>
-              Join Hackathon
+              Join Telegram Chat
             </span>
             <svg
               viewBox='0 0 24 24'
