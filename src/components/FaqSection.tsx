@@ -119,7 +119,8 @@ const faqData = [
   },
   {
     question: "Is there a Demo Day?",
-    content: "Yes, however, the exact date and format is not decided due to christmas/new year holidays. But stay tuned, we’ve many exciting surprises 👀"
+    content:
+      "Yes, however, the exact date and format is not decided due to christmas/new year holidays. But stay tuned, we’ve many exciting surprises 👀",
   },
   {
     question: "Do we have to integrate a particular sponsor?",
@@ -174,12 +175,18 @@ const faqData = [
   {
     question: "Where can I ask technical questions during the hackathon?",
     content:
-      "In the telegram group. Further, feel free to use twitter as a cheat code –– you can directly post your questions as a tweet and just tag @sendaifun, we'll tag relevant experts.",
+      "In the telegram group. Further, feel free to use twitter as a cheat code - you can directly post your questions as a tweet and just tag @sendaifun, we'll tag relevant experts.",
   },
 
   {
     question: "Is there any registration for the hackathon?",
     content:
       "No. You can directly join the telegram and start building. You need to directly submit in the submissions form, which opens on 15th December.",
+
+  },
+  {
+    question: "Can existing projects participate in the hackathon?",
+    content:
+      "Yes, they'd be able to participate as long as it's not older than 2 months. The judging team reserves the right to deny based on anything they find unsuitable",
   },
 ];
