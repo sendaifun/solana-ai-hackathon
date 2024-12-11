@@ -39,6 +39,7 @@ import kelImg from "@/assets/images/judges/kel.svg";
 import zerebroAgentImg from "@/assets/images/judges/zerebroagent.svg";
 import jadenImg from "@/assets/images/judges/jaden.svg";
 import markImg from "@/assets/images/judges/mark.svg";
+import yoheiImg from "@/assets/images/judges/yohei.svg";
 
 const judges = [
   {
@@ -257,6 +258,13 @@ const judges = [
     role: "Co-founder, Aethir",
     twitter: "https://x.com/MRRydon",
     image: markImg,
+  },
+  {
+    id: "yohei",
+    name: "Yohei",
+    role: "Untapped Capital, BabyAGI, Pippin",
+    twitter: "https://x.com/yoheinakajima",
+    image: yoheiImg,
   },
 ];
 
