@@ -15,12 +15,12 @@ const ppSans = localFont({
 
 export const metadata: Metadata = {
   title: 'Solana AI Hackathon',
-  description: '10th - 23rd Dec. global hackathon. $185k+ in prizes',
+  description: '10th - 23rd Dec. global hackathon. $210k+ in prizes',
   keywords: ['solana', 'hackathon', 'ai', 'solana ai hackathon'],
   authors: [{ name: 'SendAI', url: 'https://www.sendai.fun' }],
   openGraph: {
     title: 'Solana AI Hackathon',
-    description: '10th - 23rd Dec. global hackathon. $185k+ in prizes',
+    description: '10th - 23rd Dec. global hackathon. $210k+ in prizes',
     url: 'https://solanaaihackathon.com',
     siteName: 'Solana AI Hackathon',
     images: [
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Solana AI Hackathon',
-    description: '10th - 23rd Dec. global hackathon. $185k+ in prizes',
+    description: '10th - 23rd Dec. global hackathon. $210k+ in prizes',
     images: ['/og.png'],
   },
   metadataBase: new URL('https://solanaaihackathon.com'),

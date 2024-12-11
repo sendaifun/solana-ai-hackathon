@@ -40,7 +40,7 @@ const PreviewCards = () => {
       title: 'Prizes',
       color: '#FFFF00',
       image: prizesImg,
-      description: '$185,000+ in Prize Pool\nacross 6 Themed Tracks',
+      description: '$210,000+ in Prize Pool\nacross 6 Themed Tracks',
       gradient: 'from-[#FFFF00]/20 to-transparent',
     },
     {
