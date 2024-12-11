@@ -51,7 +51,7 @@ const NavLinks = ({ mobile }: { mobile?: boolean }) => (
 const JoinButton = ({ mobile }: { mobile?: boolean }) => (
   <Link target="_blank" href="https://t.me/solana_ai_hackathon">
     <ScrambleText
-      text="Join Now"
+      text="Join Telegram Chat"
       className={`bg-[#1E252B] text-[#1BE1FF] font-medium px-4 py-3 rounded-md transition-colors text-center
         ${mobile ? "w-full text-lg" : ""}
       `}

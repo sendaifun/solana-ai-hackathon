@@ -274,6 +274,14 @@ const judges = [
     twitter: "https://x.com/yrschrade",
     image: yannikImg,
   },
+
+  {
+    id: "jjalicea",
+    name: "JJ Alicea",
+    role: "Partner, Anagram",
+    twitter: "https://x.com/darkmarketio",
+    image: yannikImg,
+  },
 ];
 
 const JudgesSection = () => {
