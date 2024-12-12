@@ -35,11 +35,11 @@ import hAIyezLogo from "@/assets/images/framed-svgs/haiyezLogo.svg";
 import aethirLogo from "@/assets/images/framed-svgs/aethirLogo.svg";
 import privyLogo from "@/assets/images/framed-svgs/privyLogo.svg";
 
-
-
 const adrenaLogoComp = () => <Image src={adrenaLogo} alt="Adrena Logo" />;
 
-const ai16zLogoComp = () => <Image src={ai16zLogo} className="w-24 object-contain" alt="AI16Z Logo" />;
+const ai16zLogoComp = () => (
+  <Image src={ai16zLogo} className="w-24 object-contain" alt="AI16Z Logo" />
+);
 
 const assistrLogoComp = () => <Image src={assistrrLogo} alt="Assistr Logo" />;
 
@@ -106,16 +106,15 @@ const dolosLogoComp = () => (
   <Image className="w-24 object-contain" src={dolosLogo} alt="Zerebro Logo" />
 );
 const AethirLogoComp = () => (
-  <Image className="w-12 object-contain" src={aethirLogo} alt="Zerebro Logo" />
+  <Image className="w-24 object-contain" src={aethirLogo} alt="aethir Logo" />
 );
 const hAIyezLogoComp = () => (
-  <Image className="w-24 object-contain" src={hAIyezLogo} alt="Zerebro Logo" />
+  <Image className="w-24 object-contain" src={hAIyezLogo} alt="hAIyez Logo" />
 );
 
 const privyLogoComp = () => (
-  <Image className="w-24 object-contain" src={privyLogo} alt="Zerebro Logo" />
+  <Image className="w-24 object-contain" src={privyLogo} alt="Privy Logo" />
 );
-
 
 const grandPrizeSupporters = [
   { component: jitoLogoComp },
@@ -157,6 +156,21 @@ const trackTabs = [
         strokeWidth="1.5"
       >
         <path d="M21 15C21 15.5304 20.7893 16.0391 20.4142 16.4142C20.0391 16.7893 19.5304 17 19 17H7L3 21V5C3 4.46957 3.21071 3.96086 3.58579 3.58579C3.96086 3.21071 4.46957 3 5 3H19C19.5304 3 20.0391 3.21071 20.4142 3.58579C20.7893 3.96086 21 4.46957 21 5V15Z" />
+      </svg>
+    ),
+  },
+  {
+    title: "Meme Agents",
+    icon: (
+      <svg
+        width="20"
+        height="20"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.5"
+      >
+        <path d="M23 6L13.5 15.5L8.5 10.5L1 18M23 6H17M23 6V12" />
       </svg>
     ),
   },
@@ -235,21 +249,6 @@ const trackTabs = [
       </svg>
     ),
   },
-  {
-    title: "Meme Agents",
-    icon: (
-      <svg
-        width="20"
-        height="20"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1.5"
-      >
-        <path d="M23 6L13.5 15.5L8.5 10.5L1 18M23 6H17M23 6V12" />
-      </svg>
-    ),
-  },
 ];
 
 const tracksPrizeData = [
@@ -283,6 +282,36 @@ const tracksPrizeData = [
 
 these can be 1:1 text, audio, or video-based.`,
   },
+
+  {
+    totalPrize: "$15,000",
+    mainSponsor: {
+      title: "Track",
+      logo: hAIyezLogoComp,
+    },
+    mainSponsor2: {
+      title: "Track",
+      logo: AethirLogoComp,
+    },
+    prizes: [
+      {
+        title: "1st Prize",
+        amount: "$10,000",
+        progressPercentage: 100,
+        showTrophy: true,
+      },
+      {
+        title: "2nd Prize",
+        amount: "$5,000",
+        progressPercentage: 60,
+      },
+    ],
+    // supporters: ,
+    accentColor: "#A855F7",
+    title: "Meme Agents",
+    description:
+      "Make the most fun and unhinged AI agent ever. Whoever makes the judges laugh the hardest, wins.",
+  },
   {
     totalPrize: "$15,000",
     mainSponsor: {
@@ -305,8 +334,7 @@ these can be 1:1 text, audio, or video-based.`,
     // supporters: socialnInfluencerAgentsSupporters,
     accentColor: "#FF1B1B",
     title: "Conversational Agents",
-    description:
-     `Build public-facing agents (e.g., truth_terminal); these can be 1 to many text, audio, or video-based agents.
+    description: `Build public-facing agents (e.g., truth_terminal); these can be 1 to many text, audio, or video-based agents.
 
 - Create 3D avatars/custom voices
 - Generate autonomous text-to-video
@@ -421,35 +449,6 @@ these can be 1:1 text, audio, or video-based.`,
     title: "DeFi Agents",
     description:
       "Build AI Agents specifically for spot trading (for eg. agents copy trading analysing specific cluster of wallets) –– the quality of trading strategies and medium of execution matters.",
-  },
-  {
-    totalPrize: "$15,000",
-    mainSponsor: {
-      title: "Track",
-      logo: hAIyezLogoComp ,
-    },
-    mainSponsor2: {
-      title: "Track",
-      logo: AethirLogoComp,
-    },
-    prizes: [
-      {
-        title: "1st Prize",
-        amount: "$10,000",
-        progressPercentage: 100,
-        showTrophy: true,
-      },
-      {
-        title: "2nd Prize",
-        amount: "$5,000",
-        progressPercentage: 60,
-      },
-    ],
-    // supporters: ,
-    accentColor: "#A855F7",
-    title: "Meme Agents",
-    description:
-      "Make the most fun and unhinged AI agent ever. Whoever makes the judges laugh the hardest, wins.",
   },
 ];
 
