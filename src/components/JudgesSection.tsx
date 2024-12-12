@@ -46,6 +46,9 @@ import maxsegalImg from "@/assets/images/judges/maxsegal.svg";
 import kuleenImg from "@/assets/images/judges/kuleen.svg";
 import ejaazImg from "@/assets/images/judges/ejaaz.svg";
 import daveImg from "@/assets/images/judges/dave.svg";
+import frankImg from "@/assets/images/judges/frank.svg";
+import threadguyImg from "@/assets/images/judges/threadguy.svg";
+
 
 const judges = [
   {
@@ -314,6 +317,20 @@ const judges = [
     role: "Investment & Strategic Partnership Director, Animoca Brands",
     twitter: "https://x.com/0xAbcdave",
     image: daveImg,
+  },
+  {
+    id: "frank",
+    name: "Frank",
+    role: "degods",
+    twitter: "https://x.com/frankdegods",
+    image: frankImg,
+  },
+  {
+    id: "threadguy",
+    name: "Threadguy",
+    role: "probably nothing",
+    twitter: "https://x.com/notthreadguy",
+    image: threadguyImg,
   },
 ];
 
