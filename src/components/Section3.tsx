@@ -33,6 +33,7 @@ import zerebroLogo from "@/assets/images/framed-svgs/zerebroLogo.svg";
 import dolosLogo from "@/assets/images/framed-svgs/dolosLogo.svg";
 import hAIyezLogo from "@/assets/images/framed-svgs/haiyezLogo.svg";
 import aethirLogo from "@/assets/images/framed-svgs/aethirLogo.svg";
+import privyLogo from "@/assets/images/framed-svgs/privyLogo.svg";
 
 
 
@@ -111,6 +112,10 @@ const hAIyezLogoComp = () => (
   <Image className="w-24 object-contain" src={hAIyezLogo} alt="Zerebro Logo" />
 );
 
+const privyLogoComp = () => (
+  <Image className="w-24 object-contain" src={privyLogo} alt="Zerebro Logo" />
+);
+
 
 const grandPrizeSupporters = [
   { component: jitoLogoComp },
@@ -123,6 +128,7 @@ const grandPrizeSupporters = [
   { component: ionetLogoComp },
   { component: mhventuresLogoComp },
   { component: dynamicLogoComp },
+  { component: privyLogoComp },
 ];
 const autonomoschatSupporters = [{ component: assistrLogoComp }];
 // const socialnInfluencerAgentsSupporters = [{ component: "" }];

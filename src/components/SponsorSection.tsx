@@ -48,6 +48,8 @@ import dolosLogo from "@/assets/images/framed-svgs/dolosLogo.svg";
 import aethirLogo from "@/assets/images/framed-svgs/aethirLogo.svg";
 import haiyezLogo from "@/assets/images/framed-svgs/haiyezLogo.svg";
 import cookieLogo from "@/assets/images/framed-svgs/cookieLogo.svg";
+import privyLogo from "@/assets/images/framed-svgs/privyLogo.svg";
+
 const sponsors = {
   poweredby: [
     {
@@ -70,8 +72,8 @@ const latestSponsorHeirarchy2 = [
   { id: "meteora", name: "Meteora", image: meteoraLogo },
   { id: "adrena", name: "Adrena", image: adrenaLogo },
   { id: "paladin", name: "Paladin", image: paladinLogo },
-  { id: "paladin", name: "Paladin", image: aethirLogo },
-  { id: "paladin", name: "Paladin", image: haiyezLogo },
+  { id: "aethir", name: "Aethir", image: aethirLogo },
+  { id: "haiyez", name: "Haiyez", image: haiyezLogo },
 ];
 
 const latestSponsorHeirarchy3 = [
@@ -91,6 +93,7 @@ const latestSponsorHeirarchy3 = [
   { id: "switchboard", name: "Switchboard", image: switchboardLogo },
   { id: "orca", name: "Orca", image: orcaLogo },
   { id: "crossmint", name: "Crossmint", image: crossmintLogo },
+  { id: "privy", name: "Privy", image: privyLogo },
 ];
 
 // const latestSponsorHeirarchy4 = [
