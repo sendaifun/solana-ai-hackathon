@@ -34,6 +34,7 @@ import dolosLogo from "@/assets/images/framed-svgs/dolosLogo.svg";
 import hAIyezLogo from "@/assets/images/framed-svgs/haiyezLogo.svg";
 import aethirLogo from "@/assets/images/framed-svgs/aethirLogo.svg";
 import privyLogo from "@/assets/images/framed-svgs/privyLogo.svg";
+import animocaLogo from "@/assets/images/framed-svgs/animoca.svg";
 
 const adrenaLogoComp = () => <Image src={adrenaLogo} alt="Adrena Logo" />;
 
@@ -115,6 +116,9 @@ const hAIyezLogoComp = () => (
 const privyLogoComp = () => (
   <Image className="w-24 object-contain" src={privyLogo} alt="Privy Logo" />
 );
+const animocaLogoComp = () => (
+  <Image className="w-24 object-contain" src={animocaLogo} alt="Privy Logo" />
+);
 
 const grandPrizeSupporters = [
   { component: jitoLogoComp },
@@ -123,6 +127,7 @@ const grandPrizeSupporters = [
   { component: dolosLogoComp },
   { component: heliusLogoComp },
   { component: multicoincapLogoComp },
+  { component: animocaLogoComp },
   { component: assistrLogoComp },
   { component: ionetLogoComp },
   { component: mhventuresLogoComp },

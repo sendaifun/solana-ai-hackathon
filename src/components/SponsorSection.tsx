@@ -49,6 +49,8 @@ import aethirLogo from "@/assets/images/framed-svgs/aethirLogo.svg";
 import haiyezLogo from "@/assets/images/framed-svgs/haiyezLogo.svg";
 import cookieLogo from "@/assets/images/framed-svgs/cookieLogo.svg";
 import privyLogo from "@/assets/images/framed-svgs/privyLogo.svg";
+import animocaLogo from "@/assets/images/framed-svgs/animoca.svg";
+
 
 const sponsors = {
   poweredby: [
@@ -83,6 +85,7 @@ const latestSponsorHeirarchy3 = [
   { id: "dolos", name: "Dolos", image: dolosLogo },
   { id: "helius", name: "Helius", image: heliusLogo },
   { id: "multicoincap", name: "Multicoin Capital", image: multicoincapLogo },
+  { id: "animoca", name: "Animoca", image: animocaLogo },
   { id: "ionet", name: "Io.net", image: ionetLogo },
   { id: "mhventures", name: "MH Ventures", image: mhventuresLogo },
   { id: "dynamic", name: "Dynamic", image: dynamicLogo },

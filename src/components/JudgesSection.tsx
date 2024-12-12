@@ -45,7 +45,7 @@ import jjaliceaImg from "@/assets/images/judges/jjalicea.svg";
 import maxsegalImg from "@/assets/images/judges/maxsegal.svg";
 import kuleenImg from "@/assets/images/judges/kuleen.svg";
 import ejaazImg from "@/assets/images/judges/ejaaz.svg";
-
+import daveImg from "@/assets/images/judges/dave.svg";
 
 const judges = [
   {
@@ -307,6 +307,13 @@ const judges = [
     role: "Investor, 26cryptocapital",
     twitter: "https://x.com/cryptopunk7213",
     image: ejaazImg,
+  },
+  {
+    id: "dave",
+    name: " David Ching",
+    role: "Investment & Strategic Partnership Director, Animoca Brands",
+    twitter: "https://x.com/0xAbcdave",
+    image: daveImg,
   },
 ];
 
