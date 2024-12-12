@@ -162,7 +162,7 @@ const HeroSection = () => {
             rel='noopener noreferrer'
           >
             <span className='md:hidden block text-black/90 group-hover:text-black font-mono font-bold text-sm md:text-md tracking-wide transition-colors'>
-              Join
+              Join Telegram
             </span>
             <span className='md:block hidden text-black/90 group-hover:text-black font-mono font-bold text-sm md:text-md tracking-wide transition-colors'>
               Join Telegram Chat

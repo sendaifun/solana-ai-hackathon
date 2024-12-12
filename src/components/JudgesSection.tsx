@@ -41,6 +41,10 @@ import jadenImg from "@/assets/images/judges/jaden.svg";
 import markImg from "@/assets/images/judges/mark.svg";
 import yoheiImg from "@/assets/images/judges/yohei.svg";
 import yannikImg from "@/assets/images/judges/yrschrade.svg";
+import jjaliceaImg from "@/assets/images/judges/jjalicea.svg";
+import maxsegalImg from "@/assets/images/judges/maxsegal.svg";
+import kuleenImg from "@/assets/images/judges/kuleen.svg";
+
 
 const judges = [
   {
@@ -280,7 +284,21 @@ const judges = [
     name: "JJ Alicea",
     role: "Partner, Anagram",
     twitter: "https://x.com/darkmarketio",
-    image: yannikImg,
+    image: jjaliceaImg,
+  },
+  {
+    id: "max",
+    name: "Max Segall",
+    role: "COO, Privy",
+    twitter: "https://x.com/segall_max",
+    image: maxsegalImg,
+  },
+  {
+    id: "kuleen",
+    name: "Kuleen Nimkar",
+    role: "AI Lead, The Solana Foundation",
+    twitter: "https://x.com/knimkar",
+    image: kuleenImg,
   },
 ];
 
