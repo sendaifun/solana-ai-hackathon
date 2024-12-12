@@ -44,6 +44,7 @@ import yannikImg from "@/assets/images/judges/yrschrade.svg";
 import jjaliceaImg from "@/assets/images/judges/jjalicea.svg";
 import maxsegalImg from "@/assets/images/judges/maxsegal.svg";
 import kuleenImg from "@/assets/images/judges/kuleen.svg";
+import ejaazImg from "@/assets/images/judges/ejaaz.svg";
 
 
 const judges = [
@@ -299,6 +300,13 @@ const judges = [
     role: "AI Lead, The Solana Foundation",
     twitter: "https://x.com/knimkar",
     image: kuleenImg,
+  },
+  {
+    id: "ejaaz",
+    name: "Ejaaz",
+    role: "Investor, 26cryptocapital",
+    twitter: "https://x.com/cryptopunk7213",
+    image: ejaazImg,
   },
 ];
 
