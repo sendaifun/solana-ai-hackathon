@@ -53,6 +53,7 @@ import animocaLogo from "@/assets/images/framed-svgs/animoca.svg";
 import buildidfyLogo from "@/assets/images/framed-svgs/buildify.svg";
 import stFranceLogo from "@/assets/images/framed-svgs/stFrance.svg";
 import fourPillarsLogo from "@/assets/images/framed-svgs/4pillars.svg";
+import tarsLogo from "@/assets/images/framed-svgs/tars.svg";
 
 const sponsors = {
   poweredby: [
@@ -99,6 +100,7 @@ const latestSponsorHeirarchy3 = [
   { id: "orca", name: "Orca", image: orcaLogo },
   { id: "crossmint", name: "Crossmint", image: crossmintLogo },
   { id: "privy", name: "Privy", image: privyLogo },
+  { id: "tars", name: "Tars", image: tarsLogo },
 ];
 
 // const latestSponsorHeirarchy4 = [
