@@ -48,7 +48,7 @@ import ejaazImg from "@/assets/images/judges/ejaaz.svg";
 import daveImg from "@/assets/images/judges/dave.svg";
 import frankImg from "@/assets/images/judges/frank.svg";
 import threadguyImg from "@/assets/images/judges/threadguy.svg";
-
+import ryanImg from "@/assets/images/judges/ryan.svg";
 
 const judges = [
   {
@@ -152,7 +152,7 @@ const judges = [
   {
     id: "delhi",
     name: "Alex Golding",
-    role: "VC, Delphi Labs",
+    role: "VC, Delphi Ventures",
     twitter: "https://x.com/HelpedHope",
     image: delhiImg,
   },
@@ -331,6 +331,13 @@ const judges = [
     role: "probably nothing",
     twitter: "https://x.com/notthreadguy",
     image: threadguyImg,
+  },
+  {
+    id: "ryan",
+    name: "Ryan Watkins",
+    role: "Cofounder, Syncracy Capital",
+    twitter: "https://x.com/RyanWatkins_",
+    image: ryanImg,
   },
 ];
 

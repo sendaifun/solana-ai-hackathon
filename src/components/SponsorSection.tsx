@@ -51,6 +51,7 @@ import cookieLogo from "@/assets/images/framed-svgs/cookieLogo.svg";
 import privyLogo from "@/assets/images/framed-svgs/privyLogo.svg";
 import animocaLogo from "@/assets/images/framed-svgs/animoca.svg";
 import buildidfyLogo from "@/assets/images/framed-svgs/buildify.svg";
+import stFranceLogo from "@/assets/images/framed-svgs/stFrance.svg";
 
 const sponsors = {
   poweredby: [
@@ -116,6 +117,7 @@ const latestSponsorHeirarchy5 = [
   { id: "stIndia", name: "Superteam India", image: stIndiaLogo },
   { id: "stGermany", name: "Superteam Germany", image: stGermanyLogo },
   { id: "stUK", name: "Superteam UK", image: stUKLogo },
+  { id: "stFrance", name: "Superteam France", image: stFranceLogo },
   { id: "juicebox", name: "JuiceBox", image: juiceboxLogo },
   { id: "colosseum", name: "Colosseum", image: colosseumLogo },
   { id: "superhosts", name: "Superhosts", image: superhostsLogo },
