@@ -218,7 +218,7 @@ const SubtitleSection = ({ className }: SubtitleSectionProps) => {
       <LeftBorder />
       <span className="md:block hidden">10th - 23rd Dec. global & online.</span>
       {/* <span className="opacity-50 md:block hidden">·</span> */}
-      <span>$210k+ in prizes</span>
+      <span>$250k+ in prizes</span>
       <RightBorder />
     </motion.div>
   );

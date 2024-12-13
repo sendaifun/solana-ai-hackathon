@@ -36,6 +36,7 @@ import aethirLogo from "@/assets/images/framed-svgs/aethirLogo.svg";
 import privyLogo from "@/assets/images/framed-svgs/privyLogo.svg";
 import animocaLogo from "@/assets/images/framed-svgs/animoca.svg";
 import tarsLogo from "@/assets/images/framed-svgs/tars.svg";
+import frankImg from "@/assets/images/judges/frank.svg";
 
 const adrenaLogoComp = () => <Image src={adrenaLogo} alt="Adrena Logo" />;
 
@@ -123,7 +124,16 @@ const animocaLogoComp = () => (
 
 const tarsLogoComp = () => (
   <Image className="w-24 object-contain" src={tarsLogo} alt="Privy Logo" />
-)
+);
+
+const FrankLogoComp = () => (
+  <Image
+    className="w-14 rounded-lg object-contain filter grayscale"
+    src={frankImg}
+    alt="Privy Logo"
+  />
+);
+
 const grandPrizeSupporters = [
   { component: jitoLogoComp },
   { component: jupiterLogoComp },
@@ -484,7 +494,7 @@ const Section3 = () => {
   };
 
   const grandPrizeData = {
-    totalPrize: "$60,000",
+    totalPrize: "$110,000",
     mainSponsor: {
       title: "Main Track",
       logo: solanaFndnLogoComp,
@@ -493,21 +503,25 @@ const Section3 = () => {
       title: "Main Track",
       logo: ai16zLogoComp,
     },
+    mainSponsor3: {
+      title: "Main Track",
+      logo: FrankLogoComp,
+    },
     prizes: [
       {
         title: "First Main Prize",
-        amount: "$30,000",
+        amount: "$60,000",
         progressPercentage: 100,
         showTrophy: true,
       },
       {
         title: "Second Prize",
-        amount: "$20,000",
+        amount: "$30,000",
         progressPercentage: 60,
       },
       {
         title: "Third Prize",
-        amount: "$10,000",
+        amount: "$20,000",
         progressPercentage: 60,
       },
     ],

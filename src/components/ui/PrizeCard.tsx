@@ -25,6 +25,10 @@ interface PrizeCardProps {
     title: string;
     logo: ComponentType;
   };
+  mainSponsor3?: {
+    title: string;
+    logo: ComponentType;
+  };
   prizes: Prize[];
   description?: string;
   supporters?: Supporter[];
@@ -37,6 +41,7 @@ const PrizeCard = ({
   totalPrize,
   mainSponsor,
   mainSponsor2,
+  mainSponsor3,
   prizes,
   description,
   supporters = [],
@@ -46,6 +51,7 @@ const PrizeCard = ({
 }: PrizeCardProps) => {
   const MainSponsorLogo = mainSponsor.logo;
   const MainSponsorLogo2 = mainSponsor2?.logo;
+  const MainSponsorLogo3 = mainSponsor3?.logo;
 
   // Function to adjust color opacity
   const adjustColorOpacity = (color: string, opacity: number) => {
@@ -127,6 +133,7 @@ const PrizeCard = ({
                   {/* To avoid type error and optional - undefined */}
                   {mainSponsor2?.logo && React.createElement(mainSponsor2.logo)}
                   <MainSponsorLogo />
+                  {mainSponsor3?.logo && React.createElement(mainSponsor3.logo)}
                 </div>
               </div>
             </motion.div>
