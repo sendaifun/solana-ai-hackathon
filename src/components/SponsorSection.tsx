@@ -55,6 +55,7 @@ import stFranceLogo from "@/assets/images/framed-svgs/stFrance.svg";
 import fourPillarsLogo from "@/assets/images/framed-svgs/4pillars.svg";
 import tarsLogo from "@/assets/images/framed-svgs/tars.svg";
 import frankImgBW from "@/assets/images/judges/frankBW.svg";
+import goatLogo from "@/assets/images/framed-svgs/goatLogo.svg";
 
 const sponsors = {
   poweredby: [
@@ -70,6 +71,7 @@ const latestSponsorHeirarchy1 = [
   { id: "ai16z", name: "ai16z", image: ai16zLogo },
   { id: "solana fndn", name: "Solana Foundation", image: solanaFndnLogo },
   { id: "Frank", name: "Frank", image: frankImgBW },
+  { id: "goat", name: "GOAT", image: goatLogo },
 ];
 
 const latestSponsorHeirarchy2 = [
