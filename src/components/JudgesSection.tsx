@@ -49,6 +49,7 @@ import daveImg from "@/assets/images/judges/dave.svg";
 import frankImg from "@/assets/images/judges/frank.svg";
 import threadguyImg from "@/assets/images/judges/threadguy.svg";
 import ryanImg from "@/assets/images/judges/ryan.svg";
+import soljakeyImg from "@/assets/images/judges/soljakey.svg";
 import { track } from "@vercel/analytics";
 
 const judges = [
@@ -339,6 +340,13 @@ const judges = [
     role: "Cofounder, Syncracy Capital",
     twitter: "https://x.com/RyanWatkins_",
     image: ryanImg,
+  },
+  {
+    id: "soljakey",
+    name: "Soljakey",
+    role: "",
+    twitter: "https://x.com/soljakey",
+    image: soljakeyImg,
   },
 ];
 
