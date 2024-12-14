@@ -49,6 +49,7 @@ import daveImg from "@/assets/images/judges/dave.svg";
 import frankImg from "@/assets/images/judges/frank.svg";
 import threadguyImg from "@/assets/images/judges/threadguy.svg";
 import ryanImg from "@/assets/images/judges/ryan.svg";
+import { track } from "@vercel/analytics";
 
 const judges = [
   {
@@ -345,6 +346,27 @@ const JudgesSection = () => {
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { once: true, amount: 0.2 });
 
+  // To track click events on judges
+  const handleJudgeClick = (judge: any) => {
+    track("judge_profile_click", {
+      judgeName: judge.name,
+      judgeRole: judge.role,
+      twitterHandle: judge.twitter,
+    });
+  };
+
+  const handleSectionView = () => {
+    if (isInView) {
+      track('judges_section_view', {
+        totalJudges: judges.length
+      });
+    }
+  };
+
+  React.useEffect(() => {
+    handleSectionView();
+  }, [isInView]);
+
   const getColors = (index: number): string => {
     switch (index % 4) {
       case 0:
@@ -399,6 +421,7 @@ const JudgesSection = () => {
               href={judge.twitter}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => handleJudgeClick(judge)}
             >
               <motion.div
                 key={judge.id}

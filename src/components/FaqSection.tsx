@@ -11,8 +11,23 @@ import {
 import cornerAbstract from "@/assets/images/svgs/abstract/CornerRect.png";
 import FAQCloseIcon from "@/assets/images/svgs/abstract/FAQClose.svg";
 import FAQOpenIcon from "@/assets/images/svgs/abstract/FAQOpen.svg";
+import { track } from "@vercel/analytics";
 
 export default function FAQSection() {
+  
+  // Track FAQ item interactions
+  const handleFAQToggle = (
+    questionId: string,
+    question: string,
+    isOpen: boolean
+  ) => {
+    track("faq_interaction", {
+      questionId,
+      question,
+      action: isOpen ? "opened" : "closed",
+    });
+  };
+
   return (
     <div className="w-full mx-auto p-6 space-y-8 bg-black" id="faqs">
       {/* Title with decorative lines */}
@@ -77,6 +92,16 @@ export default function FAQSection() {
               <AccordionTrigger
                 className="px-6 py-4 bg-[#000] hover:border-white rounded-none border border-white/20
                         data-[state=open]:border-cyan-400/40 data-[state=open]:bg-[#191F26] data-[state=open]:text-white transition-all group"
+                onClick={() => {
+                  const accordionItem = document.querySelector(`[data-state]`);
+                  const isCurrentlyOpen =
+                    accordionItem?.getAttribute("data-state") === "open";
+                  handleFAQToggle(
+                    `item-${index}`,
+                    faq.question,
+                    !isCurrentlyOpen
+                  );
+                }}
               >
                 <span className="text-xl font-medium tracking-wider text-gray-400  font-relishGargler">
                   {faq.question}
@@ -182,7 +207,6 @@ const faqData = [
     question: "Is there any registration for the hackathon?",
     content:
       "No. You can directly join the telegram and start building. You need to directly submit in the submissions form, which opens on 15th December.",
-
   },
   {
     question: "Can existing projects participate in the hackathon?",

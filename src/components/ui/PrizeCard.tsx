@@ -29,6 +29,10 @@ interface PrizeCardProps {
     title: string;
     logo: ComponentType;
   };
+  mainSponsor4?: {
+    title: string;
+    logo: ComponentType;
+  };
   prizes: Prize[];
   description?: string;
   supporters?: Supporter[];
@@ -42,6 +46,7 @@ const PrizeCard = ({
   mainSponsor,
   mainSponsor2,
   mainSponsor3,
+  mainSponsor4,
   prizes,
   description,
   supporters = [],
@@ -52,6 +57,7 @@ const PrizeCard = ({
   const MainSponsorLogo = mainSponsor.logo;
   const MainSponsorLogo2 = mainSponsor2?.logo;
   const MainSponsorLogo3 = mainSponsor3?.logo;
+  const MainSponsorLogo4 = mainSponsor3?.logo;
 
   // Function to adjust color opacity
   const adjustColorOpacity = (color: string, opacity: number) => {
@@ -131,8 +137,9 @@ const PrizeCard = ({
                 </span>
                 <div className="text-gray-400 hover:text-gray-300 transition-colors flex flex-wrap gap-6">
                   {/* To avoid type error and optional - undefined */}
-                  {mainSponsor2?.logo && React.createElement(mainSponsor2.logo)}
                   <MainSponsorLogo />
+                  {mainSponsor2?.logo && React.createElement(mainSponsor2.logo)}
+                  {mainSponsor4?.logo && React.createElement(mainSponsor4.logo)}
                   {mainSponsor3?.logo && React.createElement(mainSponsor3.logo)}
                 </div>
               </div>

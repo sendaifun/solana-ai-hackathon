@@ -37,6 +37,8 @@ import privyLogo from "@/assets/images/framed-svgs/privyLogo.svg";
 import animocaLogo from "@/assets/images/framed-svgs/animoca.svg";
 import tarsLogo from "@/assets/images/framed-svgs/tars.svg";
 import frankImg from "@/assets/images/judges/frank.svg";
+import goatLogo from "@/assets/images/framed-svgs/goatLogo.svg";
+import { track } from "@vercel/analytics";
 
 const adrenaLogoComp = () => <Image src={adrenaLogo} alt="Adrena Logo" />;
 
@@ -130,6 +132,13 @@ const FrankLogoComp = () => (
   <Image
     className="w-14 rounded-lg object-contain filter grayscale"
     src={frankImg}
+    alt="Privy Logo"
+  />
+);
+const GoatLogoComp = () => (
+  <Image
+    className="w-14 rounded-lg object-contain filter grayscale"
+    src={goatLogo}
     alt="Privy Logo"
   />
 );
@@ -491,6 +500,12 @@ const Section3 = () => {
   const handleTabClick = (index: number) => {
     setActiveTab(index);
     setIsAutoSwitching(false);
+    
+    // Track tab click events
+    track('prize_track_selected', {
+      trackName: trackTabs[index].title,
+      trackIndex: index
+    });
   };
 
   const grandPrizeData = {
@@ -506,6 +521,10 @@ const Section3 = () => {
     mainSponsor3: {
       title: "Main Track",
       logo: FrankLogoComp,
+    },
+    mainSponsor4: {
+      title: "Main Track",
+      logo: GoatLogoComp,
     },
     prizes: [
       {

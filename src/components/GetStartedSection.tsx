@@ -3,6 +3,7 @@
 import React, { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { ScrambleText } from "./ui/scramble-text";
+import { track } from "@vercel/analytics";
 
 interface CardItem {
   id: string;
@@ -14,6 +15,10 @@ interface CardItem {
 const GetStartedSection = () => {
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { once: true, amount: 0.2 });
+
+  const handleLinkClick = (title: string) => {
+    track("get_started_link_click", { title });
+  };
 
   const getColors = (index: number): string => {
     switch (index % 4) {
@@ -223,6 +228,7 @@ const GetStartedSection = () => {
                   scale: 1.05,
                   transition: { duration: 0.2 },
                 }}
+                onClick={() => handleLinkClick(item.title)}
               >
                 <motion.div
                   className=" text-[#787B7E] group-hover:text-[var(--hover-color)] transition-colors duration-300 w-8 h-8 md:w-16 md:h-16 lg:w-[64px] lg:h-[64px]"
