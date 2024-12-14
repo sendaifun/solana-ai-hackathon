@@ -342,8 +342,8 @@ const judges = [
     image: ryanImg,
   },
   {
-    id: "soljakey",
-    name: "Soljakey",
+    id: "jakey",
+    name: "Jakey",
     role: "",
     twitter: "https://x.com/soljakey",
     image: soljakeyImg,
