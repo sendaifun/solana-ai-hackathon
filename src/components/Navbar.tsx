@@ -7,49 +7,71 @@ import aiHackathonLogo from "@/assets/images/logos/HackathonLogo.svg";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import Link from "next/link";
 import { ScrambleText } from "@/components/ui/scramble-text";
+import { track } from "@vercel/analytics";
 
-const NavLinks = ({ mobile }: { mobile?: boolean }) => (
-  <>
-    <Link href="/#tracks">
-      <ScrambleText
-        text="Tracks"
-        className={`text-gray-300 hover:text-white transition-colors z-30 ${
-          mobile ? "text-xl text-center py-4" : ""
-        }`}
-      />
-    </Link>
-    <Link target="_blank" href="https://www.sendai.fun/ideas">
-      <ScrambleText
-        text="Ideas"
-        className={`text-gray-300 hover:text-white transition-colors ${
-          mobile ? "text-xl text-center py-4" : ""
-        }`}
-      />
-    </Link>
-    <Link
-      target="_blank"
-      href="https://docs.google.com/document/d/1anJ_YRzLbgrqm3zB7gC02AxPvOlGzC2aySZLcRkjKo8/edit?"
-    >
-      <ScrambleText
-        text="Resources"
-        className={`text-gray-300 hover:text-white transition-colors ${
-          mobile ? "text-xl text-center py-4" : ""
-        }`}
-      />
-    </Link>
-    <Link href="/faq#faqs">
-      <ScrambleText
-        text="FAQs"
-        className={`text-gray-300 hover:text-white transition-colors ${
-          mobile ? "text-xl text-center py-4" : ""
-        }`}
-      />
-    </Link>
-  </>
-);
+const NavLinks = ({ mobile }: { mobile?: boolean }) => {
+  const handleNavClick = (linkName: string) => {
+    track("navigation_click", {
+      linkName,
+      platform: mobile ? "mobile" : "desktop",
+    });
+  };
+
+  return (
+    <>
+      <Link href="/#tracks" onClick={() => handleNavClick("tracks")}>
+        <ScrambleText
+          text="Tracks"
+          className={`text-gray-300 hover:text-white transition-colors z-30 ${
+            mobile ? "text-xl text-center py-4" : ""
+          }`}
+        />
+      </Link>
+      <Link
+        target="_blank"
+        href="https://www.sendai.fun/ideas"
+        onClick={() => handleNavClick("ideas")}
+      >
+        <ScrambleText
+          text="Ideas"
+          className={`text-gray-300 hover:text-white transition-colors ${
+            mobile ? "text-xl text-center py-4" : ""
+          }`}
+        />
+      </Link>
+      <Link
+        target="_blank"
+        href="https://docs.google.com/document/d/1anJ_YRzLbgrqm3zB7gC02AxPvOlGzC2aySZLcRkjKo8/edit?"
+        onClick={() => handleNavClick("resources")}
+      >
+        <ScrambleText
+          text="Resources"
+          className={`text-gray-300 hover:text-white transition-colors ${
+            mobile ? "text-xl text-center py-4" : ""
+          }`}
+        />
+      </Link>
+      <Link href="/faq#faqs" onClick={() => handleNavClick("faqs")}>
+        <ScrambleText
+          text="FAQs"
+          className={`text-gray-300 hover:text-white transition-colors ${
+            mobile ? "text-xl text-center py-4" : ""
+          }`}
+        />
+      </Link>
+    </>
+  );
+};
 
 const JoinButton = ({ mobile }: { mobile?: boolean }) => (
-  <Link target="_blank" href="https://t.me/solana_ai_hackathon">
+  <Link
+    target="_blank"
+    href="https://t.me/solana_ai_hackathon"
+    rel="noopener noreferrer"
+    onClick={() =>
+      track("join_telegram_click", { platform: mobile ? "mobile" : "desktop" })
+    }
+  >
     <ScrambleText
       text="Join Telegram Chat"
       className={`bg-[#1E252B] text-[#1BE1FF] font-medium px-4 py-3 rounded-md transition-colors text-center
@@ -66,7 +88,7 @@ const NavbarComp = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo and Brand */}
           <div className="flex items-center cursor-pointer mx-2">
-            <Link href="/">
+            <Link href="/" onClick={() => track("logo_click")}>
               <div className="h-10 w-10">
                 <svg
                   viewBox="0 0 40 40"

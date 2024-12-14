@@ -2,6 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
+import { track } from "@vercel/analytics";
 import solanaAIHackathonLogo from "@/assets/images/logos/HackathonLogo.svg";
 import sendAILogo from "@/assets/images/logos/SendAI.svg";
 import juiceBoxLogo from "@/assets/images/logos/JuiceBox.svg";
@@ -11,7 +12,6 @@ const Footer = () => {
   const navigation = {
     hackathon: [
       { name: "Tracks", href: "/#tracks", openInNewTab: false },
-      // { name: "Prizes", href: "/#tracks" },
       { name: "FAQs", href: "/faq#faqs" },
     ],
     getStarted: [
@@ -37,6 +37,26 @@ const Footer = () => {
     ],
   };
 
+  const handleNavClick = (section: string, itemName: string, isExternal: boolean) => {
+    track('footer_navigation_click', {
+      section,
+      itemName,
+      linkType: isExternal ? 'external' : 'internal'
+    });
+  };
+
+  const handleLogoClick = (logoName: string) => {
+    track('footer_logo_click', {
+      logoName
+    });
+  };
+
+  const handleJuiceboxClick = () => {
+    track('juicebox_link_click', {
+      location: 'footer'
+    });
+  };
+
   return (
     <footer className="bg-[#111111] pt-20 pb-8">
       <div className="mx-auto px-4">
@@ -49,6 +69,7 @@ const Footer = () => {
                 width={150}
                 height={30}
                 className="brightness-100"
+                onClick={() => handleLogoClick('solana_hackathon')}
               />
             </div>
             <div className="flex items-center gap-2 text-gray-500">
@@ -59,6 +80,7 @@ const Footer = () => {
                 width={80}
                 height={20}
                 className="opacity-50"
+                onClick={() => handleLogoClick('sendai')}
               />
             </div>
           </div>
@@ -74,6 +96,7 @@ const Footer = () => {
                       rel="noopener noreferrer"
                       href={item.href}
                       className="text-gray-500 hover:text-gray-400"
+                      onClick={() => handleNavClick('hackathon', item.name, item.openInNewTab || false)}
                     >
                       {item.name}
                     </a>
@@ -91,6 +114,7 @@ const Footer = () => {
                       rel="noopener noreferrer"
                       href={item.href}
                       className="text-gray-500 hover:text-gray-400"
+                      onClick={() => handleNavClick('get_started', item.name, item.openInNewTab || false)}
                     >
                       {item.name}
                     </a>
@@ -108,6 +132,7 @@ const Footer = () => {
                       rel="noopener noreferrer"
                       href={item.href}
                       className="text-gray-500 hover:text-gray-400"
+                      onClick={() => handleNavClick('organizers', item.name, item.openInNewTab || false)}
                     >
                       {item.name}
                     </a>
@@ -118,13 +143,16 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className=" pt-8 flex lg:flex-row justify-between items-center gap-4">
+        <div className="pt-8 flex lg:flex-row justify-between items-center gap-4">
           <div className="text-gray-600 font-PPSans">
             Twenty&apos;24 Solana AI Hackathon
             <br />© All Rights Reserved
           </div>
           <div className="flex gap-2">
-            <a href="https://x.com/juicebox_it">
+            <a 
+              href="https://x.com/juicebox_it"
+              onClick={handleJuiceboxClick}
+            >
               <div className="flex flex-col justify-right items-center gap-2 text-gray-600 font-PPSans">
                 <span>crafted with</span>
                 <div className="flex gap-2">
