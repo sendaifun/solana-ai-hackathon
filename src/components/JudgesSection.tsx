@@ -50,6 +50,7 @@ import frankImg from "@/assets/images/judges/frank.svg";
 import threadguyImg from "@/assets/images/judges/threadguy.svg";
 import ryanImg from "@/assets/images/judges/ryan.svg";
 import soljakeyImg from "@/assets/images/judges/soljakey.svg";
+import ansemImg from "@/assets/images/judges/ansem.svg";
 import { track } from "@vercel/analytics";
 
 const judges = [
@@ -348,6 +349,13 @@ const judges = [
     twitter: "https://x.com/soljakey",
     image: soljakeyImg,
   },
+  {
+    id: "ansem",
+    name: "Ansem",
+    role: "",
+    twitter: "https://x.com/blknoiz06",
+    image: ansemImg,
+  },
 ];
 
 const JudgesSection = () => {
@@ -365,8 +373,8 @@ const JudgesSection = () => {
 
   const handleSectionView = () => {
     if (isInView) {
-      track('judges_section_view', {
-        totalJudges: judges.length
+      track("judges_section_view", {
+        totalJudges: judges.length,
       });
     }
   };
