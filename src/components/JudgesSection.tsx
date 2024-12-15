@@ -71,7 +71,7 @@ const judges = [
   {
     id: "shaw",
     name: "Shaw",
-    role: "Co-Founder, ai16z and elizaOS",
+    role: "Founder, ai16z and Eliza Labs",
     twitter: "https://x.com/shawmakesmagic",
     image: shawImg,
   },
