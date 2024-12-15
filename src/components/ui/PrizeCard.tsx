@@ -166,7 +166,7 @@ const PrizeCard = ({
                 className="mt-auto"
               >
                 <p className="text-gray-500 text-sm mb-4 font-ppsans">Supported by</p>
-                <div className="grid grid-cols-2 gap-6 lg:gap-8">
+                <div className="grid  grid-cols-2 md:grid-cols-3 gap-6 lg:gap-8">
                   {supporters.map((supporter, index) => {
                     const SupporterLogo = supporter.component;
                     return (
