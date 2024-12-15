@@ -51,6 +51,7 @@ import threadguyImg from "@/assets/images/judges/threadguy.svg";
 import ryanImg from "@/assets/images/judges/ryan.svg";
 import soljakeyImg from "@/assets/images/judges/soljakey.svg";
 import ansemImg from "@/assets/images/judges/ansem.svg";
+import mattyImg from "@/assets/images/judges/matty.svg";
 import { track } from "@vercel/analytics";
 
 const judges = [
@@ -355,6 +356,13 @@ const judges = [
     role: "",
     twitter: "https://x.com/blknoiz06",
     image: ansemImg,
+  },
+  {
+    id: "matty",
+    name: "Matty Tay",
+    role: "Cofounder & GP, Colosseum",
+    twitter: "https://x.com/mattytay",
+    image: mattyImg,
   },
 ];
 
