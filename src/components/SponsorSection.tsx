@@ -57,7 +57,7 @@ import tarsLogo from "@/assets/images/framed-svgs/tars.svg";
 import frankImgBW from "@/assets/images/judges/frankBW.svg";
 import goatLogo from "@/assets/images/framed-svgs/goatLogo.svg";
 import snsLogo from "@/assets/images/framed-svgs/snsLogo.svg";
-
+import monocerosLogo from "@/assets/images/framed-svgs/monoceros.svg";
 const sponsors = {
   poweredby: [
     {
@@ -84,6 +84,7 @@ const latestSponsorHeirarchy2 = [
   { id: "paladin", name: "Paladin", image: paladinLogo },
   { id: "aethir", name: "Aethir", image: aethirLogo },
   { id: "haiyez", name: "Haiyez", image: haiyezLogo },
+  { id: "monoceros", name: "Monoceros", image: monocerosLogo },
 ];
 
 const latestSponsorHeirarchy3 = [
