@@ -56,6 +56,7 @@ import fourPillarsLogo from "@/assets/images/framed-svgs/4pillars.svg";
 import tarsLogo from "@/assets/images/framed-svgs/tars.svg";
 import frankImgBW from "@/assets/images/judges/frankBW.svg";
 import goatLogo from "@/assets/images/framed-svgs/goatLogo.svg";
+import snsLogo from "@/assets/images/framed-svgs/snsLogo.svg";
 
 const sponsors = {
   poweredby: [
@@ -132,6 +133,7 @@ const latestSponsorHeirarchy5 = [
   { id: "cookie", name: "Cookie DAO", image: cookieLogo },
   { id: "buildidfy", name: "Buildidfy", image: buildidfyLogo },
   { id: "fourpillars", name: "4 Pillars", image: fourPillarsLogo },
+  { id: "sns", name: "SNS", image: snsLogo },
 ];
 
 const SponsorCard = ({ image, name }: { image: string; name: string }) => (
