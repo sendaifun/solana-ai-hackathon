@@ -38,6 +38,7 @@ import animocaLogo from "@/assets/images/framed-svgs/animoca.svg";
 import tarsLogo from "@/assets/images/framed-svgs/tars.svg";
 import frankImg from "@/assets/images/judges/frank.svg";
 import goatLogo from "@/assets/images/framed-svgs/goatLogo.svg";
+import monocerosLogo from "@/assets/images/framed-svgs/monoceros.svg";
 import { track } from "@vercel/analytics";
 
 const adrenaLogoComp = () => <Image src={adrenaLogo} alt="Adrena Logo" />;
@@ -142,7 +143,13 @@ const GoatLogoComp = () => (
     alt="Privy Logo"
   />
 );
-
+const monocerosLogoComp = () => (
+  <Image
+    className="w-24 object-contain"
+    src={monocerosLogo}
+    alt="Monoceros Logo"
+  />
+)
 const grandPrizeSupporters = [
   { component: jitoLogoComp },
   { component: jupiterLogoComp },
@@ -157,6 +164,7 @@ const grandPrizeSupporters = [
   { component: dynamicLogoComp },
   { component: privyLogoComp },
   { component: tarsLogoComp },
+  { component: monocerosLogoComp },
 ];
 const autonomoschatSupporters = [{ component: assistrLogoComp }];
 // const socialnInfluencerAgentsSupporters = [{ component: "" }];
