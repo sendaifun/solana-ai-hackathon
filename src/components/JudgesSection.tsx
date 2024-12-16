@@ -53,6 +53,7 @@ import soljakeyImg from "@/assets/images/judges/soljakey.svg";
 import ansemImg from "@/assets/images/judges/ansem.svg";
 import mattyImg from "@/assets/images/judges/matty.svg";
 import pedroImg from "@/assets/images/judges/pedro.svg";
+import tukkaImg from "@/assets/images/judges/tukka.svg";
 import { track } from "@vercel/analytics";
 
 const judges = [
@@ -371,6 +372,13 @@ const judges = [
     role: "Consumer, Solana Foundation",
     twitter: "https://x.com/voteforpedrito",
     image: pedroImg,
+  },
+  {
+    id: "tukka",
+    name: "Tuukka Tuomikoski",
+    role: "Investor",
+    twitter: "https://x.com/PepegaQuant",
+    image: tukkaImg,
   },
 ];
 
