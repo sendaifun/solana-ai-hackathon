@@ -7,7 +7,7 @@ const page = () => {
     <>
       <div className="w-[100vw] h-[100vh]">
         <Widget
-          id="MXJRmO6x"
+          id="QPMRcP4l"
           style={{ width: "100%", height: "100%" }}
           className="my-form"
         />
