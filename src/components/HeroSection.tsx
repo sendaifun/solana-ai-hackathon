@@ -178,16 +178,12 @@ const HeroSection = () => {
             </svg>
           </Button> */}
 
-          <Button>
-            <PopupButton
-              id="QPMRcP4l"
-              style={{ fontSize: 20 }}
-              // className="my-button"
-            >
+          <Button href="/submit">
+
               <span className="md:block hidden text-black/90 group-hover:text-black font-mono font-bold text-sm md:text-md tracking-wide transition-colors">
                 Submit your Project
               </span>
-            </PopupButton>
+
           </Button>
         </div>
       </div>
