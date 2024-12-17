@@ -376,7 +376,7 @@ const judges = [
   {
     id: "tukka",
     name: "Tuukka Tuomikoski",
-    role: "Investor",
+    role: "Investor, Monoceros",
     twitter: "https://x.com/PepegaQuant",
     image: tukkaImg,
   },
