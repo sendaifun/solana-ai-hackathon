@@ -7,6 +7,7 @@ import { ScrambleText } from "@/components/ui/scramble-text";
 import BackgroundImages from "./ui/BackgroundImages";
 import { Button } from "./ui/button";
 import { PopupButton } from "@typeform/embed-react";
+import Link from "next/link";
 
 const TriangleBackground = () => (
   <div className="absolute h-[230px] md:h-[480px] inset-0 -translate-y-[27%] flex items-center justify-center">
@@ -178,12 +179,12 @@ const HeroSection = () => {
             </svg>
           </Button> */}
 
-          <Button href="/submit">
-
-              <span className="md:block hidden text-black/90 group-hover:text-black font-mono font-bold text-sm md:text-md tracking-wide transition-colors">
-                Submit your Project
-              </span>
-
+          <Button>
+            <Link href="/submit">
+            <span className="md:block py-2 md:py-0 text-black/90 group-hover:text-black font-mono font-bold text-sm md:text-md tracking-wide transition-colors">
+              Submit your Project
+            </span>
+            </Link>
           </Button>
         </div>
       </div>
