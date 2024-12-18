@@ -55,6 +55,7 @@ import mattyImg from "@/assets/images/judges/matty.svg";
 import pedroImg from "@/assets/images/judges/pedro.svg";
 import tukkaImg from "@/assets/images/judges/tukka.svg";
 import geoffImg from "@/assets/images/judges/geoff.svg";
+import chrisImg from "@/assets/images/judges/chris.svg";
 import { track } from "@vercel/analytics";
 
 const judges = [
@@ -387,6 +388,13 @@ const judges = [
     role: "Investor, Variant Fund",
     twitter: "https://x.com/gham1lt0n",
     image: geoffImg,
+  },
+  {
+    id: "chris",
+    name: "Chris Hermida",
+    role: "Cofounder, Switchboard",
+    twitter: "https://x.com/hermidao1",
+    image: chrisImg,
   },
 ];
 
