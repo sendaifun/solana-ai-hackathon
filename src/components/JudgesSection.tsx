@@ -54,6 +54,7 @@ import ansemImg from "@/assets/images/judges/ansem.svg";
 import mattyImg from "@/assets/images/judges/matty.svg";
 import pedroImg from "@/assets/images/judges/pedro.svg";
 import tukkaImg from "@/assets/images/judges/tukka.svg";
+import geoffImg from "@/assets/images/judges/geoff.svg";
 import { track } from "@vercel/analytics";
 
 const judges = [
@@ -379,6 +380,13 @@ const judges = [
     role: "Investor, Monoceros",
     twitter: "https://x.com/PepegaQuant",
     image: tukkaImg,
+  },
+  {
+    id: "geoff",
+    name: "Geoff Hamilton",
+    role: "Investor, Variant Fund",
+    twitter: "https://x.com/gham1lt0n",
+    image: geoffImg,
   },
 ];
 
