@@ -58,6 +58,8 @@ import frankImgBW from "@/assets/images/judges/frankBW.svg";
 import goatLogo from "@/assets/images/framed-svgs/goatLogo.svg";
 import snsLogo from "@/assets/images/framed-svgs/snsLogo.svg";
 import monocerosLogo from "@/assets/images/framed-svgs/monoceros.svg";
+import shoalLogo from "@/assets/images/framed-svgs/shoal.svg";
+
 const sponsors = {
   poweredby: [
     {
@@ -135,6 +137,7 @@ const latestSponsorHeirarchy5 = [
   { id: "buildidfy", name: "Buildidfy", image: buildidfyLogo },
   { id: "fourpillars", name: "4 Pillars", image: fourPillarsLogo },
   { id: "sns", name: "SNS", image: snsLogo },
+  { id: "shoal", name: "Shoal", image: shoalLogo },
 ];
 
 const SponsorCard = ({ image, name }: { image: string; name: string }) => (
