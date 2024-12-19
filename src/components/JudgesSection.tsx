@@ -56,6 +56,7 @@ import pedroImg from "@/assets/images/judges/pedro.svg";
 import tukkaImg from "@/assets/images/judges/tukka.svg";
 import geoffImg from "@/assets/images/judges/geoff.svg";
 import chrisImg from "@/assets/images/judges/chris.svg";
+import andyImg from "@/assets/images/judges/andy.svg";
 import { track } from "@vercel/analytics";
 
 const judges = [
@@ -395,6 +396,13 @@ const judges = [
     role: "Cofounder, Switchboard",
     twitter: "https://x.com/hermidao1",
     image: chrisImg,
+  },
+  {
+    id: "Andy",
+    name: "Andy Ayrey",
+    role: "truth terminal&apos;s daddy",
+    twitter: "https://x.com/hermidao1",
+    image: andyImg,
   },
 ];
 
