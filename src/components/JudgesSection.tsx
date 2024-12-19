@@ -400,8 +400,8 @@ const judges = [
   {
     id: "Andy",
     name: "Andy Ayrey",
-    role: "truth terminal&apos;s daddy",
-    twitter: "https://x.com/hermidao1",
+    role: "truth terminal's daddy",
+    twitter: "https://x.com/AndyAyrey",
     image: andyImg,
   },
 ];
