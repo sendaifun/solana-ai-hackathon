@@ -21,7 +21,7 @@ import kaitoImg from "@/assets/images/judges/kaito.svg";
 import kamranImg from "@/assets/images/judges/kamran.svg";
 import karanNousImg from "@/assets/images/judges/karan_nous.svg";
 import kyleImg from "@/assets/images/judges/kyle.svg";
-import marginifImg from "@/assets/images/judges/marginif.svg";
+import jakobImg from "@/assets/images/judges/jakob.svg";
 import mertImg from "@/assets/images/judges/mert.svg";
 import orcaImg from "@/assets/images/judges/orca.svg";
 import qwImg from "@/assets/images/judges/qw.svg";
@@ -251,11 +251,11 @@ const judges = [
     image: orcaImg,
   },
   {
-    id: "marginif",
-    name: "Jakob",
+    id: "jakob",
+    name: "Jakob Povsic",
     role: "Temporal and MarginFi",
     twitter: "https://x.com/libsvm",
-    image: marginifImg,
+    image: jakobImg,
   },
   {
     id: "tong",
