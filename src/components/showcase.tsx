@@ -8,27 +8,11 @@ import { track } from "@vercel/analytics";
 import ongoLogo from "@/assets/images/showcase/ongo.svg";
 import { ChevronDown, Github, Globe, PlayCircle, Twitter } from "lucide-react";
 
-const projects = [
-  {
-    id: "Ongo AI",
-    name: "Ongo AI",
-    image: ongoLogo,
-    track: ["Autonomous Chat Agents", "Social & Influencer Agents"],
-    description: "Get an expert opinion from Ongo Gablogian",
-    githubUrl: "https://github.com/ongo-ai",
-    websiteUrl: "https://ongo.ai/",
-    team: "Team Alpha",
-    twitterUrl: "https://x.com/ongo_ai/status/1869147405414957336",
-    submissionUrl: "https://ongo.ai/",
-  },
-  // Add more projects here
-];
-
 const tracks = [
   { id: "all", name: "All Projects" },
   { id: "sak", name: "Solana Agent Kit" },
   { id: "chat", name: "Autonomous Chat Agents" },
-  { id: "social", name: "Social & Influencer Agents" },
+  { id: "social", name: "Social and Influencer Agents" },
   { id: "meme", name: "Meme Agents" },
   { id: "infra", name: "Agents Infra" },
   { id: "token", name: "Agents Token tooling" },
@@ -180,18 +164,20 @@ const getTrackId = (trackName: string) => {
 const ProjectShowcase = () => {
   const [activeTrack, setActiveTrack] = useState("all");
 
-//   const [projects, setProjects] = useState([]);
+  const [projects, setProjects] = useState<any>([]);
+  const [loading, setLoading] = useState(true);
+  useEffect(() => {
+    const loadProjects = async () => {
+      setLoading(true);
+      const response = await fetch("/api/projects");
+      const data = await response.json();
+      setProjects(data);
+      setLoading(false);
+    };
+    loadProjects();
+  }, []);
 
-//   useEffect(() => {
-//     const loadProjects = async () => {
-//       const response = await fetch("/api/projects");
-//       const data = await response.json();
-//       setProjects(data);
-//     };
-//     loadProjects();
-//   }, []);
-
-  const filteredProjects = projects.filter((project) => {
+  const filteredProjects = projects.filter((project: any) => {
     if (activeTrack === "all") return true;
     const trackName = tracks.find((t) => t.id === activeTrack)?.name;
     return project?.track.includes(trackName || "");
@@ -201,8 +187,15 @@ const ProjectShowcase = () => {
     setActiveTrack(trackId);
     track("filter_change", { trackId });
   };
+  if (loading) {
+    return (
+      <>
+        <div className="bg-black h-screen flex items-center justify-center text-white font-relish text-2xl animate-pulse">Its Agentic Apps szn</div>
+      </>
+    );
+  }
   return (
-    <div className="bg-black">
+    <div className="bg-black h-full">
       <div className="max-w-7xl w-full mx-auto px-4 py-16">
         {/* Title with decorative lines */}
         <div className="flex items-center justify-center gap-4 mb-16 mx-16">
@@ -252,8 +245,8 @@ const ProjectShowcase = () => {
         </div>
 
         {/* Projects Grid */}
-        <div className="flex flex-wrap justify-center">
-          {filteredProjects.map((project, index) => (
+        <div className="flex flex-wrap justify-center gap-4">
+          {filteredProjects.map((project: any, index: number) => (
             <div
               key={project.id}
               className="relative group w-96"
@@ -264,13 +257,13 @@ const ProjectShowcase = () => {
               }
             >
               {/* Card Container */}
-              <div className="relative bg-[#1E1E1E] rounded-lg overflow-hidden">
+              <div className="relative bg-[#0f0f0f] rounded-lg overflow-hidden h-[520px]">
                 {/* Image Container */}
                 <div className="aspect-video overflow-hidden border-2 border-[#353637] transition-all duration-300 group-hover:border-[var(--hover-color)]">
-                  {project.image ? (
+                  {project?.image ? (
                     <>
                       <Image
-                        src={project.image}
+                        src={project?.image}
                         alt={project.name}
                         width={400}
                         height={225}
@@ -279,7 +272,7 @@ const ProjectShowcase = () => {
                       <div className="absolute inset-0 bg-gradient-to-t from-[#1E1E1E] via-transparent to-transparent opacity-50 transition-opacity duration-300 group-hover:opacity-30"></div>
                     </>
                   ) : (
-                    <div className="w-full h-full flex items-center justify-center bg-[#1E1E1E] rounded-lg">
+                    <div className="w-full h-full flex items-center justify-center bg-[#0f0f0f] rounded-lg">
                       <span className="text-[var(--hover-color)] text-2xl font-mono rounded-lg">
                         {project.name.slice(0, 2).toUpperCase()}
                       </span>
@@ -293,7 +286,7 @@ const ProjectShowcase = () => {
                     {project.name}
                   </h3>
                   <p className="text-gray-400 font-ppsans text-sm mb-4 transition-colors duration-300 group-hover:text-[var(--hover-color)] opacity-60">
-                    {project.description}
+                    {project.description?.slice(0, 100)}
                   </p>
 
                   {/* Team and Links Section */}
@@ -306,7 +299,7 @@ const ProjectShowcase = () => {
                     </div>
 
                     <div className="flex flex-col gap-4 cursor-pointer">
-                      {project.track.map((trackName, idx) => (
+                      {project.track.map((trackName: string, idx: number) => (
                         <div
                           key={idx}
                           onClick={() => handleTrackClick(trackName)}
