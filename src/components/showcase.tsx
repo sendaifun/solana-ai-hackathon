@@ -2,98 +2,18 @@
 
 import cornerAbstract from "@/assets/images/svgs/abstract/CornerRect.png";
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 // Img SVGs :
 import { track } from "@vercel/analytics";
 import ongoLogo from "@/assets/images/showcase/ongo.svg";
-import { Github, Globe, PlayCircle, Twitter } from "lucide-react";
-
-const ProjectPlaceholder = ({
-  name,
-  color,
-}: {
-  name: string;
-  color: string;
-}) => {
-  return (
-    <div className="relative w-full h-full bg-[#1E1E1E] flex items-center justify-center overflow-hidden">
-      {/* Background patterns */}
-      <div className="absolute inset-0">
-        <div className="absolute top-0 left-0 w-full h-[1px] bg-[#353637] opacity-20" />
-        <div className="absolute bottom-0 left-0 w-full h-[1px] bg-[#353637] opacity-20" />
-        <div className="absolute top-0 left-0 h-full w-[1px] bg-[#353637] opacity-20" />
-        <div className="absolute top-0 right-0 h-full w-[1px] bg-[#353637] opacity-20" />
-
-        {/* Diagonal lines */}
-        <div className="absolute top-0 left-0 w-16 h-[1px] bg-[#353637] opacity-20 transform -rotate-45" />
-        <div className="absolute top-0 right-0 w-16 h-[1px] bg-[#353637] opacity-20 transform rotate-45" />
-        <div className="absolute bottom-0 left-0 w-16 h-[1px] bg-[#353637] opacity-20 transform rotate-45" />
-        <div className="absolute bottom-0 right-0 w-16 h-[1px] bg-[#353637] opacity-20 transform -rotate-45" />
-      </div>
-
-      {/* Center content */}
-      <div className="relative z-10 p-6 text-center">
-        <div
-          className="font-mono text-2xl font-bold mb-2 transition-colors duration-300"
-          style={{ color }}
-        >
-          {name.slice(0, 2).toUpperCase()}
-        </div>
-        <div className="text-gray-400 text-sm font-mono max-w-[80%] mx-auto">
-          {name}
-        </div>
-      </div>
-
-      {/* Corner accents */}
-      <div
-        className="absolute top-2 left-2 w-3 h-3 transition-colors duration-300"
-        style={{
-          borderLeft: `2px solid ${color}`,
-          borderTop: `2px solid ${color}`,
-        }}
-      />
-      <div
-        className="absolute top-2 right-2 w-3 h-3 transition-colors duration-300"
-        style={{
-          borderRight: `2px solid ${color}`,
-          borderTop: `2px solid ${color}`,
-        }}
-      />
-      <div
-        className="absolute bottom-2 left-2 w-3 h-3 transition-colors duration-300"
-        style={{
-          borderLeft: `2px solid ${color}`,
-          borderBottom: `2px solid ${color}`,
-        }}
-      />
-      <div
-        className="absolute bottom-2 right-2 w-3 h-3 transition-colors duration-300"
-        style={{
-          borderRight: `2px solid ${color}`,
-          borderBottom: `2px solid ${color}`,
-        }}
-      />
-    </div>
-  );
-};
-
-const tracks = [
-  { id: "all", name: "All Projects" },
-  { id: "chat", name: "Autonomous Chat" },
-  { id: "meme", name: "Meme" },
-  { id: "social", name: "Social Influencer" },
-  { id: "infra", name: "Agents Infra" },
-  { id: "token", name: "Token tooling" },
-  { id: "defi", name: "Defi" },
-  { id: "trading", name: "Trading" },
-];
+import { ChevronDown, Github, Globe, PlayCircle, Twitter } from "lucide-react";
 
 const projects = [
   {
     id: "Ongo AI",
     name: "Ongo AI",
     image: ongoLogo,
-    track: ["chat", "social"],
+    track: ["Autonomous Chat Agents", "Social & Influencer Agents"],
     description: "Get an expert opinion from Ongo Gablogian",
     githubUrl: "https://github.com/ongo-ai",
     websiteUrl: "https://ongo.ai/",
@@ -102,6 +22,18 @@ const projects = [
     submissionUrl: "https://ongo.ai/",
   },
   // Add more projects here
+];
+
+const tracks = [
+  { id: "all", name: "All Projects" },
+  { id: "sak", name: "Solana Agent Kit" },
+  { id: "chat", name: "Autonomous Chat Agents" },
+  { id: "social", name: "Social & Influencer Agents" },
+  { id: "meme", name: "Meme Agents" },
+  { id: "infra", name: "Agents Infra" },
+  { id: "token", name: "Agents Token tooling" },
+  { id: "defi", name: "Defi Agents" },
+  { id: "trading", name: "Trading Agents" },
 ];
 
 const getColors = (index: number): string => {
@@ -119,11 +51,11 @@ const getColors = (index: number): string => {
   }
 };
 
-const ArrowIcon = () => (
+const ArrowIcon = ({ size }: { size: number }) => (
   <div className="flex gap-0">
     <svg
-      width="32"
-      height="32"
+      width={size || 32}
+      height={size || 32}
       viewBox="0 0 45 45"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -145,56 +77,130 @@ const ArrowIcon = () => (
   </div>
 );
 
-const TrackTab = ({ name, isActive, onClick }: any) => (
-  <div className="relative">
-    <button
-      onClick={onClick}
-      className={`relative bg-[#1E1E1E] bg-opacity-20 border-2 ${
-        isActive ? "border-[#787B7E]/50" : "border-[#353637]"
-      } px-6 py-2 font-mono text-sm transition-all duration-300`}
-    >
-      {/* Corner Decorations */}
-      <div className="absolute inset-0">
-        {/* Top Left */}
-        <div className="absolute -left-2 -top-2">
-          <Image src={cornerAbstract} alt="Corner" className="w-2 h-2" />
-        </div>
-        {/* Top Right */}
-        <div className="absolute -right-2 -top-2">
-          <Image src={cornerAbstract} alt="Corner" className="w-2 h-2" />
-        </div>
-        {/* Bottom Left */}
-        <div className="absolute -left-2 -bottom-2">
-          <Image src={cornerAbstract} alt="Corner" className="w-2 h-2" />
-        </div>
-        {/* Bottom Right */}
-        <div className="absolute -right-2 -bottom-2">
-          <Image src={cornerAbstract} alt="Corner" className="w-2 h-2" />
-        </div>
-      </div>
-      <span
-        className={`relative text-nowrap z-10 ${
-          isActive ? "text-white" : "text-gray-400"
-        }`}
+const TrackDropdown = ({ activeTrack, onTrackSelect }: any) => {
+  const [isOpen, setIsOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+  const activeTrackName =
+    tracks.find((track) => track.id === activeTrack)?.name || "All Projects";
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target as Node)
+      ) {
+        setIsOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
+  return (
+    <div className="relative inline-block" ref={dropdownRef}>
+      {/* Dropdown Button */}
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        className="relative bg-[#1E1E1E]  border-2 border-[#353637] px-6 py-2 font-mono text-sm transition-all duration-300 w-[240px] flex items-center justify-between"
       >
-        {name}
-      </span>
-    </button>
-  </div>
-);
+        {/* Corner Decorations */}
+        <div className="absolute inset-0">
+          <div className="absolute -left-2 -top-2">
+            <Image src={cornerAbstract} alt="Corner" className="w-2 h-2" />
+          </div>
+          <div className="absolute -right-2 -top-2">
+            <Image src={cornerAbstract} alt="Corner" className="w-2 h-2" />
+          </div>
+          <div className="absolute -left-2 -bottom-2">
+            <Image src={cornerAbstract} alt="Corner" className="w-2 h-2" />
+          </div>
+          <div className="absolute -right-2 -bottom-2">
+            <Image src={cornerAbstract} alt="Corner" className="w-2 h-2" />
+          </div>
+        </div>
+        <span className="relative z-10 text-white transition-colors duration-300">
+          {activeTrackName}
+        </span>
+        <ChevronDown
+          className={`relative ml-4 z-10 w-4 h-4 text-white transition-transform duration-200 ${
+            isOpen ? "rotate-180" : ""
+          }`}
+        />
+      </button>
+
+      {/* Dropdown Menu */}
+      {isOpen && (
+        <div className="absolute z-50 w-[240px] mt-2 bg-[#1E1E1E] border-2 border-[#353637] shadow-xl">
+          {/* Corner Decorations */}
+          <div className="absolute inset-0">
+            <div className="absolute -left-2 -top-2">
+              <Image src={cornerAbstract} alt="Corner" className="w-2 h-2" />
+            </div>
+            <div className="absolute -right-2 -top-2">
+              <Image src={cornerAbstract} alt="Corner" className="w-2 h-2" />
+            </div>
+            <div className="absolute -left-2 -bottom-2">
+              <Image src={cornerAbstract} alt="Corner" className="w-2 h-2" />
+            </div>
+            <div className="absolute -right-2 -bottom-2">
+              <Image src={cornerAbstract} alt="Corner" className="w-2 h-2" />
+            </div>
+          </div>
+          <div className="relative z-10">
+            {tracks.map((track) => (
+              <button
+                key={track.id}
+                onClick={() => {
+                  onTrackSelect(track.id);
+                  setIsOpen(false);
+                }}
+                className={`w-full px-6 py-2 text-left font-mono text-sm transition-colors duration-200
+                      ${
+                        track.id === activeTrack
+                          ? "text-white bg-[#353637]"
+                          : "text-gray-400 hover:text-white hover:bg-[#353637]"
+                      }`}
+              >
+                {track.name}
+              </button>
+            ))}
+          </div>
+        </div>
+      )}
+    </div>
+  );
+};
+
+const getTrackId = (trackName: string) => {
+  return tracks.find((t) => t.name === trackName)?.id || "all";
+};
 
 const ProjectShowcase = () => {
   const [activeTrack, setActiveTrack] = useState("all");
 
-  const filteredProjects = projects.filter(
-    (project) => activeTrack === "all" || project.track.includes(activeTrack)
-  );
+//   const [projects, setProjects] = useState([]);
 
-  const handleTrackClick = (trackId: string) => {
+//   useEffect(() => {
+//     const loadProjects = async () => {
+//       const response = await fetch("/api/projects");
+//       const data = await response.json();
+//       setProjects(data);
+//     };
+//     loadProjects();
+//   }, []);
+
+  const filteredProjects = projects.filter((project) => {
+    if (activeTrack === "all") return true;
+    const trackName = tracks.find((t) => t.id === activeTrack)?.name;
+    return project?.track.includes(trackName || "");
+  });
+  const handleTrackClick = (trackName: string) => {
+    const trackId = getTrackId(trackName);
     setActiveTrack(trackId);
     track("filter_change", { trackId });
   };
-
   return (
     <div className="bg-black">
       <div className="max-w-7xl w-full mx-auto px-4 py-16">
@@ -212,9 +218,14 @@ const ProjectShowcase = () => {
           </div>
 
           <div className="text-center">
-            <h2 className="text-4xl font-relish text-white mb-2 text-nowrap mx-6">
-              PROJECT SHOWCASE
-            </h2>
+            <div className="">
+              <h2 className="text-4xl font-relish text-white mb-2 text-nowrap mx-6">
+                EXPLORE AGENTIC APPS ON SOLANA
+              </h2>
+              <h2 className="text-2xl font-ppsans text-white mb-2 text-nowrap mx-6">
+                Built on Solana AI Hackathon, powered by SendAI
+              </h2>
+            </div>
           </div>
 
           <div className="flex-1">
@@ -229,20 +240,19 @@ const ProjectShowcase = () => {
           </div>
         </div>
 
-        {/* Track Filters */}
-        <div className="flex flex-wrap items-center justify-left gap-6 mb-12">
-          {tracks.map((track) => (
-            <TrackTab
-              key={track.id}
-              name={track.name}
-              isActive={activeTrack === track.id}
-              onClick={() => handleTrackClick(track.id)}
-            />
-          ))}
+        {/* Track Filter Dropdown */}
+        <div className="flex justify-center mb-12">
+          <TrackDropdown
+            activeTrack={activeTrack}
+            onTrackSelect={(trackId: any) => {
+              setActiveTrack(trackId);
+              track("filter_change", { trackId });
+            }}
+          />
         </div>
 
         {/* Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="flex flex-wrap justify-center">
           {filteredProjects.map((project, index) => (
             <div
               key={project.id}
@@ -279,20 +289,35 @@ const ProjectShowcase = () => {
 
                 {/* Info Section */}
                 <div className="p-4 z-50">
-                  <h3 className="text-white font-mono text-lg mb-2 transition-colors duration-300 group-hover:text-[var(--hover-color)]">
+                  <h3 className="text-white font-ppsans text-lg mb-2 transition-colors duration-300 group-hover:text-[var(--hover-color)]">
                     {project.name}
                   </h3>
-                  <p className="text-gray-400 text-sm mb-4 transition-colors duration-300 group-hover:text-[var(--hover-color)] opacity-60">
+                  <p className="text-gray-400 font-ppsans text-sm mb-4 transition-colors duration-300 group-hover:text-[var(--hover-color)] opacity-60">
                     {project.description}
                   </p>
 
                   {/* Team and Links Section */}
                   <div className="flex flex-col gap-3">
                     <div className="flex items-center justify-between">
-                      <span className="text-gray-500 text-xs transition-colors duration-300 group-hover:text-[var(--hover-color)] opacity-60">
+                      {/* <span className="text-gray-500 text-xs transition-colors duration-300 group-hover:text-[var(--hover-color)] opacity-60">
                         by {project.team}
-                      </span>
-                      <ArrowIcon />
+                      </span> */}
+                      {/* <ArrowIcon /> */}
+                    </div>
+
+                    <div className="flex flex-col gap-4 cursor-pointer">
+                      {project.track.map((trackName, idx) => (
+                        <div
+                          key={idx}
+                          onClick={() => handleTrackClick(trackName)}
+                          className="flex align-middle items-center gap-4"
+                        >
+                          <span className="border-y border-gray-500/50 hover:border-[var(--hover-color)] p-1 text-gray-500 text-xs transition-colors duration-300 hover:text-[var(--hover-color)] opacity-60">
+                            {trackName}
+                          </span>
+                          <ArrowIcon size={24} />
+                        </div>
+                      ))}
                     </div>
 
                     {/* Links Container */}
@@ -302,7 +327,7 @@ const ProjectShowcase = () => {
                           href={project.websiteUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="flex items-center gap-2 text-gray-400 hover:text-[var(--hover-color)] transition-colors duration-300"
+                          className="flex items-center gap-2 text-gray-500 hover:text-[var(--hover-color)] transition-colors duration-300"
                         >
                           <Globe size={18} />
                           {/* <span className="text-xs font-mono">Website</span> */}
@@ -314,21 +339,9 @@ const ProjectShowcase = () => {
                           href={project.twitterUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="flex items-center gap-2 text-gray-400 hover:text-[var(--hover-color)] transition-colors duration-300"
+                          className="flex items-center gap-2 text-gray-500 hover:text-[var(--hover-color)] transition-colors duration-300"
                         >
                           <Twitter size={18} />
-                          {/* <span className="text-xs font-mono">Website</span> */}
-                        </a>
-                      )}
-
-                      {project.submissionUrl && (
-                        <a
-                          href={project.submissionUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex items-center gap-2 text-gray-400 hover:text-[var(--hover-color)] transition-colors duration-300"
-                        >
-                          <PlayCircle size={18} />
                           {/* <span className="text-xs font-mono">Website</span> */}
                         </a>
                       )}
@@ -338,7 +351,7 @@ const ProjectShowcase = () => {
                           href={project.githubUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="flex items-center gap-2 text-gray-400 hover:text-[var(--hover-color)] transition-colors duration-300"
+                          className="flex items-center gap-2 text-gray-500 hover:text-[var(--hover-color)] transition-colors duration-300"
                         >
                           <Github size={18} />
                           {/* <span className="text-xs font-mono">GitHub</span> */}
