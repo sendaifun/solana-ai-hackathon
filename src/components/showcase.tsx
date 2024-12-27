@@ -7,7 +7,8 @@ import React, { useEffect, useRef, useState } from "react";
 import { track } from "@vercel/analytics";
 import ongoLogo from "@/assets/images/showcase/ongo.svg";
 import { ChevronDown, Github, Globe, PlayCircle, Twitter } from "lucide-react";
-
+import sendaiLogo from "@/assets/images/logos/SendAI.svg";
+import { ScrambleText } from "./ui/scramble-text";
 const tracks = [
   { id: "all", name: "All Projects" },
   { id: "sak", name: "Solana Agent Kit" },
@@ -213,12 +214,22 @@ const ProjectShowcase = () => {
 
           <div className="text-center px-4">
             <h2 className="text-2xl sm:text-4xl font-relish text-white mb-2 break-words sm:text-nowrap">
-              EXPLORE AGENTIC APPS ON SOLANA
+              <ScrambleText
+                text="EXPLORE AGENTIC APPS ON SOLANA"
+                className="text-xl md:text-3xl lg:text-4xl font-relish text-white tracking-wider leading-none"
+              />
             </h2>
-            <h2 className="text-lg sm:text-2xl font-ppsans text-white mb-2 break-words sm:text-nowrap">
-              Built on Solana AI Hackathon, powered by SendAI
+            <h2 className="flex items-center justify-center text-lg sm:text-2xl font-ppsans text-white mb-2 break-words sm:text-nowrap">
+              Built at Solana AI Hackathon, powered by
+              <div className="">
+                <Image
+                  src={sendaiLogo}
+                  alt="Solana Logo"
+                  className="w-18 h-18 inline-block ml-2"
+                />
+              </div>
             </h2>
-            <h2 className="text-lg sm:text-2xl font-ppsans text-white mb-2 break-words sm:text-nowrap">
+            <h2 className="text-sm mt-8 sm:text-2xl font-ppsans text-gray-400 mb-2 break-words sm:text-nowrap">
               15 days. 400+ submissions. $275k+ in Prizes.
             </h2>
           </div>
@@ -250,7 +261,7 @@ const ProjectShowcase = () => {
             {filteredProjects.map((project: any, index: number) => (
               <div
                 key={project.id}
-                className="relative group w-full max-w-sm"
+                className="relative group w-full max-w-[300px] md:max-w-sm"
                 style={
                   { "--hover-color": getColors(index) } as React.CSSProperties
                 }
