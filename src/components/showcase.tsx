@@ -163,9 +163,9 @@ const getTrackId = (trackName: string) => {
 
 const ProjectShowcase = () => {
   const [activeTrack, setActiveTrack] = useState("all");
-
   const [projects, setProjects] = useState<any>([]);
   const [loading, setLoading] = useState(true);
+
   useEffect(() => {
     const loadProjects = async () => {
       setLoading(true);
@@ -177,30 +177,31 @@ const ProjectShowcase = () => {
     loadProjects();
   }, []);
 
+  const handleTrackClick = (trackName: string) => {
+    const trackId = getTrackId(trackName);
+    setActiveTrack(trackId);
+  };
   const filteredProjects = projects.filter((project: any) => {
     if (activeTrack === "all") return true;
     const trackName = tracks.find((t) => t.id === activeTrack)?.name;
     return project?.track.includes(trackName || "");
   });
-  const handleTrackClick = (trackName: string) => {
-    const trackId = getTrackId(trackName);
-    setActiveTrack(trackId);
-    track("filter_change", { trackId });
-  };
+
   if (loading) {
     return (
-      <>
-        <div className="bg-black h-screen flex items-center justify-center text-white font-relish text-2xl animate-pulse">Its Agentic Apps szn</div>
-      </>
+      <div className="bg-black min-h-screen flex items-center justify-center text-white font-relish text-xl sm:text-2xl animate-pulse px-4 text-center">
+        Its Agentic Apps szn
+      </div>
     );
   }
+
   return (
-    <div className="bg-black h-full">
-      <div className="max-w-7xl w-full mx-auto px-4 py-16">
-        {/* Title with decorative lines */}
-        <div className="flex items-center justify-center gap-4 mb-16 mx-16">
-          <div className="flex-1">
-            <div className="flex gap-8">
+    <div className="bg-black min-h-screen">
+      <div className="max-w-7xl w-full mx-auto px-4 py-8 sm:py-16">
+        {/* Title section */}
+        <div className="flex items-center justify-center gap-4 mb-8 sm:mb-16">
+          <div className="hidden sm:flex flex-1">
+            <div className="flex gap-4 sm:gap-8">
               {[...Array(8)].map((_, i) => (
                 <div
                   key={`left-${i}`}
@@ -210,19 +211,20 @@ const ProjectShowcase = () => {
             </div>
           </div>
 
-          <div className="text-center">
-            <div className="">
-              <h2 className="text-4xl font-relish text-white mb-2 text-nowrap mx-6">
-                EXPLORE AGENTIC APPS ON SOLANA
-              </h2>
-              <h2 className="text-2xl font-ppsans text-white mb-2 text-nowrap mx-6">
-                Built on Solana AI Hackathon, powered by SendAI
-              </h2>
-            </div>
+          <div className="text-center px-4">
+            <h2 className="text-2xl sm:text-4xl font-relish text-white mb-2 break-words sm:text-nowrap">
+              EXPLORE AGENTIC APPS ON SOLANA
+            </h2>
+            <h2 className="text-lg sm:text-2xl font-ppsans text-white mb-2 break-words sm:text-nowrap">
+              Built on Solana AI Hackathon, powered by SendAI
+            </h2>
+            <h2 className="text-lg sm:text-2xl font-ppsans text-white mb-2 break-words sm:text-nowrap">
+              15 days. 400+ submissions. $275k+ in Prizes.
+            </h2>
           </div>
 
-          <div className="flex-1">
-            <div className="flex gap-8 justify-end">
+          <div className="hidden sm:flex flex-1">
+            <div className="flex gap-4 sm:gap-8 justify-end">
               {[...Array(8)].map((_, i) => (
                 <div
                   key={`right-${i}`}
@@ -232,9 +234,8 @@ const ProjectShowcase = () => {
             </div>
           </div>
         </div>
-
-        {/* Track Filter Dropdown */}
-        <div className="flex justify-center mb-12">
+        {/* Track Filter */}
+        <div className="flex justify-center mb-8 sm:mb-12">
           <TrackDropdown
             activeTrack={activeTrack}
             onTrackSelect={(trackId: any) => {
@@ -243,120 +244,105 @@ const ProjectShowcase = () => {
             }}
           />
         </div>
+        <div className="mx-6">
+          {/* Projects Grid */}
+          <div className="flex flex-wrap justify-center gap-4">
+            {filteredProjects.map((project: any, index: number) => (
+              <div
+                key={project.id}
+                className="relative group w-full max-w-sm"
+                style={
+                  { "--hover-color": getColors(index) } as React.CSSProperties
+                }
+              >
+                {/* Card Container */}
+                <div className="relative bg-[#0f0f0f] rounded-lg overflow-hidden h-full">
+                  {/* Image Container */}
+                  <div className="aspect-video overflow-hidden border-2 border-[#353637] transition-all duration-300 group-hover:border-[var(--hover-color)]">
+                    {project?.image !== "" || project?.imagev == "image" ? (
+                      <>
+                        <Image
+                          src={project?.image}
+                          alt={project.name}
+                          width={400}
+                          height={225}
+                          className="z-10 w-full h-full object-cover grayscale brightness-90 transition-all duration-500 group-hover:grayscale-0 group-hover:brightness-110 group-hover:scale-110"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-[#1E1E1E] via-transparent to-transparent opacity-50 transition-opacity duration-300 group-hover:opacity-30"></div>
+                      </>
+                    ) : (
+                      <div className="w-full h-full flex items-center justify-center bg-[#0f0f0f] rounded-lg">
+                        <span className="text-[var(--hover-color)] text-2xl font-mono">
+                          {project.name.slice(0, 2).toUpperCase()}
+                        </span>
+                      </div>
+                    )}
+                  </div>
 
-        {/* Projects Grid */}
-        <div className="flex flex-wrap justify-center gap-4">
-          {filteredProjects.map((project: any, index: number) => (
-            <div
-              key={project.id}
-              className="relative group w-96"
-              style={
-                {
-                  "--hover-color": getColors(index),
-                } as React.CSSProperties
-              }
-            >
-              {/* Card Container */}
-              <div className="relative bg-[#0f0f0f] rounded-lg overflow-hidden h-[520px]">
-                {/* Image Container */}
-                <div className="aspect-video overflow-hidden border-2 border-[#353637] transition-all duration-300 group-hover:border-[var(--hover-color)]">
-                  {project?.image ? (
-                    <>
-                      <Image
-                        src={project?.image}
-                        alt={project.name}
-                        width={400}
-                        height={225}
-                        className="z-10 w-full h-full object-cover grayscale brightness-90 transition-all duration-500 group-hover:grayscale-0 group-hover:brightness-110 group-hover:scale-110"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-[#1E1E1E] via-transparent to-transparent opacity-50 transition-opacity duration-300 group-hover:opacity-30"></div>
-                    </>
-                  ) : (
-                    <div className="w-full h-full flex items-center justify-center bg-[#0f0f0f] rounded-lg">
-                      <span className="text-[var(--hover-color)] text-2xl font-mono rounded-lg">
-                        {project.name.slice(0, 2).toUpperCase()}
-                      </span>
-                    </div>
-                  )}
-                </div>
+                  {/* Info Section */}
+                  <div className="p-4">
+                    <h3 className="text-white font-ppsans text-lg mb-2 transition-colors duration-300 group-hover:text-[var(--hover-color)]">
+                      {project.name}
+                    </h3>
+                    <p className="text-gray-400 font-ppsans text-sm mb-4 transition-colors duration-300 group-hover:text-[var(--hover-color)] opacity-60">
+                      {project.description?.slice(0, 100)}...
+                    </p>
 
-                {/* Info Section */}
-                <div className="p-4 z-50">
-                  <h3 className="text-white font-ppsans text-lg mb-2 transition-colors duration-300 group-hover:text-[var(--hover-color)]">
-                    {project.name}
-                  </h3>
-                  <p className="text-gray-400 font-ppsans text-sm mb-4 transition-colors duration-300 group-hover:text-[var(--hover-color)] opacity-60">
-                    {project.description?.slice(0, 100)}
-                  </p>
-
-                  {/* Team and Links Section */}
-                  <div className="flex flex-col gap-3">
-                    <div className="flex items-center justify-between">
-                      {/* <span className="text-gray-500 text-xs transition-colors duration-300 group-hover:text-[var(--hover-color)] opacity-60">
-                        by {project.team}
-                      </span> */}
-                      {/* <ArrowIcon /> */}
-                    </div>
-
-                    <div className="flex flex-col gap-4 cursor-pointer">
+                    {/* Tracks */}
+                    <div className="flex flex-wrap gap-4 cursor-pointer mb-4">
                       {project.track.map((trackName: string, idx: number) => (
                         <div
                           key={idx}
                           onClick={() => handleTrackClick(trackName)}
-                          className="flex align-middle items-center gap-4"
+                          className="flex items-center gap-2"
                         >
-                          <span className="border-y border-gray-500/50 hover:border-[var(--hover-color)] p-1 text-gray-500 text-xs transition-colors duration-300 hover:text-[var(--hover-color)] opacity-60">
+                          <span className="border-y border-gray-500/50 hover:border-[var(--hover-color)] p-1 text-gray-500 text-xs transition-colors duration-300 hover:text-[var(--hover-color)] opacity-60 whitespace-nowrap">
                             {trackName}
                           </span>
-                          <ArrowIcon size={24} />
+                          <ArrowIcon size={20} />
                         </div>
                       ))}
                     </div>
 
-                    {/* Links Container */}
+                    {/* Links */}
                     <div className="flex items-center gap-4 pt-2 z-50">
                       {project.websiteUrl && (
                         <a
                           href={project.websiteUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="flex items-center gap-2 text-gray-500 hover:text-[var(--hover-color)] transition-colors duration-300"
+                          className="text-gray-500 hover:text-[var(--hover-color)] transition-colors duration-300"
                         >
                           <Globe size={18} />
-                          {/* <span className="text-xs font-mono">Website</span> */}
                         </a>
                       )}
-
                       {project.twitterUrl && (
                         <a
                           href={project.twitterUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="flex items-center gap-2 text-gray-500 hover:text-[var(--hover-color)] transition-colors duration-300"
+                          className="text-gray-500 hover:text-[var(--hover-color)] transition-colors duration-300"
                         >
                           <Twitter size={18} />
-                          {/* <span className="text-xs font-mono">Website</span> */}
                         </a>
                       )}
-
                       {project.githubUrl && (
                         <a
                           href={project.githubUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="flex items-center gap-2 text-gray-500 hover:text-[var(--hover-color)] transition-colors duration-300"
+                          className="text-gray-500 hover:text-[var(--hover-color)] transition-colors duration-300"
                         >
                           <Github size={18} />
-                          {/* <span className="text-xs font-mono">GitHub</span> */}
                         </a>
                       )}
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
+        </div>{" "}
       </div>
     </div>
   );
