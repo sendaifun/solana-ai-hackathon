@@ -180,9 +180,9 @@ const HeroSection = () => {
           </Button> */}
 
           <Button>
-            <Link target="_blank" href="https://x.com/sendaifun">
+            <Link href="/projects">
               <span className="md:block py-2 md:py-0 text-black/90 group-hover:text-black font-mono font-bold text-sm md:text-md tracking-wide transition-colors">
-                Submissions Closed. Results Soon
+                Projects Showcase
               </span>
             </Link>
           </Button>
