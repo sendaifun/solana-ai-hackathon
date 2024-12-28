@@ -180,7 +180,7 @@ const HeroSection = () => {
           </Button> */}
 
           <Button>
-            <Link href="/showcase">
+            <Link href="/projects">
               <span className="md:block py-2 md:py-0 text-black/90 group-hover:text-black font-mono font-bold text-sm md:text-md tracking-wide transition-colors">
                 Projects Showcase
               </span>
