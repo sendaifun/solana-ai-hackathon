@@ -327,7 +327,7 @@ const ProjectShowcase = () => {
                           href={project.websiteUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="text-gray-500 hover:text-[var(--hover-color)] transition-colors duration-300"
+                          className=" z-50 text-gray-500 hover:text-[var(--hover-color)] transition-colors duration-300"
                         >
                           <Globe size={18} />
                         </a>
@@ -337,7 +337,7 @@ const ProjectShowcase = () => {
                           href={project.twitterUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="text-gray-500 hover:text-[var(--hover-color)] transition-colors duration-300"
+                          className=" z-50 text-gray-500 hover:text-[var(--hover-color)] transition-colors duration-300"
                         >
                           <Twitter size={18} />
                         </a>
@@ -347,7 +347,7 @@ const ProjectShowcase = () => {
                           href={project.githubUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="text-gray-500 hover:text-[var(--hover-color)] transition-colors duration-300"
+                          className=" z-50 text-gray-500 hover:text-[var(--hover-color)] transition-colors duration-300"
                         >
                           <Github size={18} />
                         </a>
