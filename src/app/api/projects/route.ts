@@ -20,7 +20,11 @@ export async function GET() {
 
   try {
     const apiUrl = `https://docs.google.com/spreadsheets/d/${sheetId}/gviz/tq?tqx=out:json&gid=${gid}`;
-    const response = await fetch(apiUrl);
+    const response = await fetch(apiUrl, {
+      next: {
+        revalidate: 10,
+      },
+    });
     const text = await response.text();
     const json = JSON.parse(text.substring(47).slice(0, -2));
 
@@ -45,7 +49,12 @@ export async function GET() {
           image: row.c[7]?.v || "",
         };
       })
-      .filter((project: Project) => project.name && project.name !== "" && project?.name !== "Project Name");
+      .filter(
+        (project: Project) =>
+          project.name &&
+          project.name !== "" &&
+          project?.name !== "Project Name"
+      );
 
     return NextResponse.json(projects);
   } catch (error) {
@@ -56,4 +65,3 @@ export async function GET() {
     );
   }
 }
-
