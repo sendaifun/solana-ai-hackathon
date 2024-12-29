@@ -172,6 +172,10 @@ const getTrackId = (trackName: string) => {
   return tracks.find((t) => t.name === trackName)?.id || "all";
 };
 
+const shuffleArray = <T,>(array: T[]): T[] => {
+  return [...array].sort(() => Math.random() - 0.5);
+};
+
 const ProjectShowcase = () => {
   const [activeTrack, setActiveTrack] = useState("all");
   const [projects, setProjects] = useState<any>([]);
@@ -182,7 +186,7 @@ const ProjectShowcase = () => {
       setLoading(true);
       const response = await fetch("/api/projects");
       const data = await response.json();
-      setProjects(data);
+      setProjects(shuffleArray(data));
       setLoading(false);
 
       // Track page load
