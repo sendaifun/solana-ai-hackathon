@@ -36,6 +36,17 @@ const getColors = (index: number): string => {
   }
 };
 
+function shuffleArray<T>(array: T[]): T[] {
+    const length = array.length;
+
+    for (let i = length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1)); // Random index from 0 to i
+        [array[i], array[j]] = [array[j], array[i]]; // Swap elements
+    }
+
+    return array; // Return the shuffled array
+}
+
 const ArrowIcon = ({ size }: { size: number }) => (
   <div className="flex gap-0">
     <svg
@@ -177,7 +188,10 @@ const ProjectShowcase = () => {
       setLoading(true);
       const response = await fetch("/api/projects");
       const data = await response.json();
-      setProjects(data);
+      
+      const shuffledProjects = shuffleArray(data);
+      
+      setProjects(shuffledProjects);
       setLoading(false);
     };
     loadProjects();
