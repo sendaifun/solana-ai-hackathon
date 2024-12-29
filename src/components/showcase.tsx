@@ -79,17 +79,20 @@ const TabCorners = () => (
   </>
 );
 
-const TrackNavigation = ({ activeTrack, onTrackSelect } : any) => {
+const TrackNavigation = ({ activeTrack, onTrackSelect }: any) => {
   const [isOpen, setIsOpen] = React.useState(false);
   const dropdownRef = React.useRef<HTMLDivElement | null>(null);
-  
+
   React.useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target as Node)
+      ) {
         setIsOpen(false);
       }
     };
-    
+
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
@@ -104,7 +107,8 @@ const TrackNavigation = ({ activeTrack, onTrackSelect } : any) => {
         >
           <TabCorners />
           <span className="relative z-10 text-white">
-            {tracks.find(track => track.id === activeTrack)?.name || "All Projects"}
+            {tracks.find((track) => track.id === activeTrack)?.name ||
+              "All Projects"}
           </span>
           <ChevronDown
             className={`relative z-10 ml-4 w-4 h-4 text-white transition-transform duration-200 ${
@@ -125,9 +129,10 @@ const TrackNavigation = ({ activeTrack, onTrackSelect } : any) => {
                     setIsOpen(false);
                   }}
                   className={`w-full px-6 py-2 text-left font-mono text-sm transition-colors duration-200
-                    ${track.id === activeTrack
-                      ? "text-white bg-[#353637]"
-                      : "text-gray-400 hover:text-white hover:bg-[#353637]"
+                    ${
+                      track.id === activeTrack
+                        ? "text-white bg-[#353637]"
+                        : "text-gray-400 hover:text-white hover:bg-[#353637]"
                     }`}
                 >
                   {track.name}
@@ -147,7 +152,7 @@ const TrackNavigation = ({ activeTrack, onTrackSelect } : any) => {
             className="relative px-4 py-2 font-mono text-sm border border-[#353637] transition-all duration-300"
           >
             <TabCorners />
-            <span 
+            <span
               className={`relative z-10 transition-colors duration-300 ${
                 track.id === activeTrack
                   ? "text-[#1BE1FF]"
@@ -179,6 +184,11 @@ const ProjectShowcase = () => {
       const data = await response.json();
       setProjects(data);
       setLoading(false);
+
+      // Track page load
+      track("showcase_view", {
+        initial_track: activeTrack,
+      });
     };
     loadProjects();
   }, []);
@@ -186,7 +196,27 @@ const ProjectShowcase = () => {
   const handleTrackClick = (trackName: string) => {
     const trackId = getTrackId(trackName);
     setActiveTrack(trackId);
+
+    // Track track selection
+    track("track_selected", {
+      track_id: trackId,
+      track_name: trackName,
+    });
   };
+
+  const handleProjectLinkClick = (
+    project: any,
+    linkType: "website" | "twitter" | "github"
+  ) => {
+    // Track link clicks
+    track("project_link_clicked", {
+      project_name: project.name,
+      project_track: project.track,
+      link_type: linkType,
+      current_track_filter: activeTrack,
+    });
+  };
+
   const filteredProjects = projects.filter((project: any) => {
     if (activeTrack === "all") return true;
     const trackName = tracks.find((t) => t.id === activeTrack)?.name;
@@ -256,7 +286,11 @@ const ProjectShowcase = () => {
             activeTrack={activeTrack}
             onTrackSelect={(trackId: string) => {
               setActiveTrack(trackId);
-              track("filter_change", { trackId });
+              track("track_filter_changed", {
+                previous_track: activeTrack,
+                new_track: trackId,
+                projects_count: filteredProjects.length,
+              });
             }}
           />
         </div>
@@ -328,6 +362,9 @@ const ProjectShowcase = () => {
                           target="_blank"
                           rel="noopener noreferrer"
                           className=" z-50 text-gray-500 hover:text-[var(--hover-color)] transition-colors duration-300"
+                          onClick={() =>
+                            handleProjectLinkClick(project, "website")
+                          }
                         >
                           <Globe size={18} />
                         </a>
@@ -338,6 +375,9 @@ const ProjectShowcase = () => {
                           target="_blank"
                           rel="noopener noreferrer"
                           className=" z-50 text-gray-500 hover:text-[var(--hover-color)] transition-colors duration-300"
+                          onClick={() =>
+                            handleProjectLinkClick(project, "twitter")
+                          }
                         >
                           <Twitter size={18} />
                         </a>
@@ -348,6 +388,9 @@ const ProjectShowcase = () => {
                           target="_blank"
                           rel="noopener noreferrer"
                           className=" z-50 text-gray-500 hover:text-[var(--hover-color)] transition-colors duration-300"
+                          onClick={() =>
+                            handleProjectLinkClick(project, "github")
+                          }
                         >
                           <Github size={18} />
                         </a>
