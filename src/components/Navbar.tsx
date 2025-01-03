@@ -40,8 +40,7 @@ const NavLinks = ({ mobile }: { mobile?: boolean }) => {
         />
       </Link>
       <Link
-        target="_blank"
-        href="https://docs.google.com/document/d/1anJ_YRzLbgrqm3zB7gC02AxPvOlGzC2aySZLcRkjKo8/edit?"
+        href="/resources"
         onClick={() => handleNavClick("resources")}
       >
         <ScrambleText

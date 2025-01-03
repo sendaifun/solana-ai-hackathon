@@ -61,7 +61,7 @@ const GetStartedSection = () => {
     {
       id: "resources",
       title: "Resources",
-      href: "https://docs.google.com/document/d/1anJ_YRzLbgrqm3zB7gC02AxPvOlGzC2aySZLcRkjKo8",
+      href: "/resources",
       icon: () => (
         <svg
           width="32"
