@@ -10,6 +10,7 @@ import Image from "next/image";
 import { ScrambleText } from "@/components/ui/scramble-text";
 import { headers } from "next/headers";
 import cornerAbstract from "@/assets/images/svgs/abstract/CornerRect.png";
+import DashTables from "./DashTables";
 
 async function getDashboardData() {
   const host = headers().get("host");
@@ -144,73 +145,7 @@ export default async function DashboardContent() {
               </h2>
             </div>
             <div className="overflow-x-auto">
-              <table className="w-full">
-                <thead>
-                  <tr className="border-b border-[#353637]">
-                    <th className="text-left py-3 px-4 text-gray-400 font-mono text-sm">
-                      Image
-                    </th>
-                    <th className="text-left py-3 px-4 text-gray-400 font-mono text-sm">
-                      Token Name
-                    </th>
-                    <th className="text-left py-3 px-4 text-gray-400 font-mono text-sm">
-                      Ticker
-                    </th>
-                    <th className="text-left py-3 px-4 text-gray-400 font-mono text-sm">
-                      Address
-                    </th>
-                    <th className="text-left py-3 px-4 text-gray-400 font-mono text-sm">
-                      Market Cap
-                    </th>
-                    <th className="text-left py-3 px-4 text-gray-400 font-mono text-sm">
-                      Volume [24h]
-                    </th>
-                    <th className="text-left py-3 px-4 text-gray-400 font-mono text-sm">
-                      Holders
-                    </th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {dashboardData.tokens.map((token: any, index: number) => (
-                    <tr
-                      key={index}
-                      className="border-b border-[#353637] hover:bg-[#1E1E1E] transition-colors duration-200"
-                    >
-                      <td className="py-4 px-4">
-                        {token.chain?.imageUrl ? (
-                          <Image
-                            src={token.chain.imageUrl}
-                            alt={token.name}
-                            width={48}
-                            height={48}
-                            className="w-12 h-12 rounded-sm"
-                          />
-                        ) : (
-                          <div className="w-12 h-12 bg-gray-700 rounded-sm" />
-                        )}
-                      </td>
-                      <td className="py-4 px-4 text-white font-ppsans">
-                        {token.name}
-                      </td>
-                      <td className="py-4 px-4 text-white font-ppsans">
-                        {token.symbol}
-                      </td>
-                      <td className="py-4 px-4 text-white font-ppsans">
-                        {token.address}
-                      </td>
-                      <td className="py-4 px-4 text-white font-ppsans">
-                        ${formatNumber(token.marketCap)}
-                      </td>
-                      <td className="py-4 px-4 text-white font-ppsans">
-                        ${formatNumber(token.volume24hUSD)}
-                      </td>
-                      <td className="py-4 px-4 text-white font-ppsans">
-                        {formatNumber(token.holders)}
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
+              <DashTables tokens={dashboardData.tokens} />
             </div>
           </div>
         </div>
