@@ -49,9 +49,9 @@ const StatsCard = ({ title, value, change, icon: Icon, color }: any) => (
     <TabCorners />
     <div className="flex justify-between align-top">
       <div>
-        <p className="text-gray-400 font-mono text-sm mb-2">{title}</p>
-        <p className="text-white text-2xl font-ppsans mb-2">{value}</p>
-        <div className="flex items-center">
+        <p className="text-gray-400 font-mono text-sm mb-2"><ScrambleText text={title} /></p>
+        <p className="text-white text-2xl font-ppsans mb-2"><ScrambleText text={value} /></p>
+        {/* <div className="flex items-center">
           {change > 0 ? (
             <Zap className="w-4 h-4 text-[#19FFCE] mr-1" />
           ) : (
@@ -64,7 +64,7 @@ const StatsCard = ({ title, value, change, icon: Icon, color }: any) => (
           >
             {Math.abs(change)}% last 24h
           </span>
-        </div>
+        </div> */}
       </div>
       <div className={`p-4 rounded-lg bg-opacity-10 ${color}`}>
         <Icon className={`w-6 h-6 ${color}`} />
@@ -136,7 +136,7 @@ export default async function DashboardContent() {
 
         {/* Agent Projects Table */}
         <div className="relative bg-[#0f0f0f] border-1 border-[#353637] overflow-hidden">
-          <TabCorners />
+          {/* <TabCorners /> */}
           <div className="p-6">
             <div className="flex items-center gap-3 mb-6">
               <Code2 className="w-5 h-5 text-[#1BE1FF]" />
