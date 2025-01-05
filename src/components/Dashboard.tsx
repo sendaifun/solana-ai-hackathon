@@ -1,22 +1,30 @@
-import React from "react";
 import {
   Bot,
-  Cpu,
   Brain,
   Zap,
-  MessagesSquare,
   Code2,
-  Workflow,
-  Network,
-  GitGraphIcon,
-  Volume,
   ChartCandlestick,
-  ChartGanttIcon,
   ChartPie,
 } from "lucide-react";
 import Image from "next/image";
+import { ScrambleText } from "@/components/ui/scramble-text";
+import { headers } from "next/headers";
 import cornerAbstract from "@/assets/images/svgs/abstract/CornerRect.png";
-import { ScrambleText } from "./ui/scramble-text";
+
+async function getDashboardData() {
+  const host = headers().get("host");
+  const protocol = process?.env.NODE_ENV === "development" ? "http" : "https";
+
+  const response = await fetch(`${protocol}://${host}/api/dashboard`, {
+    next: { revalidate: 10 }, // Cache for 60 seconds
+  });
+
+  if (!response.ok) {
+    throw new Error("Failed to fetch dashboard data");
+  }
+
+  return response.json();
+}
 
 const TabCorners = () => (
   <>
@@ -64,80 +72,44 @@ const StatsCard = ({ title, value, change, icon: Icon, color }: any) => (
   </div>
 );
 
-const Dashboard = () => {
+export default async function DashboardContent() {
+  const dashboardData = await getDashboardData();
+  const formatNumber = (number: any) => {
+    if (!number && number !== 0) return "0";
+    return new Intl.NumberFormat("en-US", {
+      maximumFractionDigits: 0,
+      minimumFractionDigits: 0,
+    }).format(Math.floor(number));
+  };
+
   const stats = [
     {
       title: "Total Market Cap",
-      value: "$455,576,202",
+      value: `$${formatNumber(dashboardData?.stats?.totalMarketCap)}`,
       change: 15.8,
       icon: ChartPie,
       color: "text-[#1BE1FF]",
     },
     {
       title: "Total Volume [24h]",
-      value: "$116,024,965",
+      value: `$${formatNumber(dashboardData?.stats?.totalVolume24h)}`,
       change: 23.4,
       icon: ChartCandlestick,
       color: "text-[#FFFF00]",
     },
     {
       title: "Total Holders",
-      value: "205,967",
+      value: formatNumber(dashboardData?.stats?.totalHolders),
       change: -8.2,
       icon: Bot,
       color: "text-[#19FFCE]",
     },
     {
       title: "Projects Count",
-      value: "62",
+      value: formatNumber(dashboardData?.stats?.projectsCount),
       change: 4.1,
       icon: Brain,
       color: "text-[#1BE1FF]",
-    },
-  ];
-
-  const tableData = [
-    {
-      logo: "https://ipfs.io/ipfs/QmTda82KF2HRFwXoq9mwcGha4eS5ncz47rdEZ2MG5Rb8cz",
-      ticker: "Davinci",
-      tokenName : "da Vinci AI",
-      tokenAddress : "23VdJFdmz8dwFxZfQ24k13jVoQEw9RSKYU2sdgocpump",
-      marketCap: "$1,000,000",
-      circulatingSupply: "1,000,000",
-      totalSupply: "1,000,000",
-      liquidity: "1,000,000",
-      type: "Autonomous",
-      status: "Active",
-      progress: 82,
-      interactions: "124K",
-    },
-    {
-      logo: "https://ipfs.io/ipfs/QmTda82KF2HRFwXoq9mwcGha4eS5ncz47rdEZ2MG5Rb8cz",
-      ticker: "Davinci",
-      tokenName : "da Vinci AI",
-      tokenAddress : "23VdJFdmz8dwFxZfQ24k13jVoQEw9RSKYU2sdgocpump",
-      marketCap: "$1,000,000",
-      circulatingSupply: "1,000,000",
-      totalSupply: "1,000,000",
-      liquidity: "1,000,000",
-      type: "Autonomous",
-      status: "Active",
-      progress: 82,
-      interactions: "124K",
-    },
-    {
-      logo: "https://ipfs.io/ipfs/QmTda82KF2HRFwXoq9mwcGha4eS5ncz47rdEZ2MG5Rb8cz",
-      ticker: "Davinci",
-      tokenName : "da Vinci AI",
-      tokenAddress : "23VdJFdmz8dwFxZfQ24k13jVoQEw9RSKYU2sdgocpump",
-      marketCap: "$1,000,000",
-      circulatingSupply: "1,000,000",
-      totalSupply: "1,000,000",
-      liquidity: "1,000,000",
-      type: "Autonomous",
-      status: "Active",
-      progress: 82,
-      interactions: "124K",
     },
   ];
 
@@ -146,7 +118,7 @@ const Dashboard = () => {
       <div className="max-w-7xl mx-auto p-6">
         {/* Title Section */}
         <div className="mb-8 text-center my-16">
-          <h1 className="text-2xl  sm:text-4xl font-relish text-white mb-2">
+          <h1 className="text-2xl sm:text-4xl font-relish text-white mb-2">
             <ScrambleText text="AGENTIC DASHBOARD" />
           </h1>
           <p className="text-gray-400 font-ppsans">
@@ -176,7 +148,7 @@ const Dashboard = () => {
                 <thead>
                   <tr className="border-b border-[#353637]">
                     <th className="text-left py-3 px-4 text-gray-400 font-mono text-sm">
-                      Logo
+                      Image
                     </th>
                     <th className="text-left py-3 px-4 text-gray-400 font-mono text-sm">
                       Token Name
@@ -191,90 +163,50 @@ const Dashboard = () => {
                       Market Cap
                     </th>
                     <th className="text-left py-3 px-4 text-gray-400 font-mono text-sm">
-                      Circulating Supply
+                      Volume [24h]
                     </th>
                     <th className="text-left py-3 px-4 text-gray-400 font-mono text-sm">
-                      Total Supply
-                    </th>
-                    <th className="text-left py-3 px-4 text-gray-400 font-mono text-sm">
-                      Liquidity
+                      Holders
                     </th>
                   </tr>
                 </thead>
                 <tbody>
-                  {tableData.map((row, index) => (
+                  {dashboardData.tokens.map((token: any, index: number) => (
                     <tr
                       key={index}
                       className="border-b border-[#353637] hover:bg-[#1E1E1E] transition-colors duration-200"
                     >
                       <td className="py-4 px-4">
-                        <Image
-                          src={row.logo}
-                          alt={row.logo}
-                          width={100}
-                          height={100}
-                          className="w-12 h-12 rounded-sm"
-                        />
-                      </td>
-                      <td className="py-4 px-4 text-white font-ppsans">
-                        {row.ticker}
-                      </td>
-                      <td className="py-4 px-4 text-white font-ppsans">
-                        {row.tokenName}
-                      </td>
-                      <td className="py-4 px-4 text-white font-ppsans">
-                        {row.tokenAddress}
-                      </td>
-                      <td className="py-4 px-4 text-white font-ppsans">
-                        {row.marketCap}
-                      </td>
-                      <td className="py-4 px-4 text-white font-ppsans">
-                        {row.circulatingSupply}
-                      </td>
-                      <td className="py-4 px-4 text-white font-ppsans">
-                        {row.totalSupply}
-                      </td>
-                      <td className="py-4 px-4 text-white font-ppsans">
-                        {row.liquidity}
-                      </td>
-
-                      {/* <td className="py-4 px-4 text-gray-400">
-                        <div className="flex items-center gap-2">
-                          <Workflow className="w-4 h-4 text-[#1BE1FF]" />
-                          {row.track}
-                        </div>
-                      </td>
-                      <td className="py-4 px-4">
-                        <div className="flex items-center gap-2">
-                          <Network className="w-4 h-4 text-[#FFFF00]" />
-                          <span className="text-gray-400">{row.type}</span>
-                        </div>
-                      </td>
-                      <td className="py-4 px-4">
-                        <span
-                          className={`px-3 py-1 rounded-full text-xs ${
-                            row.status === "Active"
-                              ? "bg-[#1BE1FF]/10 text-[#1BE1FF]"
-                              : row.status === "Learning"
-                              ? "bg-[#FFFF00]/10 text-[#FFFF00]"
-                              : row.status === "Optimizing"
-                              ? "bg-[#19FFCE]/10 text-[#19FFCE]"
-                              : row.status === "Scaling"
-                              ? "bg-purple-500/10 text-purple-500"
-                              : "bg-gray-500/10 text-gray-500"
-                          }`}
-                        >
-                          {row.status}
-                        </span>
-                      </td>
-                      <td className="py-4 px-4">
-                        <div className="w-full bg-[#353637] rounded-full h-2">
-                          <div
-                            className="bg-[#1BE1FF] h-2 rounded-full transition-all duration-300"
-                            style={{ width: `${row.progress}%` }}
+                        {token.chain?.imageUrl ? (
+                          <Image
+                            src={token.chain.imageUrl}
+                            alt={token.name}
+                            width={48}
+                            height={48}
+                            className="w-12 h-12 rounded-sm"
                           />
-                        </div>
-                      </td> */}
+                        ) : (
+                          <div className="w-12 h-12 bg-gray-700 rounded-sm" />
+                        )}
+                      </td>
+                      <td className="py-4 px-4 text-white font-ppsans">
+                        {token.name}
+                      </td>
+                      <td className="py-4 px-4 text-white font-ppsans">
+                        {token.symbol}
+                      </td>
+                      <td className="py-4 px-4 text-white font-ppsans">
+                        {token.address}
+                      </td>
+                      <td className="py-4 px-4 text-white font-ppsans">
+                        ${formatNumber(token.marketCap)}
+                      </td>
+                      <td className="py-4 px-4 text-white font-ppsans">
+                        ${formatNumber(token.volume24hUSD)}
+                      </td>
+                      <td className="py-4 px-4 text-white font-ppsans">
+                        {formatNumber(token.holders)}
+                      </td>
                     </tr>
                   ))}
                 </tbody>
@@ -285,6 +217,4 @@ const Dashboard = () => {
       </div>
     </div>
   );
-};
-
-export default Dashboard;
+}
