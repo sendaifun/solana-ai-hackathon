@@ -239,7 +239,7 @@ const ProjectShowcase = () => {
     <div className="bg-black min-h-screen">
       <div className="max-w-7xl w-full mx-auto px-4 py-8 sm:py-16">
         {/* Title section */}
-        <div className="flex items-center justify-center gap-4 mb-8 sm:mb-16">
+        <div className="flex items-center justify-center gap-4 sm:mb-8">
           <div className="hidden sm:flex flex-1">
             <div className="flex gap-4 sm:gap-8">
               {[...Array(8)].map((_, i) => (
@@ -268,9 +268,6 @@ const ProjectShowcase = () => {
                 />
               </div>
             </h2>
-            <h2 className="text-sm mt-8 sm:text-2xl font-ppsans text-gray-400 mb-2 break-words sm:text-nowrap">
-              15 days &lt;&lt; 400+ submissions &lt;&lt; $275k+ in Prizes.
-            </h2>
           </div>
 
           <div className="hidden sm:flex flex-1">
@@ -284,6 +281,12 @@ const ProjectShowcase = () => {
             </div>
           </div>
         </div>
+        
+        <h2 className="text-sm my-8 mt-0 sm:text-lg text-center font-ppsans text-pretty text-gray-400 break-words border-l-2 border-r-2 border-red-500 p-2">
+          None of these projects are endorsed by Solana AI Hackathon or SendAI. They just participated in the hackathon, it can likely be a scam or
+          spam project
+        </h2>
+
         {/* Track Filter */}
         <div className="flex justify-center mb-8 sm:mb-12">
           <TrackNavigation
