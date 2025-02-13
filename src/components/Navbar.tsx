@@ -87,7 +87,7 @@ const NavbarComp = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo and Brand */}
           <div className="flex items-center cursor-pointer mx-2">
-            <Link href="/" onClick={() => track("logo_click")}>
+            <Link href="https://www.sendai.fun" target="_blank" onClick={() => track("logo_click")}>
               <div className="h-10 w-10">
                 <svg
                   viewBox="0 0 40 40"
