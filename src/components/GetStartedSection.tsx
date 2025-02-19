@@ -39,7 +39,7 @@ const GetStartedSection = () => {
     {
       id: "ideaboard",
       title: "Ideaboard",
-      href: "https://www.sendai.fun/ideas",
+      href: "https://ideas.sendai.fun",
       icon: () => (
         <svg
           width="32"
@@ -61,7 +61,7 @@ const GetStartedSection = () => {
     {
       id: "resources",
       title: "Resources",
-      href: "/resources",
+      href: "https://resources.sendai.fun",
       icon: () => (
         <svg
           width="32"
@@ -83,7 +83,7 @@ const GetStartedSection = () => {
     {
       id: "agent-kit",
       title: "Solana Agent Kit",
-      href: "https://solanaagentkit.xyz/",
+      href: "https://kit.sendai.fun",
       icon: () => (
         <svg
           width="32"
