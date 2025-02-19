@@ -17,12 +17,12 @@ const Footer = () => {
     getStarted: [
       {
         name: "Ideas",
-        href: "https://www.sendai.fun/ideas",
+        href: "https://ideas.sendai.fun",
         openInNewTab: true,
       },
       {
         name: "Resources",
-        href: "/resources",
+        href: "https://resources.sendai.fun",
         openInNewTab: true,
       },
       {

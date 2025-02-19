@@ -29,7 +29,7 @@ const NavLinks = ({ mobile }: { mobile?: boolean }) => {
       </Link>
       <Link
         target="_blank"
-        href="https://www.sendai.fun/ideas"
+        href="https://ideas.sendai.fun"
         onClick={() => handleNavClick("ideas")}
       >
         <ScrambleText
@@ -40,7 +40,8 @@ const NavLinks = ({ mobile }: { mobile?: boolean }) => {
         />
       </Link>
       <Link
-        href="/resources"
+        target="_blank"
+        href="https://resources.sendai.fun"
         onClick={() => handleNavClick("resources")}
       >
         <ScrambleText
