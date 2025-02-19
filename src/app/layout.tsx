@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Solana AI Hackathon',
     description: '10th - 23rd Dec. global hackathon. $250k+ in prizes',
-    url: 'https://solanaaihackathon.com',
+    url: 'https://hackathon.sendai.fun',
     siteName: 'Solana AI Hackathon',
     images: [
       {
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     description: '10th - 23rd Dec. global hackathon. $250k+ in prizes',
     images: ['/og.png'],
   },
-  metadataBase: new URL('https://solanaaihackathon.com'),
+  metadataBase: new URL('https://hackathon.sendai.fun'),
 };
 
 export default function RootLayout({
