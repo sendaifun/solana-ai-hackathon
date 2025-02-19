@@ -179,13 +179,13 @@ const HeroSection = () => {
             </svg>
           </Button> */}
 
-          <Button>
+          {/* <Button>
             <Link href="/projects">
               <span className="md:block py-2 md:py-0 text-black/90 group-hover:text-black font-ppsans font-bold text-sm md:text-md tracking-wide transition-colors">
                 Projects
               </span>
             </Link>
-          </Button>
+          </Button> */}
 
           <Button>
             <Link href="https://x.com/sendaifun/status/1879665070709621176">
