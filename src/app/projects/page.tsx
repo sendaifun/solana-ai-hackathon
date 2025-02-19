@@ -4,7 +4,7 @@ const page = () => {
   return (
     <>
       <div className="bg-[#000] h-full flex justify-center">
-        <ShowcaseSection />
+        {/* <ShowcaseSection /> */}
       </div>
     </>
   );
